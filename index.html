@@ -1384,8 +1384,9 @@
       }
     }
 
+    
     /* --------------------------------------------------
-       12. PREMIUM RESTAURANTS SYSTEM
+       12. PREMIUM RESTAURANTS SYSTEM (UPDATED WITH IMAGES)
        -------------------------------------------------- */
     #restaurants-content-wrapper {
       display: flex;
@@ -1405,8 +1406,8 @@
       -webkit-backdrop-filter: blur(8px);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 20px;
+      grid-template-columns: 240px 1fr;
+      gap: 24px;
     }
 
     .restaurant-card:hover {
@@ -1416,24 +1417,49 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(201, 168, 76, 0.05);
     }
 
+    .restaurant-image-wrapper {
+      position: relative;
+      width: 240px;
+      height: 180px;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .restaurant-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .restaurant-card:hover .restaurant-img {
+      transform: scale(1.08);
+    }
+
     .restaurant-rank {
+      position: absolute;
+      top: 10px;
+      left: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 50px;
-      height: 50px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 800;
       color: #000;
-      flex-shrink: 0;
-      box-shadow: 0 0 15px currentColor;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 2;
     }
 
-    .rank-top-1 { background: linear-gradient(135deg, #FFE082, #FFB300); color: #4E342E; box-shadow: 0 0 15px rgba(255, 179, 0, 0.4); }
+    .rank-top-1 { background: linear-gradient(135deg, #FFE082, #FFB300); color: #4E342E; box-shadow: 0 0 15px rgba(255, 179, 0, 0.5); }
     .rank-top-2 { background: linear-gradient(135deg, #E0E0E0, #9E9E9E); color: #212121; box-shadow: 0 0 15px rgba(158, 158, 158, 0.3); }
     .rank-top-3 { background: linear-gradient(135deg, #FFCC80, #BCAAA4); color: #3E2723; box-shadow: 0 0 15px rgba(188, 170, 164, 0.3); }
-    .rank-other { background: rgba(255, 255, 255, 0.08); color: var(--text-main); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: none; font-size: 1.25rem; width: 44px; height: 44px; }
+    .rank-other { background: rgba(0, 0, 0, 0.6); color: var(--color-gold); border: 1.5px solid var(--color-gold); box-shadow: none; font-size: 1.1rem; }
 
     .restaurant-info {
       display: flex;
@@ -1557,10 +1583,9 @@
         gap: 15px;
         padding: 18px;
       }
-      .restaurant-rank {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
+      .restaurant-image-wrapper {
+        width: 100%;
+        height: 200px;
       }
       .restaurant-meta-grid {
         grid-template-columns: 1fr;
@@ -2889,7 +2914,7 @@
         
         <header class="day-header" style="flex-wrap: nowrap; align-items: center; justify-content: space-between; width: 100%;">
           <div class="day-title-box">
-            <h2 class="day-number-title">🔥 ลายแทง 9 ร้านอร่อยกระแสโซเชียล</h2>
+            <h2 class="day-number-title">🔥 ลายแทง 20 ร้านอร่อยกระแสโซเชียล</h2>
             <span class="day-main-theme">ร้านอาหารยอดฮิตใน Facebook, TikTok, Xiaohongshu, Douyin (ไทย & จีน)</span>
           </div>
         </header>
@@ -2898,7 +2923,7 @@
           <i class="fa-solid fa-fire" style="color: var(--color-soft-red); font-size: 1.25rem;"></i>
           <div class="tips-content">
             <strong>คำแนะนำในการตามรอยร้านอร่อย</strong>
-            <p>ร้านอาหารประเภทปิ้งย่าง หม้อไฟ หรือเป็ดปักกิ่งที่เป็นกระแสสูง (เช่น สี่จี้หมินฝู, หนานเหมินซุ่นโร่ว) มักจะมีคิวที่ยาวมากในเวลาอาหารเย็น แนะนำให้กดจองคิวออนไลน์ล่วงหน้าผ่าน WeChat Mini Program ของร้าน หรือเดินทางไปถึงร้านก่อนเวลาเปิดมื้ออาหารหลักประมาณ 30-45 นาที เพื่อเลี่ยงคิวที่ยาวนาน</p>
+            <p>ร้านอาหารประเภทปิ้งย่าง หม้อไฟ หรือเป็ดปักกิ่งที่เป็นกระแสสูง (เช่น สี่จี้หมินฝู, หนานเหมินซุ่นโร่ว, ต้าต่ง) มักจะมีคิวที่ยาวมากในเวลาอาหารเย็น แนะนำให้กดจองคิวออนไลน์ล่วงหน้าผ่าน WeChat Mini Program ของร้าน หรือเดินทางไปถึงร้านก่อนเวลาเปิดมื้ออาหารหลักประมาณ 30-45 นาที เพื่อเลี่ยงคิวที่ยาวนาน</p>
           </div>
         </div>
 
@@ -2906,7 +2931,10 @@
           
           <!-- Restaurant 1 -->
           <div class="restaurant-card">
-            <div class="restaurant-rank rank-top-1">#1</div>
+            <div class="restaurant-image-wrapper">
+              <img src="images/siji_minfu.png" alt="Siji Minfu" class="restaurant-img">
+              <div class="restaurant-rank rank-top-1">#1</div>
+            </div>
             <div class="restaurant-info">
               <div class="restaurant-header-row">
                 <div class="restaurant-names">
@@ -2945,7 +2973,10 @@
 
           <!-- Restaurant 2 -->
           <div class="restaurant-card">
-            <div class="restaurant-rank rank-top-2">#2</div>
+            <div class="restaurant-image-wrapper">
+              <img src="images/nanmen_shunrou.png" alt="Nanmen Shunrou" class="restaurant-img">
+              <div class="restaurant-rank rank-top-2">#2</div>
+            </div>
             <div class="restaurant-info">
               <div class="restaurant-header-row">
                 <div class="restaurant-names">
@@ -2984,7 +3015,10 @@
 
           <!-- Restaurant 3 -->
           <div class="restaurant-card">
-            <div class="restaurant-rank rank-top-3">#3</div>
+            <div class="restaurant-image-wrapper">
+              <img src="images/bc_bakery.png" alt="Butterful & Creamorous" class="restaurant-img">
+              <div class="restaurant-rank rank-top-3">#3</div>
+            </div>
             <div class="restaurant-info">
               <div class="restaurant-header-row">
                 <div class="restaurant-names">
@@ -3023,7 +3057,10 @@
 
           <!-- Restaurant 4 -->
           <div class="restaurant-card">
-            <div class="restaurant-rank rank-other">#4</div>
+            <div class="restaurant-image-wrapper">
+              <img src="images/bao_shi_fu.png" alt="Bao Shi Fu" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#4</div>
+            </div>
             <div class="restaurant-info">
               <div class="restaurant-header-row">
                 <div class="restaurant-names">
@@ -3062,7 +3099,10 @@
 
           <!-- Restaurant 5 -->
           <div class="restaurant-card">
-            <div class="restaurant-rank rank-other">#5</div>
+            <div class="restaurant-image-wrapper">
+              <img src="images/xiaodiao_litang.png" alt="Xiaodiao Litang" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#5</div>
+            </div>
             <div class="restaurant-info">
               <div class="restaurant-header-row">
                 <div class="restaurant-names">
@@ -3101,7 +3141,10 @@
 
           <!-- Restaurant 6 -->
           <div class="restaurant-card">
-            <div class="restaurant-rank rank-other">#6</div>
+            <div class="restaurant-image-wrapper">
+              <img src="images/fangzhuanchang.png" alt="Fangzhuanchang" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#6</div>
+            </div>
             <div class="restaurant-info">
               <div class="restaurant-header-row">
                 <div class="restaurant-names">
@@ -3140,7 +3183,10 @@
 
           <!-- Restaurant 7 -->
           <div class="restaurant-card">
-            <div class="restaurant-rank rank-other">#7</div>
+            <div class="restaurant-image-wrapper">
+              <img src="images/grandma_home.png" alt="Grandma's Home" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#7</div>
+            </div>
             <div class="restaurant-info">
               <div class="restaurant-header-row">
                 <div class="restaurant-names">
@@ -3167,7 +3213,7 @@
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-utensils"></i> เมนูแนะนำห้ามพลาด</span>
-                  <span class="restaurant-meta-val">หมูสามชั้นอบซอสโบราณบ้านคุณยาย (外婆红烧肉), ไก่อบชาเขียวครึ่งตัว (茶香鸡), เต้าหู้มาโป (ราคาประหยัดมาก)</span>
+                  <span class="restaurant-meta-val">หมูสามชั้นอบซอสโบราณบ้านคุณยาย (外婆红烧肉), ไก่อบชาเขียว (茶香鸡), เต้าหู้มาโป (ราคาประหยัดมาก)</span>
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-bell"></i> ทิปส์กระแสโซเชียล</span>
@@ -3179,7 +3225,10 @@
 
           <!-- Restaurant 8 -->
           <div class="restaurant-card">
-            <div class="restaurant-rank rank-other">#8</div>
+            <div class="restaurant-image-wrapper">
+              <img src="images/yaoji_chaogan.png" alt="Yaoji Chaogan" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#8</div>
+            </div>
             <div class="restaurant-info">
               <div class="restaurant-header-row">
                 <div class="restaurant-names">
@@ -3218,7 +3267,10 @@
 
           <!-- Restaurant 9 -->
           <div class="restaurant-card">
-            <div class="restaurant-rank rank-other">#9</div>
+            <div class="restaurant-image-wrapper">
+              <img src="images/jin_ding_xuan.png" alt="Jin Ding Xuan" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#9</div>
+            </div>
             <div class="restaurant-info">
               <div class="restaurant-header-row">
                 <div class="restaurant-names">
@@ -3255,8 +3307,472 @@
             </div>
           </div>
 
+          <!-- Restaurant 10 -->
+          <div class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img src="images/dadong.png" alt="Dadong" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#10</div>
+            </div>
+            <div class="restaurant-info">
+              <div class="restaurant-header-row">
+                <div class="restaurant-names">
+                  <span class="restaurant-name-th">ต้าต่ง烤鸭店 (เป็ดปักกิ่งฟิวชันระดับพรีเมียม)</span>
+                  <span class="restaurant-name-orig">Dadong Roast Duck · 大董烤鸭店</span>
+                </div>
+                <div class="restaurant-badges">
+                  <span class="restaurant-badge-tag badge-stars">⭐ 4.6 (Modern Luxury)</span>
+                  <span class="restaurant-badge-tag badge-viral-xhs">Xiaohongshu Chic</span>
+                  <span class="restaurant-badge-tag badge-viral-dy">Douyin Premium</span>
+                </div>
+              </div>
+              <p class="restaurant-desc">
+                ร้านเป็ดปักกิ่งระดับลักชัวรีสไตล์โมเดิร์นฟิวชัน ได้รับการยอมรับว่าหนังเป็ดกรอบเป็นพิเศษและมีไขมันต่ำมาก จุดเด่นที่เป็นกระแสไวรัลคือการเสิร์ฟแผ่นหนังเป็ดปักกิ่งกรอบคู่กับไข่ปลาคาเวียร์หรูหรา และการนำเสนออาหารที่ประณีตงดงามราวกระดาษวาดรูปพู่กันจีน
+              </p>
+              <div class="restaurant-meta-grid">
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 6 (วันช้อปปิ้งย่าน Sanlitun)</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
+                  <span class="restaurant-meta-val"><strong>สาขา Sanlitun Taikoo Li:</strong> ตั้งอยู่ในช้อปปิ้งพลาซ่าซานหลี่ถุน ทานมื้อเย็นสุดหรูท่ามกลางแสงสีย่านแฟชั่น</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-utensils"></i> เมนูแนะนำห้ามพลาด</span>
+                  <span class="restaurant-meta-val">เป็ดปักกิ่งคู่ไข่ปลาคาเวียร์ (酥沙烤鸭配鱼子酱), มะเขือยาวผัดซอสหวานสไตล์ต้าต่ง, หอยเชลล์ผัดซอสทรัฟเฟิล</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-bell"></i> ทิปส์กระแสโซเชียล</span>
+                  <span class="restaurant-meta-val">การเสิร์ฟหนังเป็ดคู่คาเวียร์เป็นเอกลักษณ์ที่บล็อกเกอร์ท่องเที่ยวหรูชอบเช็คอิน ราคาสูงกว่าร้านทั่วไปแต่บรรยากาศและการตกแต่งหรูหราทันสมัยมาก</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurant 11 -->
+          <div class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img src="images/jubaoyuan.png" alt="Jubaoyuan" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#11</div>
+            </div>
+            <div class="restaurant-info">
+              <div class="restaurant-header-row">
+                <div class="restaurant-names">
+                  <span class="restaurant-name-th">จวี่เป่าหยวน (ที่สุดแห่งหม้อไฟแกะอิสลาม)</span>
+                  <span class="restaurant-name-orig">Jubaoyuan Mutton Hotpot · 聚宝源</span>
+                </div>
+                <div class="restaurant-badges">
+                  <span class="restaurant-badge-tag badge-stars">⭐ 4.6 (Historic Halal)</span>
+                  <span class="restaurant-badge-tag badge-viral-xhs">XHS Local Choice</span>
+                  <span class="restaurant-badge-tag badge-viral-dy">Douyin Queue King</span>
+                </div>
+              </div>
+              <p class="restaurant-desc">
+                ร้านหม้อไฟฮาลาล (Halal Mutton Hotpot) ที่โด่งดังและเก่าแก่ที่สุดในย่านมุสลิม Niujie จุดเด่นที่ได้รับการรีวิวอย่างท่วมท้นคือ เนื้อแกะสดใหม่สีแดงสดที่แล่บางเฉียบแต่เนื้อมีความยืดหยุ่นสูง คีบลงต้มซุปทองแดงแล้วรสชาติหวานนุ่มละมุนลิ้น ทานคู่กับขนมเปี๊ยงใส่งาปิ้งร้อนๆ ยอดนิยม
+              </p>
+              <div class="restaurant-meta-grid">
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 1 หรือ วันที่ 8 (ใกล้ที่พักย่าน Qianmen / ช้อปปิ้งวันสุดท้าย)</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
+                  <span class="restaurant-meta-val"><strong>สาขาถนน Niujie (牛街总店):</strong> นั่งแท็กซี่จากโรงแรมไปย่านหนิวเจี่ยประมาณ 10 นาที หรือใช้บริการสาขาในห้างใกล้ทางรถไฟใต้ดิน Qianmen</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-utensils"></i> เมนูแนะนำห้ามพลาด</span>
+                  <span class="restaurant-meta-val">เนื้อแกะสดสไลด์จานพิเศษ (手切鲜羊肉), ขนมปังงาอบกรอบปักกิ่ง (芝麻烧饼), ลูกชิ้นเนื้อแกะทำมือ</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-bell"></i> ทิปส์กระแสโซเชียล</span>
+                  <span class="restaurant-meta-val">เป็นร้านอาหารที่คนปักกิ่งแท้ๆ ยอมต่อคิวยาวเหยียดตั้งแต่ช่วงบ่าย แนะนำขนมเปี๊ยะงาบดจิ้มซอสร้อนๆ เป็นเมนูดังสุดคลาสสิกของคนท้องถิ่น</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurant 12 -->
+          <div class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img src="images/najia_xiaoguan.png" alt="Najia Xiaoguan" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#12</div>
+            </div>
+            <div class="restaurant-info">
+              <div class="restaurant-header-row">
+                <div class="restaurant-names">
+                  <span class="restaurant-name-th">หนาเจียเสี่ยวกว่าน (อาหารแมนจูในโรงเตี๊ยมโบราณ)</span>
+                  <span class="restaurant-name-orig">Najia Xiaoguan · 那家小馆</span>
+                </div>
+                <div class="restaurant-badges">
+                  <span class="restaurant-badge-tag badge-stars">⭐ 4.6 (Imperial Manchu)</span>
+                  <span class="restaurant-badge-tag badge-viral-xhs">XHS Hidden Alley</span>
+                  <span class="restaurant-badge-tag badge-viral-tk">TikTok Courtyard Vibe</span>
+                </div>
+              </div>
+              <p class="restaurant-desc">
+                ร้านอาหารสไตล์ชนกลุ่มน้อยแมนจู ตกแต่งในสไตล์บ้านสี่ประสานจีนโบราณ (Siheyuan) ที่สวยงาม ร่มรื่น และมีเสน่ห์ดั่งทะลุมิติ เสิร์ฟเมนูอาหารตามตำรับราชสำนักชิง โดยมีเมนูกุ้งกรอบราดซอสน้ำผึ้งสูตรแมนจูเป็นเมนูเด็ดถ่ายรูปคู่กับโรงเตี๊ยมไม้ที่ฮิตที่สุดบนช่องทางติ๊กต็อก
+              </p>
+              <div class="restaurant-meta-grid">
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 6 (วันเที่ยว Lama Temple / Sanlitun)</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
+                  <span class="restaurant-meta-val"><strong>สาขา Guomao (ใกล้สถานี Yonganli):</strong> ตกแต่งสวยงามในซอยไม้ หรือสาขาใกล้ถนนคนเดินวัยรุ่นซานหลี่ถุน</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-utensils"></i> เมนูแนะนำห้ามพลาด</span>
+                  <span class="restaurant-meta-val">กุ้งกรอบเคลือบซอสน้ำผึ้งสูตรวังหลวง (那氏自制酥皮虾), แกงตุ๋นหม้อดินจักรพรรดิ (皇坛子)</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-bell"></i> ทิปส์กระแสโซเชียล</span>
+                  <span class="restaurant-meta-val">บรรยากาศเหมือนฉากในหนังจีนย้อนยุค เหมาะกับการใส่ชุดสไตล์จีนโบราณไปถ่ายภาพคู่กับอาหารชาววัง รสชาติกุ้งจะหวานกรอบถูกปากคนไทยแน่นอน</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurant 13 -->
+          <div class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img src="images/juqi.png" alt="Juqi" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#13</div>
+            </div>
+            <div class="restaurant-info">
+              <div class="restaurant-header-row">
+                <div class="restaurant-names">
+                  <span class="restaurant-name-th">จวี๋ชี่ (ข้าวผัดถ่านหินจุดไฟพ่นโชว์)</span>
+                  <span class="restaurant-name-orig">Juqi Creative Restaurant · 局气</span>
+                </div>
+                <div class="restaurant-badges">
+                  <span class="restaurant-badge-tag badge-stars">⭐ 4.5 (Interactive Food)</span>
+                  <span class="restaurant-badge-tag badge-viral-dy">Douyin Hot Topic</span>
+                  <span class="restaurant-badge-tag badge-viral-tk">TikTok Viral Fire</span>
+                </div>
+              </div>
+              <p class="restaurant-desc">
+                ร้านอาหารปักกิ่งแนวสร้างสรรค์ที่นำเสนอเรื่องราวประวัติศาสตร์และไลฟ์สไตล์ของปักกิ่งโบราณผ่านจานอาหาร เมนูเด็ดที่เป็นไวรัลสุดขีดบน Douyin และ TikTok คือ ข้าวผัดสับปะรดสีดำสนิทที่ปั้นเป็นทรงก้อนถ่านหินโบราณ โดยพนักงานจะทำการจุดไฟเผาให้ลุกโชนก่อนรับประทานถึงโต๊ะอาหาร
+              </p>
+              <div class="restaurant-meta-grid">
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 7 (วันเดินเที่ยวหวังฝู่จิ่ง) หรือ วันที่ 1 / 8 (Qianmen)</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
+                  <span class="restaurant-meta-val"><strong>สาขาห้าง Wangfujing Department Store ชั้น B2:</strong> ตกแต่งจำลองเมืองปักกิ่งยุค 80 ได้อารมณ์วินเทจยอดเยี่ยม</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-utensils"></i> เมนูแนะนำห้ามพลาด</span>
+                  <span class="restaurant-meta-val">ข้าวผัดถ่านหินโบราณจุดไฟ (局气炒饭), เป็ดปักกิ่งเขียนตัวหนังสือมงคลบนแผ่นแป้ง, ปลากระพงทอดราดซอสหวานรูปทรงกระรอก</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-bell"></i> ทิปส์กระแสโซเชียล</span>
+                  <span class="restaurant-meta-val">ข้าวผัดถ่านหินมีสองรสชาติ (หวานสับปะรด หรือรสซีอิ๊วเค็มเนื้อสัตว์) แนะนำให้เตรียมกล้องถ่ายวิดีโอแบบสโลว์โมชั่นตอนพนักงานจุดไฟเผาเพื่อความขึ้นกล้อง</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurant 14 -->
+          <div class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img src="images/nanjing_impressions.png" alt="Nanjing Impressions" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#14</div>
+            </div>
+            <div class="restaurant-info">
+              <div class="restaurant-header-row">
+                <div class="restaurant-names">
+                  <span class="restaurant-name-th">หนานจิงต้าไผตั้ง (โรงน้ำชาหนานจิงโคมไฟร้อยดวง)</span>
+                  <span class="restaurant-name-orig">Nanjing Impressions · 南京大牌档</span>
+                </div>
+                <div class="restaurant-badges">
+                  <span class="restaurant-badge-tag badge-stars">⭐ 4.5 (Traditional Tea House)</span>
+                  <span class="restaurant-badge-tag badge-viral-xhs">XHS Photo Spot</span>
+                  <span class="restaurant-badge-tag badge-viral-tk">TikTok Atmosphere</span>
+                </div>
+              </div>
+              <p class="restaurant-desc">
+                ร้านอาหารเจียงหนานดั้งเดิมในธีม "โรงละครและโรงน้ำชาเมืองจีนยุคโบราณ" โดดเด่นสะดุดตาด้วยโคมไฟกระดาษสีส้มแขวนห้อยระย้าหนาแน่นหลายร้อยดวงทั่วร้าน เมนูอาหารเด่นคืออาหารสูตรกึ่งติ่มซำและเป็ดต้มเกลือหนานจิงอันลือเลื่อง รสชาติกลมกล่อม มีการแสดงดนตรีสดและร้องงิ้วโบราณคลอเบาๆ
+              </p>
+              <div class="restaurant-meta-grid">
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 7 (วันเที่ยวถนนคนเดิน Wangfujing)</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
+                  <span class="restaurant-meta-val"><strong>สาขาห้าง Wangfujing APM ชั้น 6:</strong> ตั้งอยู่ชั้นเดียวกับร้าน Grandma's Home สามารถเลือกทานหรือแบ่งมื้อชิมได้สะดวกรวดเร็ว</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-utensils"></i> เมนูแนะนำห้ามพลาด</span>
+                  <span class="restaurant-meta-val">เป็ดต้มเกลือจินหลิง (金陵盐水鸭), บะหมี่เป็ดน้ำแดง, ซุปเกี๊ยวปลาต้มสไตล์หนานจิง</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-bell"></i> ทิปส์กระแสโซเชียล</span>
+                  <span class="restaurant-meta-val">แสงสีส้มจากโคมไฟกระดาษภายในร้านสวยงามและให้ภาพแนวภาพยนตร์ย้อนยุคที่โดดเด่นมากบน Xiaohongshu อาหารจัดเสิร์ฟเป็นจานเล็กๆ ทำให้สั่งมาลองได้หลากหลาย</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurant 15 -->
+          <div class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img src="images/in_out_yunnan.png" alt="In & Out Yunnan" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#15</div>
+            </div>
+            <div class="restaurant-info">
+              <div class="restaurant-header-row">
+                <div class="restaurant-names">
+                  <span class="restaurant-name-th">อี้จั้วอี้วั่ง (ร้านชิลล์ขนมจีนข้ามสะพานยูนนาน)</span>
+                  <span class="restaurant-name-orig">In & Out Yunnan Restaurant · 一坐一忘</span>
+                </div>
+                <div class="restaurant-badges">
+                  <span class="restaurant-badge-tag badge-stars">⭐ 4.5 (Yunnan Comfort)</span>
+                  <span class="restaurant-badge-tag badge-viral-xhs">XHS Expat Choice</span>
+                  <span class="restaurant-badge-tag badge-viral-tk">TikTok Soup Love</span>
+                </div>
+              </div>
+              <p class="restaurant-desc">
+                ร้านอาหารพื้นเมืองมณฑลยูนนานแนวร่มรื่น ตกแต่งด้วยต้นไม้และศิลปะพื้นถิ่นยูนนานที่สวยงาม เป็นจุดเช็คอินยอดนิยมของดาราเซเลบจีนและชาวต่างชาติ เมนูโด่งดังคือ ก๋วยเตี๋ยวข้ามสะพานยูนนาน (过桥米线) ที่ใช้น้ำซุปกระดูกไก่ร้อนๆ สีทอง เสิร์ฟพร้อมผักและเนื้อสไลด์สดให้ปรุงสุกด้วยตัวเอง
+              </p>
+              <div class="restaurant-meta-grid">
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 6 (วันช้อปปิ้งย่าน Sanlitun)</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
+                  <span class="restaurant-meta-val"><strong>สาขาตรอก Sanlitun Beixiaojie:</strong> ตั้งอยู่ในซอยสงบร่มรื่น เดินจาก Taikoo Li ประมาณ 15 นาที เหมาะกับการพักทานข้าวซุปอุ่นๆ</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-utensils"></i> เมนูแนะนำห้ามพลาด</span>
+                  <span class="restaurant-meta-val">ขนมจีนข้ามสะพานยูนนานน้ำซุปเข้มข้น (过桥米线), ปลานึ่งสมุนไพรสไตล์สิบสองปันนา, ชานมยูนนานดั้งเดิม</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-bell"></i> ทิปส์กระแสโซเชียล</span>
+                  <span class="restaurant-meta-val">ร้านนี้ได้รับการรีวิวอย่างดีเรื่องน้ำซุปที่ปราศจากผงชูรสเข้มข้น และเมนูชานมที่เสิร์ฟในกระบอกไม้ไผ่ธรรมชาติถ่ายรูปขึ้นกล้องลงไอจีสวยงาม</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurant 16 -->
+          <div class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img src="images/heytea.png" alt="HeyTea" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#16</div>
+            </div>
+            <div class="restaurant-info">
+              <div class="restaurant-header-row">
+                <div class="restaurant-names">
+                  <span class="restaurant-name-th">สี่ฉา (ราชานมชาชีสผลไม้ปั่น)</span>
+                  <span class="restaurant-name-orig">HeyTea · 喜茶</span>
+                </div>
+                <div class="restaurant-badges">
+                  <span class="restaurant-badge-tag badge-stars">⭐ 4.7 (Beverage King)</span>
+                  <span class="restaurant-badge-tag badge-viral-xhs">XHS #1 Drink</span>
+                  <span class="restaurant-badge-tag badge-viral-tk">TikTok Cheese Tea</span>
+                </div>
+              </div>
+              <p class="restaurant-desc">
+                แบรนด์ชาที่ดังที่สุดในประเทศจีน ผู้บุกเบิกและสร้างกระแสการดื่มชาผลไม้คั้นสดท็อปปิ้งด้วยครีมชีสหนานุ่มรสเค็มมันหอมกลิ่นนม โด่งดังไปทั่วโซเชียลเอเชียด้วยการใช้วัตถุดิบผลไม้เกรดพรีเมียมตามฤดูกาลปั่นสดๆ แก้วต่อแก้ว
+              </p>
+              <div class="restaurant-meta-grid">
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 6 (Sanlitun) หรือ วันที่ 7 (Wangfujing) หรือทุกวันเดินทาง</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
+                  <span class="restaurant-meta-val">มีสาขาอยู่ตามห้างสรรพสินค้าชั้นนำเกือบทุกแห่ง รวมถึงสาขา Flagship ใน Sanlitun Taikoo Li และ Wangfujing APM</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-utensils"></i> เมนูแนะนำห้ามพลาด</span>
+                  <span class="restaurant-meta-val">ชาองุ่นแดงปั่นชีสครีม (芝芝多肉葡萄), ชามะม่วงปั่นชีสสด (芝芝芒芒), ชานมไข่มุกบราวน์ชูการ์</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-bell"></i> ทิปส์กระแสโซเชียล</span>
+                  <span class="restaurant-meta-val">คิวสั่งซื้อหน้าร้านผ่านแอปเกือบทุกที่หนาแน่นมาก แนะนำให้ใช้ WeChat Mini Program กดสั่งล่วงหน้าขณะเดินเล่นแล้วค่อยเดินไปรับเมื่อถึงคิว</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurant 17 -->
+          <div class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img src="images/huguosi.png" alt="Huguosi" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#17</div>
+            </div>
+            <div class="restaurant-info">
+              <div class="restaurant-header-row">
+                <div class="restaurant-names">
+                  <span class="restaurant-name-th">หู้กั๋วซื่อเสี่ยวชือ (รวมของหวานโบราณปักกิ่ง)</span>
+                  <span class="restaurant-name-orig">Huguosi Street Snacks · 护国寺小吃</span>
+                </div>
+                <div class="restaurant-badges">
+                  <span class="restaurant-badge-tag badge-stars">⭐ 4.5 (Heritage Dessert)</span>
+                  <span class="restaurant-badge-tag badge-viral-dy">Douyin Beijing Snack</span>
+                  <span class="restaurant-badge-tag badge-viral-tk">TikTok Sweet Rice</span>
+                </div>
+              </div>
+              <p class="restaurant-desc">
+                สถาบันของว่างและของหวานพื้นเมืองระดับมรดกวัฒนธรรมปักกิ่ง รวบรวมเมนูขนมปักกิ่งดั้งเดิมกว่า 100 ชนิดที่หาทานยาก เมนูชื่อดังในโซเชียลคือขนมแป้งข้าวเหนียวยืดเหนียวนุ่มม้วนไส้ถั่วแดงโรยด้วยผงถั่วเหลืองคั่วหอมฟุ้ง (หลวี่ตากุ่น / Rolling Donkey)
+              </p>
+              <div class="restaurant-meta-grid">
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 5 (วันเที่ยวพระราชวังฤดูร้อน & ตรอกหูท่ง)</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
+                  <span class="restaurant-meta-val"><strong>สาขา Di'anmen (地安门分店):</strong> ตั้งอยู่ติดกับทางเข้าหอหอกลองปักกิ่งและแนวตรอกโบราณหูท่ง แวะชิมขนมระห่างท่องเที่ยวได้สะดวก</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-utensils"></i> เมนูแนะนำห้ามพลาด</span>
+                  <span class="restaurant-meta-val">ขนมแป้งเหนียวม้วนถั่วแดงโรยผงถั่วเหลือง (驴打滚), ขนมเค้กถั่วเหลืองหวานปักกิ่ง (豌豆黄), ไอศกรีมโยเกิร์ตขวดเซรามิกโบราณปักกิ่ง</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-bell"></i> ทิปส์กระแสโซเชียล</span>
+                  <span class="restaurant-meta-val">ขนมหลวี่ตากุ่น (Rolling Donkey) ได้รับความนิยมบนวิดีโอสั้นเรื่องความเหนียวเด้ง ขนมส่วนใหญ่ราคาประหยัดมากเพียงชิ้นละ 2-5 หยวน เหมาะกับการถ่ายภาพแนวสตรีทฟู้ดโบราณ</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurant 18 -->
+          <div class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img src="images/baoyuan_dumplings.png" alt="Baoyuan Dumplings" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#18</div>
+            </div>
+            <div class="restaurant-info">
+              <div class="restaurant-header-row">
+                <div class="restaurant-names">
+                  <span class="restaurant-name-th">เป่าหยวนเจี่ยวจื่ออู (เกี๊ยวต้มห้าสีออร์แกนิก)</span>
+                  <span class="restaurant-name-orig">Baoyuan Dumplings · 宝源饺子屋</span>
+                </div>
+                <div class="restaurant-badges">
+                  <span class="restaurant-badge-tag badge-stars">⭐ 4.6 (Healthy Color)</span>
+                  <span class="restaurant-badge-tag badge-viral-xhs">XHS Rainbow Dish</span>
+                  <span class="restaurant-badge-tag badge-viral-tk">TikTok Organic Food</span>
+                </div>
+              </div>
+              <p class="restaurant-desc">
+                ร้านเกี๊ยวระดับตำนานที่ปฏิวัติวงการเกี๊ยวต้มด้วยแป้งเกี๊ยวสีรุ้งหลากสีสัน โดยนำน้ำผักและผลไม้สดออร์แกนิกตามธรรมชาติมาคั้นผสมแป้ง (อาทิ สีเขียวจากผักโขม สีม่วงจากกะหล่ำปลีม่วง สีส้มจากแครอท) สอดไส้อร่อยสดใหม่กว่า 50 ชนิด ถ่ายรูปสวยงามลงตัวขึ้นหน้าเว็บสุดๆ
+              </p>
+              <div class="restaurant-meta-grid">
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 6 (วันเดินเที่ยว Lama Temple / 798 Art / Sanlitun)</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
+                  <span class="restaurant-meta-val"><strong>สาขา Liangmaqiao (麦子店街):</strong> ตั้งอยู่ไม่ไกลจากทางทิศเหนือของย่าน Sanlitun และสถานทูตไทย นั่งแท็กซี่ไปประมาณ 10 นาที</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-utensils"></i> เมนูแนะนำห้ามพลาด</span>
+                  <span class="restaurant-meta-val">เกี๊ยวต้มหลากสีสันคละไส้หมูผัดเห็ดหอม, เกี๊ยวไส้เนื้อวัวหัวหอม, มะเขือยาวทอดซอสเปรี้ยวหวาน</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-bell"></i> ทิปส์กระแสโซเชียล</span>
+                  <span class="restaurant-meta-val">แป้งเกี๊ยวหลากสีสันที่เป็นธรรมชาติปราศจากสีผสมอาหารทำให้นิยมมากในหมู่ครอบครัวและผู้ใส่ใจสุขภาพ สามารถสั่งแบบเกี๊ยวคละสี (五彩饺子) เพื่อภาพถ่ายที่สวยสมบูรณ์แบบ</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurant 19 -->
+          <div class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img src="images/chuan_ban.png" alt="Chuan Ban" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#19</div>
+            </div>
+            <div class="restaurant-info">
+              <div class="restaurant-header-row">
+                <div class="restaurant-names">
+                  <span class="restaurant-name-th">ฉวนป้านฉานทิง (เสฉวนแซ่บแท้ระเบิดต่อมน้ำลาย)</span>
+                  <span class="restaurant-name-orig">Chuan Ban Sichuan Restaurant · 川办餐厅</span>
+                </div>
+                <div class="restaurant-badges">
+                  <span class="restaurant-badge-tag badge-stars">⭐ 4.6 (Spicy Hot)</span>
+                  <span class="restaurant-badge-tag badge-viral-dy">Douyin Local Spicy</span>
+                  <span class="restaurant-badge-tag badge-viral-tk">TikTok Mala Challenge</span>
+                </div>
+              </div>
+              <p class="restaurant-desc">
+                ร้านอาหารของสำนักงานเลขาธิการมณฑลเสฉวนประจำกรุงปักกิ่ง การันตีเรื่องวัตถุดิบและพริกหม่าล่าส่งตรงจากเฉิงตู รสชาติเผ็ดแซ่บสะท้านลิ้นแบบต้นตำรับแท้ๆ เหมาะอย่างยิ่งสำหรับผู้ที่ต้องการเปลี่ยนบรรยากาศมาทานอาหารรสจัดจ้าน สดชื่น ระเบิดต่อมน้ำลายแบบดั้งเดิม
+              </p>
+              <div class="restaurant-meta-grid">
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 4 (หลังเที่ยวพระราชวังต้องห้าม) หรือ วันที่ 7 (หลังพิพิธภัณฑ์สถานแห่งชาติ)</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
+                  <span class="restaurant-meta-val"><strong>ย่าน Dongdan (东单):</strong> ซ่อนตัวอยู่ในซอยตรอก Gongmei Hutong เดินเท้าจากย่านถนนคนเดิน Wangfujing ประมาณ 15 นาที</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-utensils"></i> เมนูแนะนำห้ามพลาด</span>
+                  <span class="restaurant-meta-val">ไก่ต้มซอสพริกหม่าล่าน้ำมันแดงสไตล์น้ำลายสอ (口水鸡), ปลาต้มหม้อไฟพริกมันแดงเสฉวน (水煮鱼), ผัดเต้าหู้หม่าล่าเดือด</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-bell"></i> ทิปส์กระแสโซเชียล</span>
+                  <span class="restaurant-meta-val">เป็นกระแสรีวิวเรื่องรสชาติเผ็ดสะใจคนไทย ความเผ็ดชาของพริกหม่าล่าช่วยให้เจริญอาหารและอบอุ่นร่างกายได้ดีในทริปใบไม้ร่วงปักกิ่ง</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurant 20 -->
+          <div class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img src="images/sexy_tea.png" alt="Sexy Tea" class="restaurant-img">
+              <div class="restaurant-rank rank-other">#20</div>
+            </div>
+            <div class="restaurant-info">
+              <div class="restaurant-header-row">
+                <div class="restaurant-names">
+                  <span class="restaurant-name-th">ฉาเหยียนเยว่เซ่อ (ชานมไข่มุกจีนฟิวชันวิปครีมถั่ว)</span>
+                  <span class="restaurant-name-orig">Sexy Tea / Chayan Yuese · 茶颜悦色</span>
+                </div>
+                <div class="restaurant-badges">
+                  <span class="restaurant-badge-tag badge-stars">⭐ 4.6 (Tea Sensation)</span>
+                  <span class="restaurant-badge-tag badge-viral-xhs">XHS Hype Drink</span>
+                  <span class="restaurant-badge-tag badge-viral-tk">TikTok Sweet Treat</span>
+                </div>
+              </div>
+              <p class="restaurant-desc">
+                แบรนด์ชานมไข่มุกสุดอาร์ตที่นำเสนอศิลปะจีนโบราณบนแก้วและผลิตภัณฑ์อย่างประณีต ปัจจุบันเป็นกระแสฟีเวอร์อย่างมากในหมู่ววัยรุ่น เมนูเด่นคือชานมนมสดคุณภาพสูงรสชาติหอมหวานเบาๆ ท็อปด้วยวิปครีมก้อนหนานุ่มฟูราดซอสคาราเมลและถั่วพีแคนบดละเอียด
+              </p>
+              <div class="restaurant-meta-grid">
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 1 หรือ วันที่ 8 (ย่านถนนคนเดิน Qianmen และ Dashilar)</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
+                  <span class="restaurant-meta-val">มีสาขาและจุดบริการสั่งซื้อด่วนตามร้านแบรนด์ย่อยบริเวณ **Qianmen Street** ใกล้โรงแรมที่พัก CitiGo สามารถเดินไปซื้อรับประทานได้ตลอดเวลา</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-utensils"></i> เมนูแนะนำห้ามพลาด</span>
+                  <span class="restaurant-meta-val">ชานมดำท็อปวิปครีมและเม็ดถั่วพีแคนบด (幽兰拿铁), ชานมชาเขียวมะลิวิปครีมสด</span>
+                </div>
+                <div class="restaurant-meta-item">
+                  <span class="restaurant-meta-label"><i class="fa-solid fa-bell"></i> ทิปส์กระแสโซเชียล</span>
+                  <span class="restaurant-meta-val">การดื่มชานมชนิดนี้ตามคำแนะนำใน Xiaohongshu คือต้องใช้ช้อนตักตวงวิปครีมและถั่วทานก่อนครึ่งหนึ่ง แล้วจึงใช้หลอดดูดชานมด้านล่างเพื่อความอร่อยแบบสองมิติ</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </article>
+
+      
 
       <!-- Checklist Card -->
       <article class="day-card" id="checklist">
