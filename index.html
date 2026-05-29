@@ -1,0 +1,2708 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ปักกิ่ง ออทัมน์ ออดิสซีย์ 2026 | แผนการเดินทางท่องเที่ยว</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="แผนการเดินทางท่องเที่ยวปักกิ่ง 8 วันแบบโต้ตอบได้ 17-24 ตุลาคม 2026 พร้อมตารางเวลา ข้อมูลการจองล่วงหน้า ระดับความหนัก และรายละเอียดเที่ยวบิน">
+  <meta name="author" content="Antigravity Planner">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Prompt:wght@300;400;500;600;700;800&family=Chonburi&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* --------------------------------------------------
+       1. DESIGN SYSTEM & CUSTOM PROPERTIES
+       -------------------------------------------------- */
+    :root {
+      --bg-dark: #0a0f1e;
+      --color-gold: #C9A84C;
+      --color-sky-blue: #38bdf8;
+      --color-soft-red: #f87171;
+      --color-purple: #a855f7;
+      --color-orange: #f97316;
+      --color-green: #10b981;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --glass-bg: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-glow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      --font-headings: 'Playfair Display', 'Chonburi', Georgia, serif;
+      --font-body: 'Prompt', 'Inter', sans-serif;
+      --mouse-x: 50vw;
+      --mouse-y: 50vh;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* --------------------------------------------------
+       2. LAYOUT & SPOTLIGHT EFFECT
+       -------------------------------------------------- */
+    .mouse-spotlight {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 99;
+      background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.05),
+        transparent 80%
+      );
+      transition: background 0.05s linear;
+    }
+
+    /* Animated Background Mesh */
+    .gradient-mesh {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+      overflow: hidden;
+    }
+
+    .mesh-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.1;
+      mix-blend-mode: screen;
+      animation: drift 25s infinite alternate ease-in-out;
+    }
+
+    .blob-gold {
+      background: var(--color-gold);
+      width: 500px;
+      height: 500px;
+      top: -100px;
+      left: -100px;
+      animation-duration: 22s;
+    }
+
+    .blob-blue {
+      background: var(--color-sky-blue);
+      width: 600px;
+      height: 600px;
+      bottom: -150px;
+      right: -100px;
+      animation-duration: 30s;
+      animation-delay: -5s;
+    }
+
+    .blob-red {
+      background: var(--color-soft-red);
+      width: 450px;
+      height: 450px;
+      top: 30%;
+      left: 60%;
+      animation-duration: 25s;
+      animation-delay: -12s;
+    }
+
+    .blob-purple {
+      background: var(--color-purple);
+      width: 400px;
+      height: 400px;
+      bottom: 20%;
+      left: 10%;
+      animation-duration: 28s;
+      animation-delay: -8s;
+    }
+
+    @keyframes drift {
+      0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+      }
+      33% {
+        transform: translate(70px, -50px) scale(1.1) rotate(120deg);
+      }
+      66% {
+        transform: translate(-50px, 80px) scale(0.9) rotate(240deg);
+      }
+      100% {
+        transform: translate(0, 0) scale(1) rotate(360deg);
+      }
+    }
+
+    /* --------------------------------------------------
+       3. FLIGHT BANNER SYSTEM
+       -------------------------------------------------- */
+    .flight-banner {
+      width: 100%;
+      background: linear-gradient(90deg, #0e1628 0%, #15223e 50%, #0e1628 100%);
+      border-bottom: 1px solid var(--glass-border);
+      border-top: 1px solid var(--glass-border);
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      z-index: 100;
+      position: relative;
+    }
+    
+    .flight-banner-bottom {
+      border-bottom: none;
+      border-top: 1px solid var(--glass-border);
+      margin-top: 80px;
+    }
+
+    .flight-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .flight-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .flight-badge {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--color-sky-blue);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .flight-route {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .flight-arrow {
+      color: var(--color-gold);
+      margin: 0 5px;
+      animation: pulse-arrow 1.5s infinite;
+    }
+
+    @keyframes pulse-arrow {
+      0%, 100% { opacity: 0.5; transform: translateX(0); }
+      50% { opacity: 1; transform: translateX(4px); }
+    }
+
+    .flight-time {
+      color: var(--text-muted);
+    }
+
+    .flight-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--color-green);
+      box-shadow: 0 0 8px var(--color-green);
+      animation: pulse-green 2s infinite;
+    }
+
+    @keyframes pulse-green {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.6; }
+    }
+
+    /* --------------------------------------------------
+       4. HERO SECTION WITH PARTICLES & FLOATING BADGES
+       -------------------------------------------------- */
+    .hero-section {
+      height: 85vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      z-index: 10;
+      border-bottom: 1px solid var(--glass-border);
+      overflow: hidden;
+      background-image: linear-gradient(180deg, rgba(10, 15, 30, 0.4) 0%, rgba(10, 15, 30, 0.85) 100%), url('beijing_hero_bg.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Canvas Overlays */
+    #particles-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    .antigravity-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    /* Antigravity floating badge styles */
+    .floating-badge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.75);
+      box-shadow: var(--glass-glow);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      pointer-events: auto;
+      cursor: grab;
+      transition: box-shadow 0.2s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+
+    .floating-badge:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--color-gold);
+      color: #fff;
+      transform: scale(1.08);
+      box-shadow: 0 0 15px rgba(201, 168, 76, 0.3);
+    }
+
+    .floating-badge span.chinese {
+      font-size: 0.75rem;
+      opacity: 0.6;
+      font-weight: 300;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      animation: fade-in-up 1.2s ease-out;
+      background: rgba(10, 15, 30, 0.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 40px 60px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes fade-in-up {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-title {
+      font-family: var(--font-headings);
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffffff 10%, var(--color-gold) 50%, var(--color-sky-blue) 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Countdown Timer */
+    .countdown-box {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 45px;
+    }
+
+    .countdown-item {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      min-width: 90px;
+      padding: 15px 10px;
+      text-align: center;
+      box-shadow: var(--glass-glow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .countdown-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-gold), var(--color-sky-blue));
+    }
+
+    .countdown-number {
+      font-family: var(--font-headings);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .countdown-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .meta-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .meta-tag:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--color-sky-blue);
+      transform: translateY(-2px);
+    }
+
+    .meta-tag i {
+      color: var(--color-sky-blue);
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      z-index: 11;
+      padding: 10px;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+      40% { transform: translate(-50%, -10px); }
+      60% { transform: translate(-50%, -5px); }
+    }
+
+    /* --------------------------------------------------
+       5. CONTENT WRAPPER & GRID SYSTEM
+       -------------------------------------------------- */
+    .main-wrapper {
+      max-width: 1300px;
+      margin: 40px auto 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 40px;
+      position: relative;
+    }
+
+    /* --------------------------------------------------
+       6. INTERACTIVE SIDEBAR & MAP PANEL
+       -------------------------------------------------- */
+    .sidebar {
+      position: sticky;
+      top: 40px;
+      height: calc(100vh - 80px);
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      overflow-y: auto;
+      padding-right: 5px;
+    }
+
+    /* Custom Scrollbar for Sidebar */
+    .sidebar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .sidebar::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    /* Sidebar Glass Card */
+    .sidebar-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: var(--glass-glow);
+    }
+
+    .sidebar-title {
+      font-family: var(--font-headings);
+      font-size: 1.25rem;
+      color: var(--color-gold);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 10px;
+    }
+
+    /* Dynamic SVG Map Styling */
+    .map-panel {
+      text-align: center;
+    }
+
+    .beijing-svg-map {
+      width: 100%;
+      height: auto;
+      max-height: 220px;
+    }
+
+    .map-zone {
+      fill: rgba(255, 255, 255, 0.05);
+      stroke: rgba(255, 255, 255, 0.2);
+      stroke-width: 1.5;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Interactive state colors */
+    .map-zone:hover, .map-zone.active {
+      stroke: var(--color-gold);
+      stroke-width: 2;
+      filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.4));
+    }
+
+    .zone-central:hover, .zone-central.active { fill: rgba(201, 168, 76, 0.15); }
+    .zone-haidian:hover, .zone-haidian.active { fill: rgba(56, 189, 248, 0.15); }
+    .zone-chaoyang:hover, .zone-chaoyang.active { fill: rgba(168, 85, 247, 0.15); }
+    .zone-huairou:hover, .zone-huairou.active { fill: rgba(248, 113, 113, 0.15); }
+    .zone-tongzhou:hover, .zone-tongzhou.active { fill: rgba(249, 115, 22, 0.15); }
+    .zone-shunyi:hover, .zone-shunyi.active { fill: rgba(16, 185, 129, 0.15); }
+
+    .map-legend {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+      margin-top: 15px;
+      text-align: left;
+      font-size: 0.75rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      padding: 3px 5px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .legend-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* Important Reminders Panel */
+    .reminders-panel {
+      transition: all 0.3s ease;
+    }
+
+    .reminder-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 0.8rem;
+      border-left: 2px solid var(--color-soft-red);
+      padding-left: 10px;
+    }
+
+    .reminder-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .reminder-title {
+      font-weight: 600;
+      color: var(--color-soft-red);
+      margin-bottom: 2px;
+    }
+
+    .reminder-desc {
+      color: var(--text-muted);
+    }
+
+    /* Desktop Navigation Tabs */
+    .day-tabs {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .day-tab {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--glass-border);
+      padding: 10px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .day-tab:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--color-sky-blue);
+      transform: translateX(5px);
+    }
+
+    .day-tab.active {
+      background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(56,189,248,0.1));
+      border-color: var(--color-gold);
+      box-shadow: 0 0 15px rgba(201, 168, 76, 0.15);
+    }
+
+    .tab-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tab-num {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-sky-blue);
+      font-weight: 600;
+    }
+
+    .day-tab.active .tab-num {
+      color: var(--color-gold);
+    }
+
+    .tab-name {
+      font-size: 0.9rem;
+      font-weight: 550;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 180px;
+    }
+
+    .tab-badge {
+      font-size: 0.65rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* --------------------------------------------------
+       7. TIMELINE & DAY CARDS (MAIN SECTION)
+       -------------------------------------------------- */
+    .timeline-container {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .day-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: var(--glass-glow);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+      position: relative;
+    }
+
+    .day-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5), 0 0 25px rgba(201, 168, 76, 0.08);
+      border-color: rgba(201, 168, 76, 0.25);
+    }
+
+    /* Tabbed/Accordion active display states */
+    @media (min-width: 768px) {
+      .day-card {
+        display: none;
+      }
+      .day-card.active-day {
+        display: block;
+      }
+    }
+
+    /* Anchor element offset for smooth scrolling */
+    .day-anchor {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      height: 1px;
+      width: 1px;
+    }
+
+    /* Day Card Header */
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 15px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .day-title-box {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .day-number-title {
+      font-family: var(--font-headings);
+      font-size: 1.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .day-number-title span.date {
+      font-size: 1rem;
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .day-main-theme {
+      font-size: 1.05rem;
+      color: var(--color-sky-blue);
+      font-weight: 500;
+    }
+
+    /* Difficulty Pill Badges (Thai) */
+    .difficulty-badge {
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .diff-easy {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--color-green);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .diff-medium {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--color-sky-blue);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .diff-heavy {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--color-orange);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+    }
+
+    .diff-veryheavy {
+      background: rgba(248, 113, 113, 0.15);
+      color: var(--color-soft-red);
+      border: 1px solid rgba(248, 113, 113, 0.3);
+    }
+
+    /* Tips & Warnings Box */
+    .tips-warnings-box {
+      background: rgba(248, 113, 113, 0.03);
+      border: 1px dashed var(--color-soft-red);
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin-bottom: 25px;
+      display: flex;
+      gap: 12px;
+      font-size: 0.85rem;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+
+    .tips-warnings-box i {
+      color: var(--color-soft-red);
+      font-size: 1.1rem;
+      margin-top: 2px;
+    }
+
+    .tips-content strong {
+      color: var(--color-soft-red);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .tips-content p {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* --------------------------------------------------
+       8. TIMELINE LAYOUT (HOUR-BY-HOUR)
+       -------------------------------------------------- */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      margin-top: 10px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 7px;
+      width: 2px;
+      height: calc(100% - 16px);
+      background: linear-gradient(180deg, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        rgba(255, 255, 255, 0.15) 20%, 
+        rgba(255, 255, 255, 0.15) 80%, 
+        rgba(255, 255, 255, 0.05) 100%
+      );
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 25px;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Timeline bullet/circle */
+    .timeline-marker {
+      position: absolute;
+      top: 2px;
+      left: -30px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg-dark);
+      border: 2px solid var(--text-muted);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    /* Color-coded Activity Types */
+    .activity-transport .timeline-marker { border-color: var(--color-sky-blue); box-shadow: 0 0 6px var(--color-sky-blue); }
+    .activity-food .timeline-marker { border-color: var(--color-orange); box-shadow: 0 0 6px var(--color-orange); }
+    .activity-sightseeing .timeline-marker { border-color: var(--color-gold); box-shadow: 0 0 6px var(--color-gold); }
+    .activity-shopping .timeline-marker { border-color: var(--color-purple); box-shadow: 0 0 6px var(--color-purple); }
+    .activity-hotel .timeline-marker { border-color: var(--color-green); box-shadow: 0 0 6px var(--color-green); }
+
+    .timeline-item:hover .timeline-marker {
+      transform: scale(1.2);
+    }
+
+    .timeline-content {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 12px 18px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-content:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .timeline-time {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Color-coded time tags */
+    .activity-transport .timeline-time { color: var(--color-sky-blue); }
+    .activity-food .timeline-time { color: var(--color-orange); }
+    .activity-sightseeing .timeline-time { color: var(--color-gold); }
+    .activity-shopping .timeline-time { color: var(--color-purple); }
+    .activity-hotel .timeline-time { color: var(--color-green); }
+
+    .activity-emoji {
+      font-size: 0.95rem;
+    }
+
+    .timeline-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* --------------------------------------------------
+       9. FEATURED ATTRACTION CALLOUT CARDS
+       -------------------------------------------------- */
+    .attraction-callout {
+      margin-top: 15px;
+      background: linear-gradient(135deg, rgba(201, 168, 76, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 12px;
+      padding: 16px 20px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .attraction-callout:hover {
+      border-color: var(--color-gold);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(201, 168, 76, 0.12);
+    }
+
+    .attraction-callout::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--color-gold);
+    }
+
+    .callout-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .callout-title {
+      font-family: var(--font-headings);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .callout-title span.chinese {
+      font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      font-weight: 400;
+      margin-left: 4px;
+    }
+
+    .callout-tag {
+      background: rgba(201, 168, 76, 0.1);
+      color: var(--color-gold);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .callout-body {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .callout-bullets {
+      margin-top: 8px;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 6px;
+    }
+
+    .callout-bullets li {
+      position: relative;
+      padding-left: 14px;
+      color: var(--text-muted);
+    }
+
+    .callout-bullets li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--color-gold);
+      font-size: 0.7rem;
+    }
+
+    /* --------------------------------------------------
+       10. MOBILE SPECIFIC & RESPONSIVE DESIGN
+       -------------------------------------------------- */
+    /* Sticky header for mobile day navigation */
+    .mobile-day-nav {
+      display: none;
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: rgba(10, 15, 30, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 10px 0;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+
+    .mobile-day-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mobile-day-list {
+      display: flex;
+      padding: 0 15px;
+      gap: 8px;
+    }
+
+    .mobile-day-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      color: var(--text-main);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .mobile-day-btn.active {
+      background: var(--color-gold);
+      border-color: var(--color-gold);
+      color: var(--bg-dark);
+      box-shadow: 0 0 10px rgba(201, 168, 76, 0.3);
+    }
+
+    /* Accordion Toggle Element for Mobile */
+    .accordion-toggle {
+      display: none;
+      cursor: pointer;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+    }
+
+    @media (max-width: 991px) {
+      .main-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .sidebar {
+        position: static;
+        height: auto;
+        overflow-y: visible;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero-content {
+        padding: 30px 20px;
+        border-radius: 16px;
+        margin: 0 10px;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 25px;
+      }
+
+      .countdown-box {
+        gap: 8px;
+      }
+
+      .countdown-item {
+        min-width: 70px;
+        padding: 10px 5px;
+      }
+
+      .countdown-number {
+        font-size: 1.6rem;
+      }
+
+      /* Enable mobile sticky day navigation */
+      .mobile-day-nav {
+        display: block;
+      }
+
+      /* Transform day cards into accordions */
+      .day-card {
+        padding: 20px;
+      }
+
+      .accordion-toggle {
+        display: block;
+      }
+
+      /* Default collapse state for mobile */
+      .day-card.collapsed .timeline, 
+      .day-card.collapsed .tips-warnings-box {
+        display: none;
+      }
+
+      .day-card.collapsed {
+        padding-bottom: 20px;
+      }
+
+      .day-card.collapsed .accordion-toggle {
+        transform: rotate(0deg);
+      }
+
+      .day-card:not(.collapsed) .accordion-toggle {
+        transform: rotate(180deg);
+      }
+
+      .day-header {
+        padding-right: 30px;
+      }
+    }
+  </style>
+</head>
+<body class="spotlight-active">
+
+  <!-- Mouse Spotlight Layer -->
+  <div class="mouse-spotlight"></div>
+
+  <!-- Animated Gradient Mesh Background -->
+  <div class="gradient-mesh">
+    <div class="mesh-blob blob-gold"></div>
+    <div class="mesh-blob blob-blue"></div>
+    <div class="mesh-blob blob-red"></div>
+    <div class="mesh-blob blob-purple"></div>
+  </div>
+
+  <!-- Flight Banner (Top) -->
+  <header class="flight-banner">
+    <div class="flight-container">
+      <div class="flight-info">
+        <span class="flight-badge">TG614</span>
+        <span class="flight-route">BKK <i class="fa-solid fa-plane flight-arrow"></i> PEK</span>
+        <span class="flight-time">17 ต.ค. 2026 · 10:10 ➔ 15:50 (ถึงสนามบิน PEK)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <!-- Particle Canvas Layer -->
+    <canvas id="particles-canvas"></canvas>
+    
+
+    <div class="hero-content">
+      <p class="hero-subtitle">แผนการเดินทางส่วนตัว 8 วัน</p>
+      <h1 class="hero-title">Beijing Autumn Odyssey</h1>
+      
+      <!-- Countdown Clock -->
+      <div class="countdown-box" id="countdown-timer">
+        <div class="countdown-item">
+          <div class="countdown-number" id="days">00</div>
+          <div class="countdown-label">วัน</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="hours">00</div>
+          <div class="countdown-label">ชั่วโมง</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="minutes">00</div>
+          <div class="countdown-label">นาที</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="seconds">00</div>
+          <div class="countdown-label">วินาที</div>
+        </div>
+      </div>
+
+      <!-- Quick Summary Badges -->
+      <div class="hero-meta">
+        <div class="meta-tag">
+          <i class="fa-regular fa-calendar-days"></i>
+          <span>17–24 ตุลาคม 2026</span>
+        </div>
+        <div class="meta-tag">
+          <i class="fa-solid fa-hotel"></i>
+          <span>CitiGo Hotel Qianmen</span>
+        </div>
+        <div class="meta-tag">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>สถานที่ไฮไลท์ 12 แห่ง</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-down" id="scroll-to-content">
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- Mobile Sticky Day Tabs -->
+  <nav class="mobile-day-nav">
+    <div class="mobile-day-list">
+      <button class="mobile-day-btn active" data-target="day1">วันที่ 1 🏨</button>
+      <button class="mobile-day-btn" data-target="day2">วันที่ 2 🧗</button>
+      <button class="mobile-day-btn" data-target="day3">วันที่ 3 🎢</button>
+      <button class="mobile-day-btn" data-target="day4">วันที่ 4 🏯</button>
+      <button class="mobile-day-btn" data-target="day5">วันที่ 5 🛶</button>
+      <button class="mobile-day-btn" data-target="day6">วันที่ 6 🎨</button>
+      <button class="mobile-day-btn" data-target="day7">วันที่ 7 🏛️</button>
+      <button class="mobile-day-btn" data-target="day8">วันที่ 8 ✈️</button>
+    </div>
+  </nav>
+
+  <main class="main-wrapper" id="main-content">
+    <aside class="sidebar">
+      
+      <!-- Desktop Sidebar Navigation Tabs -->
+      <nav class="sidebar-card day-tabs">
+        <h2 class="sidebar-title">
+          <i class="fa-solid fa-list-check"></i>
+          <span>เลือกวันเดินทาง</span>
+        </h2>
+        <a href="#day1" class="day-tab active" data-target="day1">
+          <div class="tab-info">
+            <span class="tab-num">วันที่ 1 · 17 ต.ค.</span>
+            <span class="tab-name">ถึงปักกิ่ง & เที่ยว Qianmen</span>
+          </div>
+          <span class="tab-badge diff-easy">เบา</span>
+        </a>
+                <a href="#day2" class="day-tab" data-target="day2">
+          <div class="tab-info">
+            <span class="tab-num">วันที่ 2 · 18 ต.ค.</span>
+            <span class="tab-name">กำแพงเมืองจีน Mutianyu</span>
+          </div>
+          <span class="tab-badge diff-heavy">เยอะ</span>
+        </a>
+                <a href="#day3" class="day-tab" data-target="day3">
+          <div class="tab-info">
+            <span class="tab-num">วันที่ 3 · 19 ต.ค.</span>
+            <span class="tab-name">Universal Beijing Resort</span>
+          </div>
+          <span class="tab-badge diff-veryheavy">เยอะมาก</span>
+        </a>
+        <a href="#day4" class="day-tab" data-target="day4">
+          <div class="tab-info">
+            <span class="tab-num">วันที่ 4 · 20 ต.ค.</span>
+            <span class="tab-name">Forbidden City & Jingshan</span>
+          </div>
+          <span class="tab-badge diff-veryheavy">เยอะมาก</span>
+        </a>
+        <a href="#day5" class="day-tab" data-target="day5">
+          <div class="tab-info">
+            <span class="tab-num">วันที่ 5 · 21 ต.ค.</span>
+            <span class="tab-name">Summer Palace & Hutong</span>
+          </div>
+          <span class="tab-badge diff-heavy">เยอะ</span>
+        </a>
+        <a href="#day6" class="day-tab" data-target="day6">
+          <div class="tab-info">
+            <span class="tab-num">วันที่ 6 · 22 ต.ค.</span>
+            <span class="tab-name">Lama Temple & 798 Art</span>
+          </div>
+          <span class="tab-badge diff-medium">ปานกลาง</span>
+        </a>
+        <a href="#day7" class="day-tab" data-target="day7">
+          <div class="tab-info">
+            <span class="tab-num">วันที่ 7 · 23 ต.ค.</span>
+            <span class="tab-name">Old Summer Palace & พิพิธภัณฑ์</span>
+          </div>
+          <span class="tab-badge diff-heavy">เยอะ</span>
+        </a>
+        <a href="#day8" class="day-tab" data-target="day8">
+          <div class="tab-info">
+            <span class="tab-num">วันที่ 8 · 24 ต.ค.</span>
+            <span class="tab-name">เช็คเอาท์ & กลับกรุงเทพฯ</span>
+          </div>
+          <span class="tab-badge diff-easy">เบา</span>
+        </a>
+      </nav>
+
+      <!-- Interactive Beijing Map Panel -->
+      <section class="sidebar-card map-panel">
+        <h2 class="sidebar-title">
+          <i class="fa-solid fa-compass"></i>
+          <span>พื้นที่ท่องเที่ยวตามแผนที่</span>
+        </h2>
+        
+        <!-- SVG Map representation of visited districts -->
+        <svg class="beijing-svg-map" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
+          <!-- Huairou (North - Great Wall) -->
+          <polygon class="map-zone zone-huairou" points="100,15 200,15 180,65 120,65" data-zone="Huairou" data-day="Day 3" />
+          <text x="150" y="45" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Huairou (Great Wall)</text>
+          
+          <!-- Shunyi (Northeast - Airport) -->
+          <polygon class="map-zone zone-shunyi" points="185,75 250,75 240,115 175,115" data-zone="Shunyi" data-day="Day 1, 8" />
+          <text x="212" y="100" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Shunyi (PEK Airport)</text>
+          
+          <!-- Haidian (West - Palaces) -->
+          <polygon class="map-zone zone-haidian" points="50,85 130,85 120,135 60,155" data-zone="Haidian" data-day="Day 5, 7" />
+          <text x="90" y="115" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Haidian (Palaces)</text>
+          
+          <!-- Central (Dongcheng/Xicheng - CitiGo, Forbidden City, etc) -->
+          <rect class="map-zone zone-central active" x="125" y="125" width="60" height="50" rx="6" data-zone="Central" data-day="Day 1, 4, 5, 6, 7, 8" />
+          <text x="155" y="154" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Central (Hotel)</text>
+          
+          <!-- Chaoyang (East - 798, Sanlitun) -->
+          <polygon class="map-zone zone-chaoyang" points="190,125 250,125 240,185 190,185" data-zone="Chaoyang" data-day="Day 6" />
+          <text x="220" y="160" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Chaoyang (Art)</text>
+          
+          <!-- Tongzhou (Southeast - Universal Beijing) -->
+          <polygon class="map-zone zone-tongzhou" points="175,195 245,195 235,240 165,240" data-zone="Tongzhou" data-day="Day 2" />
+          <text x="205" y="222" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Tongzhou (Universal)</text>
+        </svg>
+
+        <div class="map-legend">
+          <div class="legend-item" data-target-zone="zone-central">
+            <span class="legend-dot" style="background-color: var(--color-gold);"></span>
+            <span>พื้นที่ใจกลางเมือง (Central)</span>
+          </div>
+          <div class="legend-item" data-target-zone="zone-haidian">
+            <span class="legend-dot" style="background-color: var(--color-sky-blue);"></span>
+            <span>เขตไห่เตี้ยน (Haidian)</span>
+          </div>
+          <div class="legend-item" data-target-zone="zone-chaoyang">
+            <span class="legend-dot" style="background-color: var(--color-purple);"></span>
+            <span>เขตเฉาหยาง (Chaoyang)</span>
+          </div>
+          <div class="legend-item" data-target-zone="zone-huairou">
+            <span class="legend-dot" style="background-color: var(--color-soft-red);"></span>
+            <span>เขตหวยโหรว (Huairou)</span>
+          </div>
+          <div class="legend-item" data-target-zone="zone-tongzhou">
+            <span class="legend-dot" style="background-color: var(--color-orange);"></span>
+            <span>เขตทงโจว (Tongzhou)</span>
+          </div>
+          <div class="legend-item" data-target-zone="zone-shunyi">
+            <span class="legend-dot" style="background-color: var(--color-green);"></span>
+            <span>เขตซุ่นอี้ (Shunyi)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sticky Important Reminders Panel -->
+      <section class="sidebar-card reminders-panel">
+        <h2 class="sidebar-title">
+          <i class="fa-solid fa-triangle-exclamation" style="color: var(--color-soft-red);"></i>
+          <span>ข้อควรจำสำคัญ</span>
+        </h2>
+        <div class="reminder-item">
+          <div>
+            <div class="reminder-title">Forbidden City (故宫)</div>
+            <div class="reminder-desc">จองล่วงหน้า 7 วันผ่าน WeChat Mini Program และใช้หนังสือเดินทาง <strong>(ปิดวันจันทร์)</strong></div>
+          </div>
+        </div>
+        <div class="reminder-item">
+          <div>
+            <div class="reminder-title">National Museum (国家博物馆)</div>
+            <div class="reminder-desc">จองผ่าน chnmuseum.cn 7 วันล่วงหน้าด้วยข้อมูลหนังสือเดินทาง <strong>(เข้าฟรี, ปิดวันจันทร์)</strong></div>
+          </div>
+        </div>
+        <div class="reminder-item">
+          <div>
+            <div class="reminder-title">Mutianyu Toboggan Slide</div>
+            <div class="reminder-desc">กรุณาจองบัตรตั๋ว Toboggan แยกต่างหากเมื่อทำการซื้อตั๋วเข้ากำแพงเมืองจีน</div>
+          </div>
+        </div>
+        <div class="reminder-item">
+          <div>
+            <div class="reminder-title">Universal Beijing Resort</div>
+            <div class="reminder-desc">ซื้อบัตรผ่านประตูออนไลน์ล่วงหน้าเพื่อรับประกันสิทธิ์การเข้าเล่นสวนสนุก</div>
+          </div>
+        </div>
+        <div class="reminder-item">
+          <div>
+            <div class="reminder-title">Beijing Zoo / Panda House</div>
+            <div class="reminder-desc">เปิดทำการตั้งแต่ 08:00 น. ควรจองบัตรล่วงหน้า 2–5 วันก่อนวันเข้าชม</div>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <!-- Detailed Itinerary Sections -->
+    <section class="timeline-container">
+      
+      <!-- Day 1 -->
+      <article class="day-card" id="day1">
+        <div class="day-anchor"></div>
+        <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+        
+        <header class="day-header">
+          <div class="day-title-box">
+            <h2 class="day-number-title">วันที่ 1 <span class="date">วันเสาร์ที่ 17 ตุลาคม 2026</span></h2>
+            <span class="day-main-theme">เดินทางถึง & เที่ยว Qianmen Street</span>
+          </div>
+          <span class="difficulty-badge diff-easy">
+            <i class="fa-solid fa-face-smile"></i> ความหนัก: เบา
+          </span>
+        </header>
+
+        <div class="tips-warnings-box">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div class="tips-content">
+            <strong>การเตรียมตัววันแรก</strong>
+            <p>กรุณาเตรียมความพร้อมเกี่ยวกับแอปพลิเคชัน Alipay/WeChat Pay, eSIM และอินเทอร์เน็ตความเร็วสูงให้เรียบร้อยก่อนขึ้นเครื่องบิน และกรอกเอกสารตรวจคนเข้าเมือง (Arrival Card) ให้เสร็จสิ้นเมื่อเดินทางถึงสนามบิน PEK</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          
+          <div class="timeline-item activity-transport">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🚇</span> 10:10 - 15:50
+              </div>
+              <h3 class="timeline-title">Flight TG614 (BKK ➔ PEK)</h3>
+              <p class="timeline-desc">ออกเดินทางจาก BKK ถึงสนามบิน PEK (อาคาร 3) เวลา 15:50 น.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-transport">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🚇</span> 16:30 - 17:45
+              </div>
+              <h3 class="timeline-title">เดินทางเข้าสู่ที่พักด้วย Airport Express & รถไฟใต้ดิน</h3>
+              <p class="timeline-desc">นั่ง Airport Express และรถไฟใต้ดินสาย 2 ลงที่สถานี Qianmen</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-hotel">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏨</span> 18:00
+              </div>
+              <h3 class="timeline-title">เช็คอินที่ CitiGo Hotel, Qianmen Street</h3>
+              <p class="timeline-desc">เช็คอินและพักผ่อนที่โรงแรม CitiGo Hotel Qianmen</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 19:00 - 20:00
+              </div>
+              <h3 class="timeline-title">อาหารค่ำมื้อแรก: เมนูท้องถิ่น</h3>
+              <p class="timeline-desc">ทานอาหารค่ำเมนูบะหมี่ Zhajiangmian หรือเกี๊ยวปักกิ่งบริเวณที่พัก</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 20:00 - 21:30
+              </div>
+              <h3 class="timeline-title">เดินเล่นช่วงค่ำ: Qianmen Street (前门大街)</h3>
+              <p class="timeline-desc">เดินชมสถาปัตยกรรมย้อนยุคยามค่ำคืนบนถนน Qianmen Street</p>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+            <!-- Day 2 -->
+      <article class="day-card" id="day2">
+        <div class="day-anchor"></div>
+        <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+ 
+        <header class="day-header">
+          <div class="day-title-box">
+            <h2 class="day-number-title">วันที่ 2 <span class="date">วันอาทิตย์ที่ 18 ตุลาคม 2026</span></h2>
+            <span class="day-main-theme">ปีนกำแพงเมืองจีน Mutianyu & เล่น Toboggan Slide</span>
+          </div>
+          <span class="difficulty-badge diff-heavy">
+            <i class="fa-solid fa-person-running"></i> ความหนัก: เยอะ
+          </span>
+        </header>
+
+        <div class="tips-warnings-box">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div class="tips-content">
+            <strong>การหลีกเลี่ยงคนเยอะ</strong>
+            <p>ออกเดินทางแต่เช้าตรู่เวลา 07:00 น. เพื่อไปถึงกำแพงเมืองจีนเป็นกลุ่มแรกๆ ช่วยเลี่ยงฝูงชนและเดินเที่ยวได้อย่างสงบสบาย</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 06:30 - 07:00
+              </div>
+              <h3 class="timeline-title">รับประทานอาหารเช้าแบบเร่งด่วน</h3>
+              <p class="timeline-desc">ทานอาหารเช้าที่โรงแรมเพื่อเตรียมพลังก่อนออกเดินทางแต่เช้า</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-transport">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🚇</span> 07:00 - 08:30
+              </div>
+              <h3 class="timeline-title">เดินทางสู่ Mutianyu ด้วยรถส่วนตัว</h3>
+              <p class="timeline-desc">เดินทางสู่เขต Huairou (75 กม.) ด้วยรถเช่าพร้อมคนขับเพื่อความสะดวกรวดเร็ว</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 08:30 - 12:00
+              </div>
+              <h3 class="timeline-title">Mutianyu Great Wall (慕田峪长城)</h3>
+              <p class="timeline-desc">นั่งกระเช้าขึ้นป้อมที่ 14 ชมวิวกำแพงเมืองจีนช่วงใบไม้เปลี่ยนสี แล้วสไลด์ลงด้วย Toboggan จากหอคอยที่ 6</p>
+              
+              <!-- Attraction Callout -->
+              <div class="attraction-callout">
+                <div class="callout-header">
+                  <h4 class="callout-title">Great Wall Mutianyu <span class="chinese">(慕田峪长城)</span></h4>
+                  <span class="callout-tag">สถานที่ไฮไลท์</span>
+                </div>
+                <div class="callout-body">
+                  <p>กำแพงเมืองจีนด่านที่ได้รับการบูรณะอย่างสมบูรณ์ แวดล้อมด้วยป่าเขาหนาแน่นที่ใบไม้จะเปลี่ยนเป็นสีแดงทองในเดือนตุลาคม</p>
+                  <ul class="callout-bullets">
+                    <li>Toboggan Slide: รถเลื่อนแล่นคดเคี้ยวลงจากเนินเขาระยะทางยาว สนุกสนานและหวาดเสียวปานกลาง</li>
+                    <li>กระเช้าลอยฟ้า: นั่ง Cable Car ขึ้นสะดวก ไม่ต้องเสียแรงปีนช่วงขึ้นเขา</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 12:00 - 13:00
+              </div>
+              <h3 class="timeline-title">รับประทานอาหารกลางวัน</h3>
+              <p class="timeline-desc">ทานมื้อกลางวัน เมนูปลาเทราต์ย่างเกลือท้องถิ่นใกล้กำแพงเมืองจีน</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-transport">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🚇</span> 13:00 - 14:30
+              </div>
+              <h3 class="timeline-title">เดินทางกลับเข้าตัวเมืองปักกิ่ง</h3>
+              <p class="timeline-desc">นั่งรถส่วนตัวกลับเข้าปักกิ่งเพื่อไปเดินเล่นในตรอกประวัติศาสตร์</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-shopping">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🛍️</span> 15:00 - 17:30
+              </div>
+              <h3 class="timeline-title">เดินเล่นทานขนมที่ Yandaixie Street & Houhai (烟袋斜街)</h3>
+              <p class="timeline-desc">เดินเล่นช้อปปิ้ง ซื้อของฝาก และชิมขนมโบราณในตรอกประวัติศาสตร์ Yandaixie และทะเลสาบ Houhai</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 18:30 - 20:30
+              </div>
+              <h3 class="timeline-title">อาหารค่ำร้านดัง: เป็ดปักกิ่งขนานแท้</h3>
+              <p class="timeline-desc">ทานเป็ดปักกิ่งหนังกรอบแล่สดข้างโต๊ะที่ร้านดังย่าน Qianmen เพื่อจบทริปของวันอย่างสมบูรณ์แบบ</p>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      
+      <article class="day-card" id="day3">
+        <div class="day-anchor"></div>
+        <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+
+        <header class="day-header">
+          <div class="day-title-box">
+            <h2 class="day-number-title">วันที่ 3 <span class="date">วันจันทร์ที่ 19 ตุลาคม 2026</span></h2>
+            <span class="day-main-theme">ปีนกำแพงเมืองจีน Mutianyu & เล่น Toboggan Slide</span>
+          </div>
+          <span class="difficulty-badge diff-heavy">
+            <i class="fa-solid fa-person-running"></i> ความหนัก: เยอะ
+          </span>
+        </header>
+
+        <div class="tips-warnings-box">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div class="tips-content">
+            <strong>การจองตั๋ว Toboggan</strong>
+            <p>ควรจองตั๋วเข้าชมกำแพงเมืองจีนและตั๋วเล่น Toboggan Slide แยกต่างหากทางออนไลน์ การไปเที่ยวในวันธรรมดาช่วยลดความแออัดและชมทิวทัศน์ใบไม้เปลี่ยนสีได้อย่างสวยงาม</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 07:00 - 07:30
+              </div>
+              <h3 class="timeline-title">รับประทานอาหารเช้าแบบเร่งด่วน</h3>
+              <p class="timeline-desc">ทานอาหารเช้าที่โรงแรมแต่เช้าตรู่เพื่อเตรียมเดินทาง</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-transport">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🚇</span> 07:30 - 09:00
+              </div>
+              <h3 class="timeline-title">เดินทางสู่ Mutianyu ด้วยรถเช่าส่วนตัว</h3>
+              <p class="timeline-desc">เดินทางสู่เขต Huairou (75 กม.) ด้วยรถเช่าพร้อมคนขับเพื่อความสะดวก</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 09:00 - 12:30
+              </div>
+              <h3 class="timeline-title">Mutianyu Great Wall (慕田峪长城)</h3>
+              <p class="timeline-desc">นั่งกระเช้าขึ้นป้อมที่ 14 ชมวิวกำแพงเมืองจีนช่วงใบไม้เปลี่ยนสี</p>
+              
+              <!-- Attraction Callout -->
+              <div class="attraction-callout">
+                <div class="callout-header">
+                  <h4 class="callout-title">Great Wall Mutianyu <span class="chinese">(慕田峪长城)</span></h4>
+                  <span class="callout-tag">สถานที่ไฮไลท์</span>
+                </div>
+                <div class="callout-body">
+                  <p>กำแพงเมืองจีนด่านที่ได้รับการบูรณะอย่างสมบูรณ์แบบ แวดล้อมด้วยทิวทัศน์เทือกเขาและป่าไม้หนาทึบ พร้อมหอคอยโบราณ 23 ป้อม</p>
+                  <ul class="callout-bullets">
+                    <li>ใบไม้เปลี่ยนสี: เดือนตุลาคมคือช่วงเวลาที่สวยงามที่สุดของเทือกเขายามใบไม้เปลี่ยนสีครอบคลุมขุนเขา</li>
+                    <li>ความสะดวกสบาย: คนหนาแน่นน้อยกว่าและชันน้อยกว่าด่าน Badaling ทำให้เดินชมได้สบายกว่า</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 12:30 - 13:30
+              </div>
+              <h3 class="timeline-title">รับประทานอาหารกลางวัน</h3>
+              <p class="timeline-desc">ทานมื้อกลางวัน เมนูปลาเทราต์ย่างเกลือท้องถิ่นใกล้กำแพงเมืองจีน</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 13:30 - 14:30
+              </div>
+              <h3 class="timeline-title">สไลด์ตัวสุดตื่นเต้นด้วย Toboggan</h3>
+              <p class="timeline-desc">สไลด์ลงจากกำแพงเมืองจีนด้วย Toboggan จากหอคอยที่ 6</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-transport">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🚇</span> 14:30 - 16:30
+              </div>
+              <h3 class="timeline-title">เดินทางกลับสู่ตัวเมืองปักกิ่ง</h3>
+              <p class="timeline-desc">เดินทางกลับโรงแรมในปักกิ่งและพักผ่อนชาร์จพลัง</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 18:30 - 20:30
+              </div>
+              <h3 class="timeline-title">อาหารค่ำมื้อพิเศษ: เป็ดปักกิ่งขนานแท้</h3>
+              <p class="timeline-desc">ทานเป็ดปักกิ่งหนังกรอบแล่สดข้างโต๊ะที่ร้านดังย่าน Qianmen</p>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Day 4 -->
+      <article class="day-card" id="day4">
+        <div class="day-anchor"></div>
+        <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+
+        <header class="day-header">
+          <div class="day-title-box">
+            <h2 class="day-number-title">วันที่ 4 <span class="date">วันอังคารที่ 20 ตุลาคม 2026</span></h2>
+            <span class="day-main-theme">เที่ยว Temple of Heaven, Forbidden City & Jingshan Park</span>
+          </div>
+          <span class="difficulty-badge diff-veryheavy">
+            <i class="fa-solid fa-fire"></i> ความหนัก: เยอะมาก
+          </span>
+        </header>
+
+        <div class="tips-warnings-box">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div class="tips-content">
+            <strong>การจองตั๋วล่วงหน้าที่สำคัญมาก</strong>
+            <p><strong>ตั๋วเข้าชม Forbidden City ต้องจองออนไลน์ล่วงหน้า 7 วัน</strong> (ระบบจะเริ่มเปิดให้จองเวลา 20:00 น. ตามเวลาปักกิ่ง) และต้องกรอกข้อมูลหนังสือเดินทาง ตั๋วเข้าชมจัตุรัส Tiananmen ก็ต้องจองล่วงหน้าเช่นกัน</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 08:30 - 10:30
+              </div>
+              <h3 class="timeline-title">Temple of Heaven (天坛)</h3>
+              <p class="timeline-desc">นั่งรถไฟใต้ดินสาย 5 ชมหอสักการะฟ้าเจดีย์สามชั้นและ Echo Wall</p>
+              
+              <!-- Attraction Callout -->
+              <div class="attraction-callout">
+                <div class="callout-header">
+                  <h4 class="callout-title">Temple of Heaven <span class="chinese">(天坛)</span></h4>
+                  <span class="callout-tag">สถานที่ไฮไลท์</span>
+                </div>
+                <div class="callout-body">
+                  <p>ผลงานชิ้นเอกด้านสถาปัตยกรรมสมัยราชวงศ์หมิง สถานที่ศักดิ์สิทธิ์ที่จักรพรรดิใช้ทำพิธีบวงสรวงสักการะฟ้าดินเพื่อความอุดมสมบูรณ์</p>
+                  <ul class="callout-bullets">
+                    <li>โครงสร้างหลัก: หอสักการะฟ้าวงกลมสามชั้นสร้างด้วยไม้โบราณโดยไม่ใช้ตะปูแม้แต่ตัวเดียว</li>
+                    <li>ความสมมาตร: สร้างตามแนวแกนเหนือ-ใต้ สื่อถึงเส้นเชื่อมระหว่างโลกและสรวงสวรรค์</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 10:30 - 11:30
+              </div>
+              <h3 class="timeline-title">เดินผ่านจัตุรัส Tiananmen Square (天安门广场)</h3>
+              <p class="timeline-desc">เดินชมลานจัตุรัส Tiananmen และจุดสัญลักษณ์ทางประวัติศาสตร์</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 11:30 - 12:30
+              </div>
+              <h3 class="timeline-title">รับประทานอาหารกลางวัน</h3>
+              <p class="timeline-desc">ทานอาหารกลางวันแบบรวดเร็วใกล้ทางเข้าพระราชวังต้องห้าม</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 12:30 - 15:30
+              </div>
+              <h3 class="timeline-title">Forbidden City Palace Tour (故宫)</h3>
+              <p class="timeline-desc">เข้าชมพระราชวังต้องห้าม ประตูอู่เหมิน และตำหนักไท่เหอเตี้ยน</p>
+              
+              <!-- Attraction Callout -->
+              <div class="attraction-callout">
+                <div class="callout-header">
+                  <h4 class="callout-title">Forbidden City <span class="chinese">(故宫)</span></h4>
+                  <span class="callout-tag">สถานที่ไฮไลท์</span>
+                </div>
+                <div class="callout-body">
+                  <p>พระราชวังหลวงโบราณอันยิ่งใหญ่ของจีนในสมัยราชวงศ์หมิงและราชวงศ์ชิง ประกอบด้วยห้องกว่า 10,000 ห้องที่เปี่ยมด้วยคุณค่าทางประวัติศาสตร์</p>
+                  <ul class="callout-bullets">
+                    <li>ข้อกำหนด: จำกัดจำนวนผู้เข้าชมในแต่ละวัน ต้องใช้หนังสือเดินทางในการเข้าชม ปิดให้บริการทุกวันจันทร์</li>
+                    <li>หูฟังนำทาง: แนะนำให้เช่าเครื่องบรรยายเสียงดิจิทัลที่ประตูทางเข้าเพื่อเรียนรู้ข้อมูลประวัติศาสตร์โดยละเอียด</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 15:30 - 17:00
+              </div>
+              <h3 class="timeline-title">ชมทัศนียภาพมุมสูงที่ Jingshan Park (景山公园)</h3>
+              <p class="timeline-desc">เดินขึ้นศาลาว่านชุน สวน Jingshan ชมวิวพาโนรามาพระราชวังต้องห้าม</p>
+              
+              <!-- Attraction Callout -->
+              <div class="attraction-callout">
+                <div class="callout-header">
+                  <h4 class="callout-title">Jingshan Park <span class="chinese">(景山公园)</span></h4>
+                  <span class="callout-tag">สถานที่ไฮไลท์</span>
+                </div>
+                <div class="callout-body">
+                  <p>สวนหลวงประวัติศาสตร์ที่ตั้งอยู่ทางเหนือสุดของแนวแกนกลางพระราชวังต้องห้าม บนเนินเขาเทียมที่สร้างขึ้นจากการขุดคูพระราชวัง</p>
+                  <ul class="callout-bullets">
+                    <li>มุมมองแบบพาโนรามา: จุดที่ดีที่สุดในการชมทัศนียภาพกว้างไกลของหลังคาสีทองของพระราชวังต้องห้ามทั้งหมด</li>
+                    <li>เวลาทองคำ: ควรไปในช่วงบ่ายแก่ ๆ เพื่อชมทิวทัศน์ยามพระอาทิตย์ตกดินสะท้อนแสงสีทองทาบแกนกลางเมืองปักกิ่ง</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 18:00 - 20:00
+              </div>
+              <h3 class="timeline-title">อาหารค่ำ: หม้อไฟทองแดงปักกิ่งดั้งเดิม</h3>
+              <p class="timeline-desc">ทานมื้อค่ำเมนูหม้อไฟถ่านทองแดงจุ่มซอสงาสูตรปักกิ่งดั้งเดิม</p>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Day 5 -->
+      <article class="day-card" id="day5">
+        <div class="day-anchor"></div>
+        <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+
+        <header class="day-header">
+          <div class="day-title-box">
+            <h2 class="day-number-title">วันที่ 5 <span class="date">วันพุธที่ 21 ตุลาคม 2026</span></h2>
+            <span class="day-main-theme">เที่ยว Summer Palace, Beihai Park & ตรอก Hutong</span>
+          </div>
+          <span class="difficulty-badge diff-heavy">
+            <i class="fa-solid fa-person-running"></i> ความหนัก: เยอะ
+          </span>
+        </header>
+
+        <div class="tips-warnings-box">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div class="tips-content">
+            <strong>การเดินทางไป Summer Palace</strong>
+            <p>เขต Haidian ตั้งอยู่ทางตะวันตกเฉียงเหนือของปักกิ่ง แนะนำให้ขึ้นรถไฟใต้ดิน Line 4 แต่เช้า สำหรับการนั่งสามล้อทัวร์ตรอก Hutong ควรสอบถามราคาและต่อรองให้เรียบร้อย หรือเลือกจองล่วงหน้าผ่านตัวแทนที่น่าเชื่อถือเพื่อหลีกเลี่ยงการถูกโก่งราคา</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          
+          <div class="timeline-item activity-transport">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🚇</span> 08:00 - 09:00
+              </div>
+              <h3 class="timeline-title">เดินทางด้วยรถไฟใต้ดินไป Summer Palace</h3>
+              <p class="timeline-desc">นั่งรถไฟใต้ดินสาย 4 สู่สถานี Beigongmen ทางเข้าทิศเหนือ</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 09:00 - 12:00
+              </div>
+              <h3 class="timeline-title">Summer Palace Tour (颐和园)</h3>
+              <p class="timeline-desc">ชมระเบียง Long Corridor ขึ้นเขา Longevity และนั่งเรือมังกร</p>
+              
+              <!-- Attraction Callout -->
+              <div class="attraction-callout">
+                <div class="callout-header">
+                  <h4 class="callout-title">Summer Palace <span class="chinese">(颐和园)</span></h4>
+                  <span class="callout-tag">สถานที่ไฮไลท์</span>
+                </div>
+                <div class="callout-body">
+                  <p>อุทยานราชสำนักขนาดมหึมาที่โอบล้อมทะเลสาบ Kunming ซึ่งทำหน้าที่เป็นพระราชวังฤดูร้อนสำหรับพักผ่อนของจักรพรรดิราชวงศ์ชิง</p>
+                  <ul class="callout-bullets">
+                    <li>Long Corridor: ทางเดินไม้ที่ทาสีและวาดลวดลายวรรณกรรมจีนประวัติศาสตร์อย่างวิจิตรบรรจง ยาวกว่า 700 เมตร</li>
+                    <li>Scenic Boat Ride: นั่งเรือมังกรข้ามทะเลสาบเพื่อรับสายลมเย็นและทอดสายตามองดูวิหารกลางภูเขา</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 12:00 - 13:00
+              </div>
+              <h3 class="timeline-title">อาหารกลางวัน: ร้านอาหารท้องถิ่น</h3>
+              <p class="timeline-desc">ทานอาหารกลางวันที่ร้านอาหารท้องถิ่นใกล้ประตูทิศตะวันออก</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 13:30 - 15:00
+              </div>
+              <h3 class="timeline-title">ชมเจดีย์ขาวสไตล์ธิเบตที่ Beihai Park (北海公园)</h3>
+              <p class="timeline-desc">ชมเจดีย์ขาวสไตล์ธิเบต แลนด์มาร์คสำคัญในสวนหลวง Beihai</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 15:30 - 17:30
+              </div>
+              <h3 class="timeline-title">ชมหอกลอง Drum Tower & ทัวร์สามล้อถีบตรอกโบราณ Hutong</h3>
+              <p class="timeline-desc">ชมหอกลองโบราณ นั่งสามล้อถีบนำเที่ยวชมตรอกซอกซอย Houhai Hutong</p>
+              
+              <!-- Attraction Callout -->
+              <div class="attraction-callout">
+                <div class="callout-header">
+                  <h4 class="callout-title">Hutong Rickshaw Tour <span class="chinese">(胡同胡同)</span></h4>
+                  <span class="callout-tag">สถานที่ไฮไลท์</span>
+                </div>
+                <div class="callout-body">
+                  <p>สัมผัสบรรยากาศย้อนยุคด้วยการนั่งรถสามล้อถีบสำรวจตรอกซอยเก่าแก่และหมู่บ้านแบบจีนโบราณในปักกิ่ง</p>
+                  <ul class="callout-bullets">
+                    <li>วิถีชีวิต: มีโอกาสเยี่ยมชมบ้านสี่ประสานแบบดั้งเดิม (Siheyuan)</li>
+                    <li>เส้นทาง: ทัวร์จะแล่นลัดเลาะเลียบทะเลสาบ Houhai และย่านชุมชนเก่าแก่</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-shopping">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🛍️</span> 17:30 - 19:00
+              </div>
+              <h3 class="timeline-title">ช้อปปิ้งถนนคนเดินตรอกโบราณ Nanluoguxiang (南锣鼓巷)</h3>
+              <p class="timeline-desc">เดินช้อปปิ้ง ซื้อของฝาก และชิมของว่างบนถนนโบราณ Nanluoguxiang</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 19:00 - 20:30
+              </div>
+              <h3 class="timeline-title">อาหารเย็นเลียบทะเลสาบ Houhai</h3>
+              <p class="timeline-desc">ทานอาหารค่ำบรรยากาศริมนํ้าชิลๆ เลียบทะเลสาบ Houhai</p>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Day 6 -->
+      <article class="day-card" id="day6">
+        <div class="day-anchor"></div>
+        <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+
+        <header class="day-header">
+          <div class="day-title-box">
+            <h2 class="day-number-title">วันที่ 6 <span class="date">วันพฤหัสบดีที่ 22 ตุลาคม 2026</span></h2>
+            <span class="day-main-theme">เที่ยว Lama Temple, 798 Art District & ย่าน Sanlitun</span>
+          </div>
+          <span class="difficulty-badge diff-medium">
+            <i class="fa-solid fa-face-smile-beam"></i> ความหนัก: ปานกลาง
+          </span>
+        </header>
+
+        <div class="tips-warnings-box">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div class="tips-content">
+            <strong>ข้อควรทราบการเข้าวัดและย่านศิลปะ</strong>
+            <p>กรุณาสำรวมความเงียบสงบภายในโบสถ์วิหารวัดลามะ สำหรับย่านศิลปะ 798 Art District อยู่ห่างจากสถานีรถไฟใต้ดินพอสมควร แนะนำให้นั่งรถแท็กซี่ต่อเข้าไปจะสะดวกที่สุด</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 09:00 - 11:30
+              </div>
+              <h3 class="timeline-title">Lama Temple (雍和宫 - Yonghegong)</h3>
+              <p class="timeline-desc">เข้าชมอารามทิเบตและพระพุทธรูปไม้แกะสลักสูง 18 เมตรที่วัดลามะ</p>
+              
+              <!-- Attraction Callout -->
+              <div class="attraction-callout">
+                <div class="callout-header">
+                  <h4 class="callout-title">Lama Temple <span class="chinese">(雍和宫)</span></h4>
+                  <span class="callout-tag">สถานที่ไฮไลท์</span>
+                </div>
+                <div class="callout-body">
+                  <p>วัดพุทธทิเบตที่โด่งดังและมีชีวิตชีวาที่สุดในปักกิ่ง โดดเด่นด้วยสถาปัตยกรรมวิจิตรตระการตาและแท่นบูชาธูปหอม</p>
+                  <ul class="callout-bullets">
+                    <li>วิหารหมื่นสุข (Wanfuge): อาหารโถงหลักท้ายสุดที่ประดิษฐานพระศรีอริยเมตไตรยไม้แกะสลักขนาดใหญ่ที่สุดในโลก</li>
+                    <li>อาราม: เป็นสถานที่ศึกษาปฏิบัติธรรมและมีพระภิกษุสามเณรจำพรรษาจริง</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 11:30 - 12:30
+              </div>
+              <h3 class="timeline-title">อาหารกลางวันย่านตรอกชิค Wudaoying Hutong</h3>
+              <p class="timeline-desc">ทานมื้อกลางวันที่คาเฟ่หรือร้านเก๋ๆ บนตรอก Wudaoying Hutong</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 13:00 - 16:30
+              </div>
+              <h3 class="timeline-title">798 Art District (798艺术区)</h3>
+              <p class="timeline-desc">เดินชมนิทรรศการและประติมากรรมเก๋ๆ ในย่านศิลปะ 798 Art District</p>
+              
+              <!-- Attraction Callout -->
+              <div class="attraction-callout">
+                <div class="callout-header">
+                  <h4 class="callout-title">798 Art District <span class="chinese">(798艺术区)</span></h4>
+                  <span class="callout-tag">สถานที่ไฮไลท์</span>
+                </div>
+                <div class="callout-body">
+                  <p>ย่านชุมชนสร้างสรรค์และศิลปะร่วมสมัยของปักกิ่ง อาศัยพื้นที่โครงสร้างอาคารโรงงานสไตล์เบาเฮาส์จากยุคทศวรรษ 1950</p>
+                  <ul class="callout-bullets">
+                    <li>หอศิลป์: ชมผลงานและนิทรรศการทดลองร่วมสมัยทั้งของศิลปินชาวจีนและต่างประเทศ</li>
+                    <li>ความเท่สไตล์อุตสาหกรรม: เพดานโค้งสูง ผนังอิฐสีแดง และท่อเหล็กโรงงานสร้างกลิ่นอายอันเป็นเอกลักษณ์</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-shopping">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🛍️</span> 17:00 - 19:00
+              </div>
+              <h3 class="timeline-title">ช้อปปิ้งย่านแฟชั่น Sanlitun Taikoo Li (三里屯)</h3>
+              <p class="timeline-desc">เดินทางสู่ย่าน Sanlitun ช้อปปิ้งสินค้าแฟชั่นแบรนด์เนมชั้นนำ</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 19:00 - 20:30
+              </div>
+              <h3 class="timeline-title">อาหารค่ำ: ลิ้มรสอาหารแนวฟิวชัน</h3>
+              <p class="timeline-desc">ทานอาหารค่ำที่ร้านอาหารยอดนิยมในห้าง Taikoo Li Sanlitun</p>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Day 7 -->
+      <article class="day-card" id="day7">
+        <div class="day-anchor"></div>
+        <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+
+        <header class="day-header">
+          <div class="day-title-box">
+            <h2 class="day-number-title">วันที่ 7 <span class="date">วันศุกร์ที่ 23 ตุลาคม 2026</span></h2>
+            <span class="day-main-theme">เที่ยว Old Summer Palace, National Museum & ถนน Wangfujing</span>
+          </div>
+          <span class="difficulty-badge diff-heavy">
+            <i class="fa-solid fa-person-running"></i> ความหนัก: เยอะ
+          </span>
+        </header>
+
+        <div class="tips-warnings-box">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div class="tips-content">
+            <strong>คำเตือนเรื่องการจองตั๋วเข้าพิพิธภัณฑ์ล่วงหน้า</strong>
+            <p><strong>พิพิธภัณฑ์สถานแห่งชาติจีนเปิดให้เข้าชมฟรี แต่ต้องจองตั๋วล่วงหน้าอย่างน้อย 7 วันทางออนไลน์ที่ chnmuseum.cn โดยใช้ข้อมูลหนังสือเดินทาง และต้องนำหนังสือเดินทางตัวจริงไปแสดง (ปิดทุกวันจันทร์)</strong></p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 09:00 - 11:30
+              </div>
+              <h3 class="timeline-title">Old Summer Palace Ruins (圆明园)</h3>
+              <p class="timeline-desc">ชมซากเสาหินสไตล์ยุโรปโบราณ Dashilou ณ พระราชวังฤดูร้อนเดิม</p>
+              
+              <!-- Attraction Callout -->
+              <div class="attraction-callout">
+                <div class="callout-header">
+                  <h4 class="callout-title">Old Summer Palace <span class="chinese">(圆明园)</span></h4>
+                  <span class="callout-tag">สถานที่ไฮไลท์</span>
+                </div>
+                <div class="callout-body">
+                  <p>อุทยานประวัติศาสตร์ขนาดใหญ่ที่เก็บรักษาซากปรักหักพังของพระอุทยานหลวงอันหรูหราอลังการที่สุดในสมัยราชวงศ์ชิง</p>
+                  <ul class="callout-bullets">
+                    <li>ซากปรักหักพัง: เสาหินทรงยุโรปและแท่นน้ำพุแกะสลักกลายเป็นสัญลักษณ์อันน่าสะเทือนใจทางประวัติศาสตร์</li>
+                    <li>ทะเลสาบ: สระนํ้าขนาดใหญ่ที่เงียบสงบสะท้อนเงาใบไม้และบัวหลวงในฤดูใบไม้ร่วง</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 11:30 - 12:30
+              </div>
+              <h3 class="timeline-title">อาหารกลางวันแบบสะดวก</h3>
+              <p class="timeline-desc">ทานอาหารกลางวันที่ฟู้ดคอร์ทในห้างสรรพสินค้าย่าน Zhongguancun</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 13:00 - 16:30
+              </div>
+              <h3 class="timeline-title">National Museum of China (国家博物馆)</h3>
+              <p class="timeline-desc">เข้าชมโบราณวัตถุและนิทรรศการประวัติศาสตร์ชาติจีน 5,000 ปี</p>
+              
+              <!-- Attraction Callout -->
+              <div class="attraction-callout">
+                <div class="callout-header">
+                  <h4 class="callout-title">National Museum of China <span class="chinese">(中国国家博物馆)</span></h4>
+                  <span class="callout-tag">สถานที่ไฮไลท์</span>
+                </div>
+                <div class="callout-body">
+                  <p>หนึ่งในพิพิธภัณฑ์สถานแห่งชาติที่ใหญ่ที่สุดในโลก รวบรวมและบอกเล่าเรื่องราวอารยธรรมจีนอันเก่าแก่ยาวนานกว่า 5,000 ปี</p>
+                  <ul class="callout-bullets">
+                    <li>นิทรรศการหลัก: โซน "Ancient China" ที่รวบรวมวัตถุโบราณและสมบัติของชาติจีนตั้งแต่ยุคก่อนประวัติศาสตร์</li>
+                    <li>ทางเข้า: ตรวจสอบความปลอดภัยระดับสูงและตรวจสอบหนังสือเดินทางที่ตรงตามการจองล่วงหน้า</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-shopping">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🛍️</span> 17:00 - 19:30
+              </div>
+              <h3 class="timeline-title">ช้อปปิ้งถนนคนเดินและลิ้มลองของว่างที่ Wangfujing Street & Snack Alleys (王府井)</h3>
+              <p class="timeline-desc">เดินช้อปปิ้งและหาของว่างทานเล่นบนถนนคนเดิน Wangfujing</p>
+              
+              <!-- Attraction Callout -->
+              <div class="attraction-callout">
+                <div class="callout-header">
+                  <h4 class="callout-title">Wangfujing Snack Street <span class="chinese">(王府井小吃街)</span></h4>
+                  <span class="callout-tag">สถานที่ไฮไลท์</span>
+                </div>
+                <div class="callout-body">
+                  <p>ถนนของกินเล่นสตรีทฟู้ดและร้านจำหน่ายสินค้าของที่ระลึกที่คึกคักไปด้วยผู้คนและแสงสี</p>
+                  <ul class="callout-bullets">
+                    <li>เมนูยอดนิยม: Tanghulu (ผลไม้เคลือบน้ำตาลเสียบไม้), เกี๊ยวอบร้อน, เนื้อแพะเสียบไม้ย่างผงกะหรี่จีน</li>
+                    <li>ทำเล: ตั้งอยู่แยกออกมาจากโซนห้างสรรพสินค้าหลักในย่านใจกลางเมืองปักกิ่ง</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 19:30 - 21:00
+              </div>
+              <h3 class="timeline-title">อาหารค่ำ: เลี้ยงฉลองมื้อส่งท้าย</h3>
+              <p class="timeline-desc">ทานมื้อค่ำร้านอาหารอร่อยใน Wangfujing ฉลองส่งท้ายการเดินทาง</p>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Day 8 -->
+      <article class="day-card" id="day8">
+        <div class="day-anchor"></div>
+        <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+
+        <header class="day-header">
+          <div class="day-title-box">
+            <h2 class="day-number-title">วันที่ 8 <span class="date">วันเสาร์ที่ 24 ตุลาคม 2026</span></h2>
+            <span class="day-main-theme">เช็คเอาท์โรงแรม & บินกลับกรุงเทพฯ (TG615)</span>
+          </div>
+          <span class="difficulty-badge diff-easy">
+            <i class="fa-solid fa-plane-departure"></i> ความหนัก: เบา
+          </span>
+        </header>
+
+        <div class="tips-warnings-box">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div class="tips-content">
+            <strong>การกะเวลาไปสนามบิน</strong>
+            <p>ควรไปถึงสนามบินปักกิ่ง PEK อาคาร 3 ล่วงหน้าอย่างน้อย 2.5 ชั่วโมงก่อนเวลาเครื่องบินออก 17:05 น. กรุณาบรรจุของเหลวหรือเจลต่าง ๆ ลงในกระเป๋าเดินทางที่ต้องการโหลดใต้ท้องเครื่อง</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          
+          <div class="timeline-item activity-hotel">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏨</span> 09:30 - 10:00
+              </div>
+              <h3 class="timeline-title">เช็คเอาท์จากที่พัก CitiGo Hotel</h3>
+              <p class="timeline-desc">เก็บสัมภาระ เช็คเอาท์และฝากกระเป๋าเดินทางไว้ที่โรงแรม</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-shopping">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🛍️</span> 10:00 - 12:30
+              </div>
+              <h3 class="timeline-title">เดินซื้อของฝากมื้อสุดท้าย</h3>
+              <p class="timeline-desc">ช้อปปิ้งซื้อของฝาก ใบชามะลิ หรือผ้าไหม ย่าน Qianmen/Dashilar</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 12:30 - 13:30
+              </div>
+              <h3 class="timeline-title">อาหารกลางวันมื้อส่งท้าย</h3>
+              <p class="timeline-desc">ทานอาหารกลางวันมื้อส่งท้ายใกล้โรงแรมก่อนเดินทางไปสนามบิน</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-transport">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🚇</span> 13:30 - 14:30
+              </div>
+              <h3 class="timeline-title">เดินทางไปสนามบินด้วย Airport Express</h3>
+              <p class="timeline-desc">รับกระเป๋า นั่งรถไฟใต้ดินต่อ Airport Express สู่สนามบิน PEK (อาคาร 3)</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-transport">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🚇</span> 14:30 - 17:05
+              </div>
+              <h3 class="timeline-title">Check-in & Flight TG615 (PEK ➔ BKK)</h3>
+              <p class="timeline-desc">เช็คอิน โหลดกระเป๋า บินกลับกรุงเทพฯ ด้วยเที่ยวบิน TG615 เวลา 17:05 น.</p>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- Flight Banner (Bottom) -->
+  <footer class="flight-banner flight-banner-bottom">
+    <div class="flight-container">
+      <div class="flight-info">
+        <span class="flight-badge">TG615</span>
+        <span class="flight-route">PEK <i class="fa-solid fa-plane flight-arrow"></i> BKK</span>
+        <span class="flight-time">24 ต.ค. 2026 · 17:05 ➔ 21:20 (ถึงสนามบิน BKK)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Javascript Logic -->
+  <script>
+    /* --------------------------------------------------
+       1. MOUSE SPOTLIGHT EFFECT
+       -------------------------------------------------- */
+    document.addEventListener('mousemove', (e) => {
+      document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+      document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+    });
+
+    /* --------------------------------------------------
+       2. COUNTDOWN TIMER TO TG614 DEPARTURE
+       -------------------------------------------------- */
+    // Departure date is Saturday Oct 17, 2026 at 10:10 AM BKK time.
+    const targetDate = new Date('October 17, 2026 10:10:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference < 0) {
+        document.getElementById('countdown-timer').innerHTML = "<div style='color: var(--color-gold); font-weight: 600; font-size: 1.25rem;'>การเดินทางเริ่มต้นขึ้นแล้ว! ✈️</div>";
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerText = days.toString().padStart(2, '0');
+      document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* --------------------------------------------------
+       3. PARTICLES CANVAS ENGINE (HERO BG)
+       -------------------------------------------------- */
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let particles = [];
+    const maxParticles = 60;
+    let mouse = { x: null, y: null, radius: 100 };
+
+    function resizeCanvas() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    window.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+
+    window.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = (Math.random() - 0.5) * 0.4;
+        this.radius = Math.random() * 2 + 1;
+        this.color = Math.random() > 0.5 ? 'rgba(201, 168, 76, 0.4)' : 'rgba(56, 189, 248, 0.4)';
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+        // Interaction with mouse
+        if (mouse.x && mouse.y) {
+          let dx = mouse.x - this.x;
+          let dy = mouse.y - this.y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < mouse.radius) {
+            let force = (mouse.radius - distance) / mouse.radius;
+            let angle = Math.atan2(dy, dx);
+            this.x -= Math.cos(angle) * force * 1.5;
+            this.y -= Math.sin(angle) * force * 1.5;
+          }
+        }
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < maxParticles; i++) {
+        particles.push(new Particle());
+      }
+    }
+    initParticles();
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+
+
+    /* --------------------------------------------------
+       5. ACTIVE DAY SWITCHING ENGINE (TABS & ACCORDIONS)
+       -------------------------------------------------- */
+    const dayCards = document.querySelectorAll('.day-card');
+    const dayTabs = document.querySelectorAll('.day-tab');
+    const mobileDayBtns = document.querySelectorAll('.mobile-day-btn');
+    const scrollDownBtn = document.getElementById('scroll-to-content');
+
+    scrollDownBtn.addEventListener('click', () => {
+      document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    function setActiveDay(dayId, shouldScroll = true) {
+      const isMobile = window.innerWidth < 768;
+
+      // 1. Update Tabs & Buttons active class
+      dayTabs.forEach(tab => {
+        if (tab.getAttribute('data-target') === dayId) {
+          tab.classList.add('active');
+        } else {
+          tab.classList.remove('active');
+        }
+      });
+
+      mobileDayBtns.forEach(btn => {
+        if (btn.getAttribute('data-target') === dayId) {
+          btn.classList.add('active');
+          // Scroll mobile tab buttons into view horizontally
+          btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // 2. Update Day Cards display
+      dayCards.forEach(card => {
+        if (card.id === dayId) {
+          card.classList.add('active-day');
+          card.classList.remove('collapsed');
+          
+          // Animate timeline items immediately
+          card.querySelectorAll('.timeline-item').forEach(item => {
+            item.classList.add('visible');
+          });
+          
+          // Scroll to card
+          if (shouldScroll) {
+            if (isMobile) {
+              card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+              document.getElementById('main-content').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        } else {
+          card.classList.remove('active-day');
+          if (isMobile) {
+            card.classList.add('collapsed');
+          }
+        }
+      });
+
+      // 3. Sync Map Highlight
+      document.querySelectorAll('.map-zone').forEach(z => z.classList.remove('active'));
+      syncMapHighlight(dayId);
+    }
+
+    // Initialize display on load/resize
+    function initLayout() {
+      const isMobile = window.innerWidth < 768;
+      const activeTab = document.querySelector('.day-tab.active') || document.querySelector('.day-tab');
+      const activeId = activeTab ? activeTab.getAttribute('data-target') : 'day1';
+      
+      setActiveDay(activeId, false);
+    }
+
+    // Event listeners for tabs & buttons
+    dayTabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        setActiveDay(tab.getAttribute('data-target'));
+      });
+    });
+
+    mobileDayBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        setActiveDay(btn.getAttribute('data-target'));
+      });
+    });
+
+    // Mobile Accordion Header Click toggling
+    dayCards.forEach(card => {
+      const header = card.querySelector('.day-header');
+      const toggleBtn = card.querySelector('.accordion-toggle');
+
+      const toggleAction = (e) => {
+        if (window.innerWidth < 768) {
+          e.preventDefault();
+          if (card.classList.contains('collapsed')) {
+            setActiveDay(card.id);
+          } else {
+            card.classList.add('collapsed');
+          }
+        }
+      };
+
+      header.addEventListener('click', toggleAction);
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleAction(e);
+        });
+      }
+    });
+
+    // Run initialization
+    initLayout();
+    window.addEventListener('resize', initLayout);
+
+    /* --------------------------------------------------
+       6. INTERACTIVE MAP SYNCING
+       -------------------------------------------------- */
+    const mapZones = document.querySelectorAll('.map-zone');
+    const legendItems = document.querySelectorAll('.legend-item');
+
+    // Sync which map zones highlight depending on current active Day Card
+    function syncMapHighlight(dayId) {
+      if (dayId === 'day1' || dayId === 'day8') {
+        document.querySelector('.zone-shunyi').classList.add('active');
+        document.querySelector('.zone-central').classList.add('active');
+      } else if (dayId === 'day2') {
+        document.querySelector('.zone-huairou').classList.add('active');
+      } else if (dayId === 'day3') {
+        document.querySelector('.zone-tongzhou').classList.add('active');
+      } else if (dayId === 'day4') {
+        document.querySelector('.zone-central').classList.add('active');
+      } else if (dayId === 'day5') {
+        document.querySelector('.zone-haidian').classList.add('active');
+        document.querySelector('.zone-central').classList.add('active');
+      } else if (dayId === 'day6') {
+        document.querySelector('.zone-chaoyang').classList.add('active');
+        document.querySelector('.zone-central').classList.add('active');
+      } else if (dayId === 'day7') {
+        document.querySelector('.zone-haidian').classList.add('active');
+        document.querySelector('.zone-central').classList.add('active');
+      }
+    }
+
+    // Map zone click scrolls to corresponding Day Cards
+    mapZones.forEach(zone => {
+      zone.addEventListener('click', () => {
+        const days = zone.getAttribute('data-day').split(', ');
+        const firstDayNum = days[0].replace('Day ', '');
+        const targetId = `day${firstDayNum}`;
+        setActiveDay(targetId);
+      });
+    });
+
+    // Map legend item hovering highlights respective zones
+    legendItems.forEach(item => {
+      const targetZoneClass = item.getAttribute('data-target-zone');
+      item.addEventListener('mouseenter', () => {
+        document.querySelector(`.${targetZoneClass}`).classList.add('active');
+      });
+      item.addEventListener('mouseleave', () => {
+        const activeTab = document.querySelector('.day-tab.active');
+        if (activeTab) {
+          const activeId = activeTab.getAttribute('data-target');
+          document.querySelectorAll('.map-zone').forEach(z => z.classList.remove('active'));
+          syncMapHighlight(activeId);
+        }
+      });
+    });
+
+    /* --------------------------------------------------
+       7. SMOOTH SLIDE-IN SCROLL ANIMATION (FOR MANUAL SCROLLING IF NEEDED)
+       -------------------------------------------------- */
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineObserverOptions = {
+      root: null,
+      rootMargin: '0px 0px -100px 0px',
+      threshold: 0.15
+    };
+
+    const timelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, timelineObserverOptions);
+
+    timelineItems.forEach(item => timelineObserver.observe(item));
+  </script>
+</body>
+</html>
