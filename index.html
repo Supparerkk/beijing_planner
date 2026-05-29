@@ -1593,6 +1593,54 @@
       }
     }
 
+
+    /* 📋 Checklist Header & Responsive Titles Rules */
+    .checklist-header {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+    
+    .progress-bar-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 767px) {
+      .day-number-title {
+        font-size: 1.3rem !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+      }
+      
+      .day-number-title span.date {
+        font-size: 0.8rem !important;
+        margin-left: 0 !important;
+        display: block !important;
+      }
+      
+      .day-main-theme {
+        font-size: 0.9rem !important;
+      }
+
+      .checklist-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        width: 100% !important;
+      }
+
+      .progress-bar-container {
+        margin-left: 0 !important;
+        width: 100% !important;
+        justify-content: space-between !important;
+      }
+    }
+
 </style>
 </head>
 <body class="spotlight-active">
@@ -2912,7 +2960,7 @@
         <div class="day-anchor"></div>
         <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
         
-        <header class="day-header" style="flex-wrap: nowrap; align-items: center; justify-content: space-between; width: 100%;">
+        <header class="day-header">
           <div class="day-title-box">
             <h2 class="day-number-title">🔥 ลายแทง 20 ร้านอร่อยกระแสโซเชียล</h2>
             <span class="day-main-theme">ร้านอาหารยอดฮิตใน Facebook, TikTok, Xiaohongshu, Douyin (ไทย & จีน)</span>
@@ -3779,12 +3827,12 @@
         <div class="day-anchor"></div>
         <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
         
-        <header class="day-header" style="flex-wrap: nowrap; align-items: center; justify-content: space-between; width: 100%;">
+        <header class="day-header checklist-header">
           <div class="day-title-box">
             <h2 class="day-number-title">📋 เช็คลิสต์เตรียมตัวท่องเที่ยวปักกิ่ง</h2>
             <span class="day-main-theme">ตรวจสอบสถานะการจองตั๋วและการเตรียมตัวที่จำเป็นทั้งหมด</span>
           </div>
-          <div class="progress-bar-container" style="display: flex; align-items: center; gap: 15px; flex-shrink: 0; margin-left: 20px;">
+          <div class="progress-bar-container">
             <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-gold);" id="checklist-progress-text">เสร็จสิ้น: 0%</div>
             <div style="width: 100px; height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
               <div id="checklist-progress-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--color-gold), var(--color-sky-blue)); transition: width 0.3s ease;"></div>
