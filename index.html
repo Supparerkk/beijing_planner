@@ -1532,67 +1532,7 @@
         </a>
       </nav>
 
-      <!-- Interactive Beijing Map Panel -->
-      <section class="sidebar-card map-panel">
-        <h2 class="sidebar-title">
-          <i class="fa-solid fa-compass"></i>
-          <span>พื้นที่ท่องเที่ยวตามแผนที่</span>
-        </h2>
-        
-        <!-- SVG Map representation of visited districts -->
-        <svg class="beijing-svg-map" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
-          <!-- Huairou (North - Great Wall) -->
-          <polygon class="map-zone zone-huairou" points="100,15 200,15 180,65 120,65" data-zone="Huairou" data-day="Day 3" />
-          <text x="150" y="45" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Huairou (Great Wall)</text>
-          
-          <!-- Shunyi (Northeast - Airport) -->
-          <polygon class="map-zone zone-shunyi" points="185,75 250,75 240,115 175,115" data-zone="Shunyi" data-day="Day 1, 8" />
-          <text x="212" y="100" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Shunyi (PEK Airport)</text>
-          
-          <!-- Haidian (West - Palaces) -->
-          <polygon class="map-zone zone-haidian" points="50,85 130,85 120,135 60,155" data-zone="Haidian" data-day="Day 5, 7" />
-          <text x="90" y="115" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Haidian (Palaces)</text>
-          
-          <!-- Central (Dongcheng/Xicheng - CitiGo, Forbidden City, etc) -->
-          <rect class="map-zone zone-central active" x="125" y="125" width="60" height="50" rx="6" data-zone="Central" data-day="Day 1, 4, 5, 6, 7, 8" />
-          <text x="155" y="154" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Central (Hotel)</text>
-          
-          <!-- Chaoyang (East - 798, Sanlitun) -->
-          <polygon class="map-zone zone-chaoyang" points="190,125 250,125 240,185 190,185" data-zone="Chaoyang" data-day="Day 6" />
-          <text x="220" y="160" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Chaoyang (Art)</text>
-          
-          <!-- Tongzhou (Southeast - Universal Beijing) -->
-          <polygon class="map-zone zone-tongzhou" points="175,195 245,195 235,240 165,240" data-zone="Tongzhou" data-day="Day 2" />
-          <text x="205" y="222" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Tongzhou (Universal)</text>
-        </svg>
-
-        <div class="map-legend">
-          <div class="legend-item" data-target-zone="zone-central">
-            <span class="legend-dot" style="background-color: var(--color-gold);"></span>
-            <span>พื้นที่ใจกลางเมือง (Central)</span>
-          </div>
-          <div class="legend-item" data-target-zone="zone-haidian">
-            <span class="legend-dot" style="background-color: var(--color-sky-blue);"></span>
-            <span>เขตไห่เตี้ยน (Haidian)</span>
-          </div>
-          <div class="legend-item" data-target-zone="zone-chaoyang">
-            <span class="legend-dot" style="background-color: var(--color-purple);"></span>
-            <span>เขตเฉาหยาง (Chaoyang)</span>
-          </div>
-          <div class="legend-item" data-target-zone="zone-huairou">
-            <span class="legend-dot" style="background-color: var(--color-soft-red);"></span>
-            <span>เขตหวยโหรว (Huairou)</span>
-          </div>
-          <div class="legend-item" data-target-zone="zone-tongzhou">
-            <span class="legend-dot" style="background-color: var(--color-orange);"></span>
-            <span>เขตทงโจว (Tongzhou)</span>
-          </div>
-          <div class="legend-item" data-target-zone="zone-shunyi">
-            <span class="legend-dot" style="background-color: var(--color-green);"></span>
-            <span>เขตซุ่นอี้ (Shunyi)</span>
-          </div>
-        </div>
-      </section>
+      
 
       <!-- Sticky Important Reminders Panel -->
       <section class="sidebar-card reminders-panel">
@@ -3230,9 +3170,7 @@
         }
       });
 
-      // 3. Sync Map Highlight
-      document.querySelectorAll('.map-zone').forEach(z => z.classList.remove('active'));
-      syncMapHighlight(dayId);
+
     }
 
     // Initialize display on load/resize
@@ -3287,61 +3225,6 @@
     // Run initialization
     initLayout();
     window.addEventListener('resize', initLayout);
-
-    /* --------------------------------------------------
-       6. INTERACTIVE MAP SYNCING
-       -------------------------------------------------- */
-    const mapZones = document.querySelectorAll('.map-zone');
-    const legendItems = document.querySelectorAll('.legend-item');
-
-    // Sync which map zones highlight depending on current active Day Card
-    function syncMapHighlight(dayId) {
-      if (dayId === 'day1' || dayId === 'day8') {
-        document.querySelector('.zone-shunyi').classList.add('active');
-        document.querySelector('.zone-central').classList.add('active');
-      } else if (dayId === 'day2') {
-        document.querySelector('.zone-huairou').classList.add('active');
-      } else if (dayId === 'day3') {
-        document.querySelector('.zone-tongzhou').classList.add('active');
-      } else if (dayId === 'day4') {
-        document.querySelector('.zone-central').classList.add('active');
-      } else if (dayId === 'day5') {
-        document.querySelector('.zone-haidian').classList.add('active');
-        document.querySelector('.zone-central').classList.add('active');
-      } else if (dayId === 'day6') {
-        document.querySelector('.zone-chaoyang').classList.add('active');
-        document.querySelector('.zone-central').classList.add('active');
-      } else if (dayId === 'day7') {
-        document.querySelector('.zone-haidian').classList.add('active');
-        document.querySelector('.zone-central').classList.add('active');
-      }
-    }
-
-    // Map zone click scrolls to corresponding Day Cards
-    mapZones.forEach(zone => {
-      zone.addEventListener('click', () => {
-        const days = zone.getAttribute('data-day').split(', ');
-        const firstDayNum = days[0].replace('Day ', '');
-        const targetId = `day${firstDayNum}`;
-        setActiveDay(targetId);
-      });
-    });
-
-    // Map legend item hovering highlights respective zones
-    legendItems.forEach(item => {
-      const targetZoneClass = item.getAttribute('data-target-zone');
-      item.addEventListener('mouseenter', () => {
-        document.querySelector(`.${targetZoneClass}`).classList.add('active');
-      });
-      item.addEventListener('mouseleave', () => {
-        const activeTab = document.querySelector('.day-tab.active');
-        if (activeTab) {
-          const activeId = activeTab.getAttribute('data-target');
-          document.querySelectorAll('.map-zone').forEach(z => z.classList.remove('active'));
-          syncMapHighlight(activeId);
-        }
-      });
-    });
 
     /* --------------------------------------------------
        7. SMOOTH SLIDE-IN SCROLL ANIMATION (FOR MANUAL SCROLLING IF NEEDED)
