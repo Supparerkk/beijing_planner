@@ -1164,7 +1164,8 @@
 
       /* Default collapse state for mobile */
       .day-card.collapsed .timeline, 
-      .day-card.collapsed .tips-warnings-box {
+      .day-card.collapsed .tips-warnings-box,
+      .day-card.collapsed #checklist-content-wrapper {
         display: none;
       }
 
@@ -2677,7 +2678,7 @@
         </div>
       </article>
       <!-- Checklist Card -->
-      <article class="day-card" id="checklist" style="display: none;">
+      <article class="day-card" id="checklist">
         <div class="day-anchor"></div>
         <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
         
@@ -2702,7 +2703,7 @@
           </div>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; flex-direction: column; gap: 20px;" id="checklist-content-wrapper">
           
           <!-- Category 1 -->
           <div class="checklist-section">
