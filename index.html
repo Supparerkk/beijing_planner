@@ -1184,7 +1184,186 @@
         padding-right: 30px;
       }
     }
-  </style>
+  
+    /* --------------------------------------------------
+       11. PREMIUM CHECKLIST SYSTEM
+       -------------------------------------------------- */
+    .checklist-section {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 25px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+    }
+    
+    .checklist-section:hover {
+      border-color: rgba(201, 168, 76, 0.15);
+      background: rgba(255, 255, 255, 0.03);
+    }
+    
+    .checklist-section-title {
+      font-family: var(--font-headings);
+      font-size: 1.25rem;
+      color: var(--color-gold);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 10px;
+    }
+    
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 14px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      transition: background 0.2s ease;
+      border-radius: 8px;
+    }
+    
+    .checklist-item:last-child {
+      border-bottom: none;
+    }
+    
+    .checklist-item:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    
+    .checklist-cb-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    
+    .checklist-checkbox {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    
+    .checklist-checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: rgba(255, 255, 255, 0.04);
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .checklist-item:hover .checklist-checkmark {
+      border-color: rgba(201, 168, 76, 0.5);
+    }
+    
+    .checklist-checkbox:checked ~ .checklist-checkmark {
+      background-color: var(--color-gold);
+      border-color: var(--color-gold);
+      box-shadow: 0 0 10px rgba(201, 168, 76, 0.3);
+    }
+    
+    .checklist-checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+    .checklist-checkbox:checked ~ .checklist-checkmark:after {
+      display: block;
+    }
+    
+    .checklist-checkmark:after {
+      left: 6px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+      border: solid #000;
+      border-width: 0 2.5px 2.5px 0;
+      transform: rotate(45deg);
+    }
+    
+    .checklist-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .checklist-label {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #ffffff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .checklist-checkbox:checked ~ .checklist-content .checklist-label {
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+    
+    .checklist-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    
+    .checklist-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .checklist-meta i {
+      color: var(--color-sky-blue);
+    }
+    
+    .checklist-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+    
+    .badge-urgent {
+      background: rgba(248, 113, 113, 0.15);
+      color: var(--color-soft-red);
+      border: 1px solid rgba(248, 113, 113, 0.3);
+    }
+    
+    .badge-warning {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--color-orange);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+    }
+    
+    .badge-info {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--color-sky-blue);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    
+    .badge-free {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--color-green);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+</style>
 </head>
 <body class="spotlight-active">
 
@@ -1274,6 +1453,7 @@
       <button class="mobile-day-btn" data-target="day6">วันที่ 6 🎨</button>
       <button class="mobile-day-btn" data-target="day7">วันที่ 7 🏛️</button>
       <button class="mobile-day-btn" data-target="day8">วันที่ 8 ✈️</button>
+      <button class="mobile-day-btn" data-target="checklist">เช็คลิสต์ 📋</button>
     </div>
   </nav>
 
@@ -1341,6 +1521,13 @@
             <span class="tab-name">เช็คเอาท์ & กลับกรุงเทพฯ</span>
           </div>
           <span class="tab-badge diff-easy">เบา</span>
+        </a>
+        <a href="#checklist" class="day-tab" data-target="checklist" style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 15px;">
+          <div class="tab-info">
+            <span class="tab-num" style="color: var(--color-gold);">เช็คลิสต์จองตั๋ว</span>
+            <span class="tab-name">Checklist การจองและเตรียมตัว</span>
+          </div>
+          <span class="tab-badge" style="background: var(--color-gold); font-size: 0.65rem; color: #000;">เตรียมตัว</span>
         </a>
       </nav>
 
@@ -2489,6 +2676,359 @@
 
         </div>
       </article>
+      <!-- Checklist Card -->
+      <article class="day-card" id="checklist" style="display: none;">
+        <div class="day-anchor"></div>
+        <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+        
+        <header class="day-header" style="flex-wrap: nowrap; align-items: center; justify-content: space-between; width: 100%;">
+          <div class="day-title-box">
+            <h2 class="day-number-title">📋 เช็คลิสต์เตรียมตัวท่องเที่ยวปักกิ่ง</h2>
+            <span class="day-main-theme">ตรวจสอบสถานะการจองตั๋วและการเตรียมตัวที่จำเป็นทั้งหมด</span>
+          </div>
+          <div class="progress-bar-container" style="display: flex; align-items: center; gap: 15px; flex-shrink: 0; margin-left: 20px;">
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-gold);" id="checklist-progress-text">เสร็จสิ้น: 0%</div>
+            <div style="width: 100px; height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+              <div id="checklist-progress-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--color-gold), var(--color-sky-blue)); transition: width 0.3s ease;"></div>
+            </div>
+          </div>
+        </header>
+
+        <div class="tips-warnings-box">
+          <i class="fa-solid fa-circle-info" style="color: var(--color-sky-blue);"></i>
+          <div class="tips-content">
+            <strong>คำแนะนำในการใช้งาน</strong>
+            <p>เมื่อท่านกดทำเครื่องหมายถูก (✓) หน้าหัวข้อที่ทำเสร็จแล้ว ระบบจะบันทึกสถานะไว้ในเบราว์เซอร์ของท่านโดยอัตโนมัติ ทำให้สามารถเปิดกลับมาตรวจสอบซ้ำเมื่อไหร่ก็ได้</p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          
+          <!-- Category 1 -->
+          <div class="checklist-section">
+            <h3 class="checklist-section-title">
+              <i class="fa-solid fa-suitcase-rolling"></i>
+              <span>การเตรียมตัวทั่วไป & ข้อมูลการเดินทางหลัก</span>
+            </h3>
+            
+            <div class="checklist-item">
+              <div class="checklist-cb-wrapper">
+                <input type="checkbox" id="chk_flights" class="checklist-checkbox">
+                <span class="checklist-checkmark"></span>
+              </div>
+              <div class="checklist-content">
+                <label for="chk_flights" class="checklist-label">ตั๋วเครื่องบินไป-กลับ กรุงเทพฯ (BKK) ➔ ปักกิ่ง (PEK)</label>
+                <div class="checklist-meta">
+                  <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 3-6 เดือน</span>
+                  <span><i class="fa-solid fa-cart-shopping"></i> การบินไทย (TG614 / TG615)</span>
+                  <span class="checklist-badge badge-urgent">ด่วนที่สุด</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="checklist-item">
+              <div class="checklist-cb-wrapper">
+                <input type="checkbox" id="chk_hotel" class="checklist-checkbox">
+                <span class="checklist-checkmark"></span>
+              </div>
+              <div class="checklist-content">
+                <label for="chk_hotel" class="checklist-label">จองที่พักโรงแรม CitiGo Hotel Qianmen Street (7 คืน)</label>
+                <div class="checklist-meta">
+                  <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 1-3 เดือน</span>
+                  <span><i class="fa-solid fa-cart-shopping"></i> Trip.com / Agoda / Booking.com</span>
+                  <span class="checklist-badge badge-urgent">ด่วนที่สุด</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="checklist-item">
+              <div class="checklist-cb-wrapper">
+                <input type="checkbox" id="chk_internet" class="checklist-checkbox">
+                <span class="checklist-checkmark"></span>
+              </div>
+              <div class="checklist-content">
+                <label for="chk_internet" class="checklist-label">อินเทอร์เน็ตสำหรับใช้งานในจีน (eSIM หรือ SIM Roaming)</label>
+                <div class="checklist-meta">
+                  <span><i class="fa-regular fa-clock"></i> เตรียมก่อนเดินทาง 7-14 วัน</span>
+                  <span><i class="fa-solid fa-cart-shopping"></i> Airalo, Nomad, AIS SIM2Fly, True Travel SIM</span>
+                  <span class="checklist-badge badge-warning">สำคัญ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="checklist-item">
+              <div class="checklist-cb-wrapper">
+                <input type="checkbox" id="chk_payment" class="checklist-checkbox">
+                <span class="checklist-checkmark"></span>
+              </div>
+              <div class="checklist-content">
+                <label for="chk_payment" class="checklist-label">ลงทะเบียนแอปพลิเคชัน Alipay & WeChat Pay พร้อมผูกบัตร Travel Card</label>
+                <div class="checklist-meta">
+                  <span><i class="fa-regular fa-clock"></i> เตรียมก่อนเดินทาง 7-14 วัน</span>
+                  <span><i class="fa-solid fa-cart-shopping"></i> โหลดผ่าน App Store / Play Store ยืนยันตัวตนด้วย Passport</span>
+                  <span class="checklist-badge badge-urgent">ด่วนที่สุด</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="checklist-item">
+              <div class="checklist-cb-wrapper">
+                <input type="checkbox" id="chk_health" class="checklist-checkbox">
+                <span class="checklist-checkmark"></span>
+              </div>
+              <div class="checklist-content">
+                <label for="chk_health" class="checklist-label">กรอกข้อมูลการประกาศสุขภาพขาเข้าประเทศจีน (Health Declaration)</label>
+                <div class="checklist-meta">
+                  <span><i class="fa-regular fa-clock"></i> ทำก่อนเวลาขึ้นเครื่อง 24 ชั่วโมง</span>
+                  <span><i class="fa-solid fa-cart-shopping"></i> กรอกผ่าน WeChat Mini Program หรือกรอกที่ ตม. สนามบิน PEK</span>
+                  <span class="checklist-badge badge-warning">สำคัญ</span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <!-- Category 2 -->
+          <div class="checklist-section">
+            <h3 class="checklist-section-title">
+              <i class="fa-solid fa-ticket"></i>
+              <span>การจองตั๋วท่องเที่ยวและกิจกรรมรายวัน (Daily Attraction Checklist)</span>
+            </h3>
+
+            <!-- Day 1 -->
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 0.85rem; color: var(--color-sky-blue); margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px;">วันที่ 1 · 17 ต.ค. (วันเดินทางถึง)</h4>
+              
+              <div class="checklist-item">
+                <div class="checklist-cb-wrapper">
+                  <input type="checkbox" id="chk_d1_express" class="checklist-checkbox">
+                  <span class="checklist-checkmark"></span>
+                </div>
+                <div class="checklist-content">
+                  <label for="chk_d1_express" class="checklist-label">ตั๋วรถไฟด่วนสนามบิน Airport Express (PEK T3 ➔ Dongzhimen)</label>
+                  <div class="checklist-meta">
+                    <span><i class="fa-regular fa-clock"></i> ซื้อ ณ วันเดินทาง (25 RMB)</span>
+                    <span><i class="fa-solid fa-cart-shopping"></i> ซื้อที่ตู้ขายตั๋วอัตโนมัติที่สถานีรถไฟสนามบิน หรือสแกนจ่ายผ่าน Alipay</span>
+                    <span class="checklist-badge badge-info">ข้อมูลเพิ่มเติม</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 0.85rem; color: var(--color-sky-blue); margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px;">วันที่ 2 · 18 ต.ค. (กำแพงเมืองจีน Mutianyu)</h4>
+              
+              <div class="checklist-item">
+                <div class="checklist-cb-wrapper">
+                  <input type="checkbox" id="chk_d2_mutianyu" class="checklist-checkbox">
+                  <span class="checklist-checkmark"></span>
+                </div>
+                <div class="checklist-content">
+                  <label for="chk_d2_mutianyu" class="checklist-label">ตั๋วกำแพงเมืองจีนด่าน Mutianyu (ตั๋วผ่านประตู + กระเช้าลอยฟ้า + เลื่อน Toboggan)</label>
+                  <div class="checklist-meta">
+                    <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 7-14 วัน</span>
+                    <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (慕田峪长城) หรือผ่านเว็บท่องเที่ยว Klook / Trip.com</span>
+                    <span class="checklist-badge badge-warning">แนะนำจองก่อน</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="checklist-item">
+                <div class="checklist-cb-wrapper">
+                  <input type="checkbox" id="chk_d2_car" class="checklist-checkbox">
+                  <span class="checklist-checkmark"></span>
+                </div>
+                <div class="checklist-content">
+                  <label for="chk_d2_car" class="checklist-label">จองบริการรถรับ-ส่งส่วนตัวพร้อมคนขับไป-กลับกำแพงเมืองจีน</label>
+                  <div class="checklist-meta">
+                    <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 15-30 วัน (เผื่อช่วงฤดูใบไม้ร่วงใบไม้เปลี่ยนสีคนจะเยอะ)</span>
+                    <span><i class="fa-solid fa-cart-shopping"></i> ติดต่อเอเจนซี่ทัวร์นำเที่ยวท้องถิ่น หรือจองผ่าน Trip.com / Klook</span>
+                    <span class="checklist-badge badge-info">ข้อมูลเพิ่มเติม</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 0.85rem; color: var(--color-sky-blue); margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px;">วันที่ 3 · 19 ต.ค. (Universal Beijing Resort)</h4>
+              
+              <div class="checklist-item">
+                <div class="checklist-cb-wrapper">
+                  <input type="checkbox" id="chk_d3_universal" class="checklist-checkbox">
+                  <span class="checklist-checkmark"></span>
+                </div>
+                <div class="checklist-content">
+                  <label for="chk_d3_universal" class="checklist-label">บัตรผ่านประตูสวนสนุก Universal Beijing Resort (1-Day Ticket)</label>
+                  <div class="checklist-meta">
+                    <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 14-30 วัน</span>
+                    <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (北京环球度假区) / Official App หรือจองผ่าน Klook / Trip.com</span>
+                    <span class="checklist-badge badge-urgent">จำเป็นต้องจอง</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 0.85rem; color: var(--color-sky-blue); margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px;">วันที่ 4 · 20 ต.ค. (พระราชวังต้องห้าม & เทียนถัน)</h4>
+              
+              <div class="checklist-item">
+                <div class="checklist-cb-wrapper">
+                  <input type="checkbox" id="chk_d4_tiananmen" class="checklist-checkbox">
+                  <span class="checklist-checkmark"></span>
+                </div>
+                <div class="checklist-content">
+                  <label for="chk_d4_tiananmen" class="checklist-label">ลงทะเบียนขอสิทธิ์เข้าชมจัตุรัส Tiananmen Square (ลานจัตุรัสภายนอก)</label>
+                  <div class="checklist-meta">
+                    <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 1-9 วัน (เปิดให้กดลงทะเบียนตอน 12:00 น. ตามเวลาปักกิ่ง)</span>
+                    <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (天安门广场预约) (เข้าฟรีแต่จำเป็นต้องกดจองสิทธิ์)</span>
+                    <span class="checklist-badge badge-free">ฟรีแต่ต้องจอง</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="checklist-item">
+                <div class="checklist-cb-wrapper">
+                  <input type="checkbox" id="chk_d4_forbidden" class="checklist-checkbox">
+                  <span class="checklist-checkmark"></span>
+                </div>
+                <div class="checklist-content">
+                  <label for="chk_d4_forbidden" class="checklist-label">จองบัตรเข้าชมพระราชวังต้องห้าม (Forbidden City)</label>
+                  <div class="checklist-meta">
+                    <span><i class="fa-regular fa-clock"></i> <strong>จองล่วงหน้า 7 วัน (เปิดระบบตอน 20:00 น. ตามเวลาปักกิ่งของ 7 วันล่วงหน้า)</strong></span>
+                    <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (故宫博物院) หรือจองผ่านเว็บนำเที่ยว Trip.com (จองยากมาก ด่วน!)</span>
+                    <span class="checklist-badge badge-urgent">จองยากที่สุด</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="checklist-item">
+                <div class="checklist-cb-wrapper">
+                  <input type="checkbox" id="chk_d4_heaven" class="checklist-checkbox">
+                  <span class="checklist-checkmark"></span>
+                </div>
+                <div class="checklist-content">
+                  <label for="chk_d4_heaven" class="checklist-label">ซื้อตั๋วรวมหอสักการะฟ้าดิน (Temple of Heaven Through Ticket)</label>
+                  <div class="checklist-meta">
+                    <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 1-7 วัน (หรือซื้อหน้าทางเข้า)</span>
+                    <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (天坛 หรือ 畅游公园)</span>
+                    <span class="checklist-badge badge-info">ข้อมูลเพิ่มเติม</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="checklist-item">
+                <div class="checklist-cb-wrapper">
+                  <input type="checkbox" id="chk_d4_jingshan" class="checklist-checkbox">
+                  <span class="checklist-checkmark"></span>
+                </div>
+                <div class="checklist-content">
+                  <label for="chk_d4_jingshan" class="checklist-label">ตั๋วเข้าชมสวน Jingshan Park (ศาลาว่านชุนชมวิวพระราชวังต้องห้ามมุมสูง)</label>
+                  <div class="checklist-meta">
+                    <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 1-7 วัน (หรือซื้อหน้าทางเข้า)</span>
+                    <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (畅游公园) หรือซื้อตั๋วที่หน้าประตูทางเข้า</span>
+                    <span class="checklist-badge badge-info">ข้อมูลเพิ่มเติม</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 0.85rem; color: var(--color-sky-blue); margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px;">วันที่ 5 · 21 ต.ค. (พระราชวังฤดูร้อน & เป่ยไห่)</h4>
+              
+              <div class="checklist-item">
+                <div class="checklist-cb-wrapper">
+                  <input type="checkbox" id="chk_d5_summer" class="checklist-checkbox">
+                  <span class="checklist-checkmark"></span>
+                </div>
+                <div class="checklist-content">
+                  <label for="chk_d5_summer" class="checklist-label">ตั๋วเข้าชมพระราชวังฤดูร้อน (Summer Palace Ticket)</label>
+                  <div class="checklist-meta">
+                    <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 1-7 วัน</span>
+                    <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (颐和园 หรือ 畅游公园)</span>
+                    <span class="checklist-badge badge-info">ข้อมูลเพิ่มเติม</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="checklist-item">
+                <div class="checklist-cb-wrapper">
+                  <input type="checkbox" id="chk_d5_beihai" class="checklist-checkbox">
+                  <span class="checklist-checkmark"></span>
+                </div>
+                <div class="checklist-content">
+                  <label for="chk_d5_beihai" class="checklist-label">ตั๋วเข้าชมอุทยานสวนหลวง Beihai Park</label>
+                  <div class="checklist-meta">
+                    <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 1-7 วัน</span>
+                    <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (畅游公园)</span>
+                    <span class="checklist-badge badge-info">ข้อมูลเพิ่มเติม</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 6 -->
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 0.85rem; color: var(--color-sky-blue); margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px;">วันที่ 6 · 22 ต.ค. (วัดลามะ & ย่านศิลปะ 798)</h4>
+              
+              <div class="checklist-item">
+                <div class="checklist-cb-wrapper">
+                  <input type="checkbox" id="chk_d6_lama" class="checklist-checkbox">
+                  <span class="checklist-checkmark"></span>
+                </div>
+                <div class="checklist-content">
+                  <label for="chk_d6_lama" class="checklist-label">ตั๋วผ่านประตูเข้าชมวัดลามะ (Lama Temple / Yonghegong)</label>
+                  <div class="checklist-meta">
+                    <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 1-10 วัน</span>
+                    <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (雍和宫游客信众服务)</span>
+                    <span class="checklist-badge badge-warning">สำคัญ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 7 -->
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 0.85rem; color: var(--color-sky-blue); margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px;">วันที่ 7 · 23 ต.ค. (หยวนหมิงหยวน & พิพิธภัณฑ์แห่งชาติ)</h4>
+              
+              <div class="checklist-item">
+                <div class="checklist-cb-wrapper">
+                  <input type="checkbox" id="chk_d7_oldsummer" class="checklist-checkbox">
+                  <span class="checklist-checkmark"></span>
+                </div>
+                <div class="checklist-content">
+                  <label for="chk_d7_oldsummer" class="checklist-label">ตั๋วเข้าชมพระราชวังฤดูร้อนเดิม (Old Summer Palace / Yuanmingyuan)</label>
+                  <div class="checklist-meta">
+                    <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 1-7 วัน</span>
+                    <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (圆明园遗址公园)</span>
+                    <span class="checklist-badge badge-info">ข้อมูลเพิ่มเติม</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="checklist-item">
+                <div class="checklist-cb-wrapper">
+                  <input type="checkbox" id="chk_d7_museum" class="checklist-checkbox">
+                  <span class="checklist-checkmark"></span>
+                </div>
+                <div class="checklist-content">
+                  <label for="chk_d7_museum" class="checklist-label">จองบัตรสิทธิ์เข้าชมฟรีพิพิธภัณฑ์สถานแห่งชาติจีน (National Museum of China)</label>
+                  <div class="checklist-meta">
+                    <span><i class="fa-regular fa-clock"></i> <strong>จองล่วงหน้า 7 วัน (เปิดระบบตอน 17:00 น. ตามเวลาปักกิ่งของ 7 วันล่วงหน้า)</strong></span>
+                    <span><i class="fa-solid fa-cart-shopping"></i> เว็บไซต์ chnmuseum.cn หรือ WeChat Mini Program (国家博物馆) (เข้าฟรีแต่ต้องลงทะเบียนล่วงหน้า)</span>
+                    <span class="checklist-badge badge-free">ฟรีแต่ต้องจอง</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </article>
 
     </section>
   <!-- Flight Banner (Bottom) -->
@@ -2821,6 +3361,42 @@
     }, timelineObserverOptions);
 
     timelineItems.forEach(item => timelineObserver.observe(item));
-  </script>
+  
+    /* --------------------------------------------------
+       8. CHECKLIST LOCALSTORAGE LOGIC
+       -------------------------------------------------- */
+    const checklistCbs = document.querySelectorAll('.checklist-checkbox');
+    const progressText = document.getElementById('checklist-progress-text');
+    const progressBar = document.getElementById('checklist-progress-bar');
+
+    function updateChecklistProgress() {
+      if (checklistCbs.length === 0) return;
+      let checkedCount = 0;
+      checklistCbs.forEach(cb => {
+        if (cb.checked) checkedCount++;
+      });
+      const pct = Math.round((checkedCount / checklistCbs.length) * 100);
+      if (progressText) progressText.innerText = `เสร็จสิ้น: ${pct}%`;
+      if (progressBar) progressBar.style.width = `${pct}%`;
+    }
+
+    // Set up listeners and initial load
+    checklistCbs.forEach(cb => {
+      // Load saved state
+      const savedState = localStorage.getItem(cb.id);
+      if (savedState !== null) {
+        cb.checked = savedState === 'true';
+      }
+
+      // Add event listener
+      cb.addEventListener('change', () => {
+        localStorage.setItem(cb.id, cb.checked);
+        updateChecklistProgress();
+      });
+    });
+
+    // Run initial progress calculation
+    updateChecklistProgress();
+</script>
 </body>
 </html>
