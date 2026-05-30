@@ -1792,16 +1792,17 @@
       50% { opacity: 1; }
     }
 
-    /* Landmark container */
+    /* Landmark container - Upgraded to fit multiple landmarks side by side */
     .pixel-landmark {
       position: absolute;
       bottom: 14px;
-      right: 18%;
-      width: 110px;
-      height: 55px;
+      right: 12%;
+      width: 320px;
+      height: 65px;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: flex-end;
+      gap: 20px;
       z-index: 40;
     }
 
@@ -1812,7 +1813,6 @@
       image-rendering: pixelated;
       image-rendering: crisp-edges;
       shape-rendering: crispEdges;
-      animation: lmFloat 2.5s ease-in-out infinite alternate;
     }
 
     .lm-svg.active {
@@ -1852,9 +1852,10 @@
       }
       .pixel-landmark {
         bottom: 14px;
-        right: 10%;
+        right: 5%;
         height: 38px;
-        width: 80px;
+        width: 180px;
+        gap: 10px;
       }
       .lm-svg {
         height: 38px;
@@ -2414,8 +2415,10 @@
         
         <!-- Current Day's Landmark -->
         <div class="pixel-landmark">
-          <!-- Day 1 SVG -->
-          <svg id="lm-svg-1" class="lm-svg active" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg"><rect x="13" y="1" width="1" height="1" fill="#f59e0b" />
+          <!-- Day 1 SVGs -->
+          <svg class="lm-svg lm-day-1 active" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 1A: Zhengyangmen Gate -->
+            <rect x="13" y="1" width="1" height="1" fill="#f59e0b" />
             <rect x="14" y="1" width="1" height="1" fill="#f59e0b" />
             <rect x="15" y="1" width="1" height="1" fill="#f59e0b" />
             <rect x="16" y="1" width="1" height="1" fill="#f59e0b" />
@@ -2672,9 +2675,76 @@
             <rect x="23" y="15" width="1" height="1" fill="#dc2626" />
             <rect x="24" y="15" width="1" height="1" fill="#dc2626" />
             <rect x="25" y="15" width="1" height="1" fill="#dc2626" />
-            <rect x="26" y="15" width="1" height="1" fill="#dc2626" /></svg>
-          <!-- Day 2 SVG -->
-          <svg id="lm-svg-2" class="lm-svg" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg"><rect x="26" y="0" width="1" height="1" fill="#94a3b8" />
+            <rect x="26" y="15" width="1" height="1" fill="#dc2626" />
+          </svg>
+          <svg class="lm-svg lm-day-1 active" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 1B: Qianmen Archway -->
+            <rect x="11" y="0" width="1" height="1" fill="#f59e0b" />
+            <rect x="12" y="0" width="1" height="1" fill="#f59e0b" />
+            <rect x="13" y="0" width="1" height="1" fill="#f59e0b" />
+            <rect x="14" y="0" width="1" height="1" fill="#f59e0b" />
+            <rect x="15" y="0" width="1" height="1" fill="#f59e0b" />
+            <rect x="16" y="0" width="1" height="1" fill="#f59e0b" />
+            <rect x="9" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="10" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="11" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="12" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="13" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="14" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="15" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="16" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="8" y="2" width="1" height="1" fill="#4ade80" />
+            <rect x="9" y="2" width="1" height="1" fill="#4ade80" />
+            <rect x="10" y="2" width="1" height="1" fill="#4ade80" />
+            <rect x="11" y="2" width="1" height="1" fill="#4ade80" />
+            <rect x="12" y="2" width="1" height="1" fill="#4ade80" />
+            <rect x="13" y="2" width="1" height="1" fill="#4ade80" />
+            <rect x="14" y="2" width="1" height="1" fill="#4ade80" />
+            <rect x="15" y="2" width="1" height="1" fill="#4ade80" />
+            <rect x="16" y="2" width="1" height="1" fill="#4ade80" />
+            <rect x="17" y="2" width="1" height="1" fill="#4ade80" />
+            <rect x="7" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="8" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="9" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="11" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="12" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="13" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="14" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="15" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="16" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="17" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="18" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="7" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="13" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="14" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="17" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="20" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="7" y="5" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="5" width="1" height="1" fill="#dc2626" />
+            <rect x="13" y="5" width="1" height="1" fill="#dc2626" />
+            <rect x="14" y="5" width="1" height="1" fill="#dc2626" />
+            <rect x="17" y="5" width="1" height="1" fill="#dc2626" />
+            <rect x="20" y="5" width="1" height="1" fill="#dc2626" />
+            <rect x="7" y="6" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="6" width="1" height="1" fill="#dc2626" />
+            <rect x="13" y="6" width="1" height="1" fill="#dc2626" />
+            <rect x="14" y="6" width="1" height="1" fill="#dc2626" />
+            <rect x="17" y="6" width="1" height="1" fill="#dc2626" />
+            <rect x="20" y="6" width="1" height="1" fill="#dc2626" />
+            <rect x="6" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="9" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="12" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="13" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="16" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="19" y="7" width="1" height="1" fill="#f1f5f9" />
+          </svg>
+          
+          <!-- Day 2 SVGs -->
+          <svg class="lm-svg lm-day-2" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 2A: Great Wall segment -->
+            <rect x="26" y="0" width="1" height="1" fill="#94a3b8" />
             <rect x="27" y="0" width="1" height="1" fill="#94a3b8" />
             <rect x="28" y="0" width="1" height="1" fill="#94a3b8" />
             <rect x="29" y="0" width="1" height="1" fill="#94a3b8" />
@@ -2857,9 +2927,74 @@
             <rect x="23" y="9" width="1" height="1" fill="#f97316" />
             <rect x="24" y="9" width="1" height="1" fill="#f97316" />
             <rect x="25" y="9" width="1" height="1" fill="#f97316" />
-            <rect x="26" y="9" width="1" height="1" fill="#f97316" /></svg>
-          <!-- Day 3 SVG -->
-          <svg id="lm-svg-3" class="lm-svg" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg"><rect x="13" y="2" width="1" height="1" fill="#0288d1" />
+            <rect x="26" y="9" width="1" height="1" fill="#f97316" />
+          </svg>
+          <svg class="lm-svg lm-day-2" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 2B: Great Wall Watchtower -->
+            <rect x="9" y="0" width="1" height="1" fill="#94a3b8" />
+            <rect x="10" y="0" width="1" height="1" fill="#94a3b8" />
+            <rect x="11" y="0" width="1" height="1" fill="#94a3b8" />
+            <rect x="12" y="0" width="1" height="1" fill="#94a3b8" />
+            <rect x="13" y="0" width="1" height="1" fill="#94a3b8" />
+            <rect x="7" y="1" width="1" height="1" fill="#94a3b8" />
+            <rect x="8" y="1" width="1" height="1" fill="#334155" />
+            <rect x="9" y="1" width="1" height="1" fill="#94a3b8" />
+            <rect x="10" y="1" width="1" height="1" fill="#334155" />
+            <rect x="11" y="1" width="1" height="1" fill="#94a3b8" />
+            <rect x="12" y="1" width="1" height="1" fill="#94a3b8" />
+            <rect x="6" y="2" width="1" height="1" fill="#94a3b8" />
+            <rect x="7" y="2" width="1" height="1" fill="#94a3b8" />
+            <rect x="8" y="2" width="1" height="1" fill="#94a3b8" />
+            <rect x="9" y="2" width="1" height="1" fill="#94a3b8" />
+            <rect x="10" y="2" width="1" height="1" fill="#94a3b8" />
+            <rect x="11" y="2" width="1" height="1" fill="#94a3b8" />
+            <rect x="12" y="2" width="1" height="1" fill="#94a3b8" />
+            <rect x="6" y="3" width="1" height="1" fill="#94a3b8" />
+            <rect x="7" y="3" width="1" height="1" fill="#334155" />
+            <rect x="8" y="3" width="1" height="1" fill="#334155" />
+            <rect x="9" y="3" width="1" height="1" fill="#334155" />
+            <rect x="10" y="3" width="1" height="1" fill="#334155" />
+            <rect x="11" y="3" width="1" height="1" fill="#94a3b8" />
+            <rect x="12" y="3" width="1" height="1" fill="#94a3b8" />
+            <rect x="5" y="4" width="1" height="1" fill="#94a3b8" />
+            <rect x="6" y="4" width="1" height="1" fill="#94a3b8" />
+            <rect x="7" y="4" width="1" height="1" fill="#94a3b8" />
+            <rect x="8" y="4" width="1" height="1" fill="#94a3b8" />
+            <rect x="9" y="4" width="1" height="1" fill="#94a3b8" />
+            <rect x="10" y="4" width="1" height="1" fill="#94a3b8" />
+            <rect x="11" y="4" width="1" height="1" fill="#94a3b8" />
+            <rect x="12" y="4" width="1" height="1" fill="#94a3b8" />
+            <rect x="5" y="5" width="1" height="1" fill="#94a3b8" />
+            <rect x="6" y="5" width="1" height="1" fill="#94a3b8" />
+            <rect x="7" y="5" width="1" height="1" fill="#1e293b" />
+            <rect x="8" y="5" width="1" height="1" fill="#1e293b" />
+            <rect x="9" y="5" width="1" height="1" fill="#94a3b8" />
+            <rect x="10" y="5" width="1" height="1" fill="#94a3b8" />
+            <rect x="11" y="5" width="1" height="1" fill="#94a3b8" />
+            <rect x="12" y="5" width="1" height="1" fill="#94a3b8" />
+            <rect x="5" y="6" width="1" height="1" fill="#94a3b8" />
+            <rect x="6" y="6" width="1" height="1" fill="#94a3b8" />
+            <rect x="7" y="6" width="1" height="1" fill="#1e293b" />
+            <rect x="8" y="6" width="1" height="1" fill="#1e293b" />
+            <rect x="9" y="6" width="1" height="1" fill="#94a3b8" />
+            <rect x="10" y="6" width="1" height="1" fill="#94a3b8" />
+            <rect x="11" y="6" width="1" height="1" fill="#94a3b8" />
+            <rect x="12" y="6" width="1" height="1" fill="#94a3b8" />
+            <rect x="4" y="7" width="1" height="1" fill="#94a3b8" />
+            <rect x="5" y="7" width="1" height="1" fill="#94a3b8" />
+            <rect x="6" y="7" width="1" height="1" fill="#94a3b8" />
+            <rect x="7" y="7" width="1" height="1" fill="#94a3b8" />
+            <rect x="8" y="7" width="1" height="1" fill="#94a3b8" />
+            <rect x="9" y="7" width="1" height="1" fill="#94a3b8" />
+            <rect x="10" y="7" width="1" height="1" fill="#94a3b8" />
+            <rect x="11" y="7" width="1" height="1" fill="#94a3b8" />
+            <rect x="12" y="7" width="1" height="1" fill="#94a3b8" />
+          </svg>
+          
+          <!-- Day 3 SVGs -->
+          <svg class="lm-svg lm-day-3" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 3A: Universal Globe -->
+            <rect x="13" y="2" width="1" height="1" fill="#0288d1" />
             <rect x="14" y="2" width="1" height="1" fill="#0288d1" />
             <rect x="15" y="2" width="1" height="1" fill="#0288d1" />
             <rect x="16" y="2" width="1" height="1" fill="#0288d1" />
@@ -2970,9 +3105,62 @@
             <rect x="15" y="10" width="1" height="1" fill="#0288d1" />
             <rect x="16" y="10" width="1" height="1" fill="#0288d1" />
             <rect x="17" y="10" width="1" height="1" fill="#0288d1" />
-            <rect x="18" y="10" width="1" height="1" fill="#0288d1" /></svg>
-          <!-- Day 4 SVG -->
-          <svg id="lm-svg-4" class="lm-svg" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg"><rect x="16" y="1" width="1" height="1" fill="#fbbf24" />
+            <rect x="18" y="10" width="1" height="1" fill="#0288d1" />
+          </svg>
+          <svg class="lm-svg lm-day-3" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 3B: Wizarding Tower -->
+            <rect x="12" y="0" width="1" height="1" fill="#475569" />
+            <rect x="11" y="1" width="1" height="1" fill="#475569" />
+            <rect x="12" y="1" width="1" height="1" fill="#475569" />
+            <rect x="10" y="2" width="1" height="1" fill="#475569" />
+            <rect x="11" y="2" width="1" height="1" fill="#475569" />
+            <rect x="12" y="2" width="1" height="1" fill="#475569" />
+            <rect x="9" y="3" width="1" height="1" fill="#475569" />
+            <rect x="10" y="3" width="1" height="1" fill="#475569" />
+            <rect x="11" y="3" width="1" height="1" fill="#475569" />
+            <rect x="12" y="3" width="1" height="1" fill="#475569" />
+            <rect x="8" y="4" width="1" height="1" fill="#475569" />
+            <rect x="9" y="4" width="1" height="1" fill="#475569" />
+            <rect x="10" y="4" width="1" height="1" fill="#475569" />
+            <rect x="11" y="4" width="1" height="1" fill="#475569" />
+            <rect x="12" y="4" width="1" height="1" fill="#475569" />
+            <rect x="7" y="5" width="1" height="1" fill="#475569" />
+            <rect x="8" y="5" width="1" height="1" fill="#475569" />
+            <rect x="9" y="5" width="1" height="1" fill="#475569" />
+            <rect x="10" y="5" width="1" height="1" fill="#475569" />
+            <rect x="11" y="5" width="1" height="1" fill="#475569" />
+            <rect x="12" y="5" width="1" height="1" fill="#475569" />
+            <rect x="7" y="6" width="1" height="1" fill="#475569" />
+            <rect x="8" y="6" width="1" height="1" fill="#475569" />
+            <rect x="9" y="6" width="1" height="1" fill="#1e293b" />
+            <rect x="10" y="6" width="1" height="1" fill="#1e293b" />
+            <rect x="11" y="6" width="1" height="1" fill="#475569" />
+            <rect x="12" y="6" width="1" height="1" fill="#475569" />
+            <rect x="7" y="7" width="1" height="1" fill="#475569" />
+            <rect x="8" y="7" width="1" height="1" fill="#475569" />
+            <rect x="9" y="7" width="1" height="1" fill="#f59e0b" />
+            <rect x="10" y="7" width="1" height="1" fill="#f59e0b" />
+            <rect x="11" y="7" width="1" height="1" fill="#475569" />
+            <rect x="12" y="7" width="1" height="1" fill="#475569" />
+            <rect x="7" y="8" width="1" height="1" fill="#475569" />
+            <rect x="8" y="8" width="1" height="1" fill="#475569" />
+            <rect x="9" y="8" width="1" height="1" fill="#1e293b" />
+            <rect x="10" y="8" width="1" height="1" fill="#1e293b" />
+            <rect x="11" y="8" width="1" height="1" fill="#475569" />
+            <rect x="12" y="8" width="1" height="1" fill="#475569" />
+            <rect x="6" y="9" width="1" height="1" fill="#475569" />
+            <rect x="7" y="9" width="1" height="1" fill="#475569" />
+            <rect x="8" y="9" width="1" height="1" fill="#475569" />
+            <rect x="9" y="9" width="1" height="1" fill="#475569" />
+            <rect x="10" y="9" width="1" height="1" fill="#475569" />
+            <rect x="11" y="9" width="1" height="1" fill="#475569" />
+            <rect x="12" y="9" width="1" height="1" fill="#475569" />
+          </svg>
+          
+          <!-- Day 4 SVGs -->
+          <svg class="lm-svg lm-day-4" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 4A: Yonghe Lama Temple -->
+            <rect x="16" y="1" width="1" height="1" fill="#fbbf24" />
             <rect x="17" y="1" width="1" height="1" fill="#fbbf24" />
             <rect x="15" y="2" width="1" height="1" fill="#fbbf24" />
             <rect x="16" y="2" width="1" height="1" fill="#fbbf24" />
@@ -3115,9 +3303,46 @@
             <rect x="21" y="13" width="1" height="1" fill="#f1f5f9" />
             <rect x="22" y="13" width="1" height="1" fill="#f1f5f9" />
             <rect x="23" y="13" width="1" height="1" fill="#f1f5f9" />
-            <rect x="24" y="13" width="1" height="1" fill="#f1f5f9" /></svg>
-          <!-- Day 5 SVG -->
-          <svg id="lm-svg-5" class="lm-svg" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="0" width="1" height="1" fill="#fbbf24" />
+            <rect x="24" y="13" width="1" height="1" fill="#f1f5f9" />
+          </svg>
+          <svg class="lm-svg lm-day-4" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 4B: 798 Red-brick Chimney -->
+            <rect x="9" y="0" width="1" height="1" fill="#334155" />
+            <rect x="10" y="0" width="1" height="1" fill="#334155" />
+            <rect x="8" y="1" width="1" height="1" fill="#334155" />
+            <rect x="9" y="1" width="1" height="1" fill="#334155" />
+            <rect x="10" y="1" width="1" height="1" fill="#334155" />
+            <rect x="9" y="2" width="1" height="1" fill="#1e293b" />
+            <rect x="10" y="2" width="1" height="1" fill="#1e293b" />
+            <rect x="9" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="9" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="8" y="5" width="1" height="1" fill="#dc2626" />
+            <rect x="9" y="5" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="5" width="1" height="1" fill="#dc2626" />
+            <rect x="8" y="6" width="1" height="1" fill="#dc2626" />
+            <rect x="9" y="6" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="6" width="1" height="1" fill="#dc2626" />
+            <rect x="7" y="7" width="1" height="1" fill="#dc2626" />
+            <rect x="8" y="7" width="1" height="1" fill="#dc2626" />
+            <rect x="9" y="7" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="7" width="1" height="1" fill="#dc2626" />
+            <rect x="7" y="8" width="1" height="1" fill="#dc2626" />
+            <rect x="8" y="8" width="1" height="1" fill="#dc2626" />
+            <rect x="9" y="8" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="8" width="1" height="1" fill="#dc2626" />
+            <rect x="6" y="9" width="1" height="1" fill="#dc2626" />
+            <rect x="7" y="9" width="1" height="1" fill="#dc2626" />
+            <rect x="8" y="9" width="1" height="1" fill="#dc2626" />
+            <rect x="9" y="9" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="9" width="1" height="1" fill="#dc2626" />
+          </svg>
+          
+          <!-- Day 5 SVGs -->
+          <svg class="lm-svg lm-day-5" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 5A: Marble Boat -->
+            <rect x="15" y="0" width="1" height="1" fill="#fbbf24" />
             <rect x="14" y="1" width="1" height="1" fill="#fbbf24" />
             <rect x="15" y="1" width="1" height="1" fill="#fbbf24" />
             <rect x="16" y="1" width="1" height="1" fill="#fbbf24" />
@@ -3227,9 +3452,87 @@
             <rect x="25" y="10" width="1" height="1" fill="#38bdf8" />
             <rect x="26" y="10" width="1" height="1" fill="#38bdf8" />
             <rect x="27" y="10" width="1" height="1" fill="#38bdf8" />
-            <rect x="28" y="10" width="1" height="1" fill="#38bdf8" /></svg>
-          <!-- Day 6 SVG -->
-          <svg id="lm-svg-6" class="lm-svg" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="1" width="1" height="1" fill="#fbbf24" />
+            <rect x="28" y="10" width="1" height="1" fill="#38bdf8" />
+          </svg>
+          <svg class="lm-svg lm-day-5" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 5B: Seventeen-Arch Bridge -->
+            <rect x="1" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="2" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="3" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="4" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="5" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="6" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="7" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="8" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="9" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="10" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="11" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="12" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="13" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="14" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="15" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="16" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="17" y="0" width="1" height="1" fill="#f1f5f9" />
+            <rect x="0" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="1" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="2" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="3" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="4" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="5" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="6" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="7" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="8" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="9" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="10" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="11" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="12" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="13" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="14" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="15" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="16" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="17" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="18" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="0" y="2" width="1" height="1" fill="#f1f5f9" />
+            <rect x="1" y="2" width="1" height="1" fill="#1e293b" />
+            <rect x="2" y="2" width="1" height="1" fill="#1e293b" />
+            <rect x="3" y="2" width="1" height="1" fill="#f1f5f9" />
+            <rect x="4" y="2" width="1" height="1" fill="#1e293b" />
+            <rect x="5" y="2" width="1" height="1" fill="#1e293b" />
+            <rect x="6" y="2" width="1" height="1" fill="#f1f5f9" />
+            <rect x="7" y="2" width="1" height="1" fill="#1e293b" />
+            <rect x="8" y="2" width="1" height="1" fill="#1e293b" />
+            <rect x="9" y="2" width="1" height="1" fill="#f1f5f9" />
+            <rect x="10" y="2" width="1" height="1" fill="#1e293b" />
+            <rect x="11" y="2" width="1" height="1" fill="#1e293b" />
+            <rect x="12" y="2" width="1" height="1" fill="#f1f5f9" />
+            <rect x="13" y="2" width="1" height="1" fill="#1e293b" />
+            <rect x="14" y="2" width="1" height="1" fill="#1e293b" />
+            <rect x="15" y="2" width="1" height="1" fill="#f1f5f9" />
+            <rect x="0" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="1" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="2" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="3" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="4" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="5" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="6" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="7" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="8" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="9" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="10" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="11" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="12" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="13" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="14" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="15" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="16" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="17" y="3" width="1" height="1" fill="#38bdf8" />
+            <rect x="18" y="3" width="1" height="1" fill="#38bdf8" />
+          </svg>
+          
+          <!-- Day 6 SVGs -->
+          <svg class="lm-svg lm-day-6" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 6A: Temple of Heaven -->
+            <rect x="8" y="1" width="1" height="1" fill="#fbbf24" />
             <rect x="9" y="1" width="1" height="1" fill="#fbbf24" />
             <rect x="10" y="1" width="1" height="1" fill="#fbbf24" />
             <rect x="11" y="1" width="1" height="1" fill="#fbbf24" />
@@ -3402,9 +3705,89 @@
             <rect x="23" y="9" width="1" height="1" fill="#f1f5f9" />
             <rect x="24" y="9" width="1" height="1" fill="#f1f5f9" />
             <rect x="25" y="9" width="1" height="1" fill="#f1f5f9" />
-            <rect x="26" y="9" width="1" height="1" fill="#f1f5f9" /></svg>
-          <!-- Day 7 SVG -->
-          <svg id="lm-svg-7" class="lm-svg" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="26" y="9" width="1" height="1" fill="#f1f5f9" />
+          </svg>
+          <svg class="lm-svg lm-day-6" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 6B: Palace Hall (Forbidden City) -->
+            <rect x="8" y="0" width="1" height="1" fill="#f59e0b" />
+            <rect x="9" y="0" width="1" height="1" fill="#f59e0b" />
+            <rect x="10" y="0" width="1" height="1" fill="#f59e0b" />
+            <rect x="11" y="0" width="1" height="1" fill="#f59e0b" />
+            <rect x="12" y="0" width="1" height="1" fill="#f59e0b" />
+            <rect x="13" y="0" width="1" height="1" fill="#f59e0b" />
+            <rect x="14" y="0" width="1" height="1" fill="#f59e0b" />
+            <rect x="15" y="0" width="1" height="1" fill="#f59e0b" />
+            <rect x="6" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="7" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="8" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="9" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="10" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="11" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="12" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="13" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="14" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="15" y="1" width="1" height="1" fill="#f59e0b" />
+            <rect x="5" y="2" width="1" height="1" fill="#f59e0b" />
+            <rect x="6" y="2" width="1" height="1" fill="#f59e0b" />
+            <rect x="7" y="2" width="1" height="1" fill="#f59e0b" />
+            <rect x="8" y="2" width="1" height="1" fill="#f59e0b" />
+            <rect x="9" y="2" width="1" height="1" fill="#f59e0b" />
+            <rect x="10" y="2" width="1" height="1" fill="#f59e0b" />
+            <rect x="11" y="2" width="1" height="1" fill="#f59e0b" />
+            <rect x="12" y="2" width="1" height="1" fill="#f59e0b" />
+            <rect x="13" y="2" width="1" height="1" fill="#f59e0b" />
+            <rect x="14" y="2" width="1" height="1" fill="#f59e0b" />
+            <rect x="15" y="2" width="1" height="1" fill="#f59e0b" />
+            <rect x="16" y="2" width="1" height="1" fill="#f59e0b" />
+            <rect x="4" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="5" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="6" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="7" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="8" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="9" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="11" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="12" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="13" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="14" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="15" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="16" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="17" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="4" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="5" y="4" width="1" height="1" fill="#f1f5f9" />
+            <rect x="6" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="7" y="4" width="1" height="1" fill="#f1f5f9" />
+            <rect x="8" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="9" y="4" width="1" height="1" fill="#f1f5f9" />
+            <rect x="10" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="11" y="4" width="1" height="1" fill="#f1f5f9" />
+            <rect x="12" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="13" y="4" width="1" height="1" fill="#f1f5f9" />
+            <rect x="14" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="15" y="4" width="1" height="1" fill="#f1f5f9" />
+            <rect x="16" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="17" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="3" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="4" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="5" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="6" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="7" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="8" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="9" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="10" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="11" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="12" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="13" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="14" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="15" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="16" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="17" y="5" width="1" height="1" fill="#f1f5f9" />
+          </svg>
+          
+          <!-- Day 7 SVGs -->
+          <svg class="lm-svg lm-day-7" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 7A: Yuanmingyuan ruins -->
+            <rect x="7" y="1" width="1" height="1" fill="#f1f5f9" />
             <rect x="8" y="1" width="1" height="1" fill="#f1f5f9" />
             <rect x="18" y="1" width="1" height="1" fill="#f1f5f9" />
             <rect x="19" y="1" width="1" height="1" fill="#f1f5f9" />
@@ -3522,9 +3905,63 @@
             <rect x="30" y="8" width="1" height="1" fill="#4ade80" />
             <rect x="31" y="8" width="1" height="1" fill="#4ade80" />
             <rect x="32" y="8" width="1" height="1" fill="#4ade80" />
-            <rect x="33" y="8" width="1" height="1" fill="#4ade80" /></svg>
-          <!-- Day 8 SVG -->
-          <svg id="lm-svg-8" class="lm-svg" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="1" width="1" height="1" fill="#ffffff" />
+            <rect x="33" y="8" width="1" height="1" fill="#4ade80" />
+          </svg>
+          <svg class="lm-svg lm-day-7" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 7B: Wangfujing Street Food Stall -->
+            <rect x="9" y="0" width="1" height="1" fill="#ffffff" />
+            <rect x="12" y="0" width="1" height="1" fill="#ffffff" />
+            <rect x="8" y="1" width="1" height="1" fill="#ffffff" />
+            <rect x="9" y="1" width="1" height="1" fill="#ffffff" />
+            <rect x="10" y="1" width="1" height="1" fill="#ffffff" />
+            <rect x="11" y="1" width="1" height="1" fill="#ffffff" />
+            <rect x="5" y="2" width="1" height="1" fill="#dc2626" />
+            <rect x="6" y="2" width="1" height="1" fill="#dc2626" />
+            <rect x="7" y="2" width="1" height="1" fill="#dc2626" />
+            <rect x="8" y="2" width="1" height="1" fill="#dc2626" />
+            <rect x="9" y="2" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="2" width="1" height="1" fill="#dc2626" />
+            <rect x="11" y="2" width="1" height="1" fill="#dc2626" />
+            <rect x="12" y="2" width="1" height="1" fill="#dc2626" />
+            <rect x="13" y="2" width="1" height="1" fill="#dc2626" />
+            <rect x="4" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="5" y="3" width="1" height="1" fill="#f59e0b" />
+            <rect x="6" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="7" y="3" width="1" height="1" fill="#f59e0b" />
+            <rect x="8" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="9" y="3" width="1" height="1" fill="#f59e0b" />
+            <rect x="10" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="11" y="3" width="1" height="1" fill="#f59e0b" />
+            <rect x="12" y="3" width="1" height="1" fill="#dc2626" />
+            <rect x="4" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="5" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="6" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="7" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="8" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="9" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="11" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="12" y="4" width="1" height="1" fill="#dc2626" />
+            <rect x="4" y="5" width="1" height="1" fill="#dc2626" />
+            <rect x="14" y="5" width="1" height="1" fill="#dc2626" />
+            <rect x="4" y="6" width="1" height="1" fill="#dc2626" />
+            <rect x="14" y="6" width="1" height="1" fill="#dc2626" />
+            <rect x="3" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="4" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="5" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="6" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="7" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="8" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="9" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="10" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="11" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="12" y="7" width="1" height="1" fill="#f1f5f9" />
+          </svg>
+          
+          <!-- Day 8 SVGs -->
+          <svg class="lm-svg lm-day-8" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 8A: Airplane -->
+            <rect x="15" y="1" width="1" height="1" fill="#ffffff" />
             <rect x="16" y="1" width="1" height="1" fill="#ffffff" />
             <rect x="14" y="2" width="1" height="1" fill="#ffffff" />
             <rect x="15" y="2" width="1" height="1" fill="#ffffff" />
@@ -3592,7 +4029,35 @@
             <rect x="23" y="9" width="1" height="1" fill="#ffffff" />
             <rect x="24" y="9" width="1" height="1" fill="#ffffff" />
             <rect x="25" y="9" width="1" height="1" fill="#ffffff" />
-            <rect x="26" y="9" width="1" height="1" fill="#ffffff" /></svg>
+            <rect x="26" y="9" width="1" height="1" fill="#ffffff" />
+          </svg>
+          <svg class="lm-svg lm-day-8" viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landmark 8B: Airport Control Tower -->
+            <rect x="11" y="0" width="1" height="1" fill="#dc2626" />
+            <rect x="10" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="11" y="1" width="1" height="1" fill="#f1f5f9" />
+            <rect x="9" y="2" width="1" height="1" fill="#f1f5f9" />
+            <rect x="10" y="2" width="1" height="1" fill="#475569" />
+            <rect x="11" y="2" width="1" height="1" fill="#f1f5f9" />
+            <rect x="8" y="3" width="1" height="1" fill="#f1f5f9" />
+            <rect x="9" y="3" width="1" height="1" fill="#f1f5f9" />
+            <rect x="10" y="3" width="1" height="1" fill="#f1f5f9" />
+            <rect x="11" y="3" width="1" height="1" fill="#f1f5f9" />
+            <rect x="9" y="4" width="1" height="1" fill="#f1f5f9" />
+            <rect x="10" y="4" width="1" height="1" fill="#f1f5f9" />
+            <rect x="9" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="10" y="5" width="1" height="1" fill="#f1f5f9" />
+            <rect x="9" y="6" width="1" height="1" fill="#f1f5f9" />
+            <rect x="10" y="6" width="1" height="1" fill="#f1f5f9" />
+            <rect x="9" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="10" y="7" width="1" height="1" fill="#f1f5f9" />
+            <rect x="9" y="8" width="1" height="1" fill="#f1f5f9" />
+            <rect x="10" y="8" width="1" height="1" fill="#f1f5f9" />
+            <rect x="8" y="9" width="1" height="1" fill="#f1f5f9" />
+            <rect x="9" y="9" width="1" height="1" fill="#f1f5f9" />
+            <rect x="10" y="9" width="1" height="1" fill="#f1f5f9" />
+            <rect x="11" y="9" width="1" height="1" fill="#f1f5f9" />
+          </svg>
         </div>
       </div>
     </div>
@@ -6166,6 +6631,38 @@
 
   <!-- Javascript Logic -->
   <script>
+    // 8-bit Pixel Art Animation Syncing Logic
+    const pixelDayTitles = {
+      'day1': 'Day 1 · ถึงปักกิ่ง & เที่ยว Qianmen',
+      'day2': 'Day 2 · ปีนกำแพงเมืองจีน Mutianyu',
+      'day3': 'Day 3 · สวนสนุก Universal Studios',
+      'day4': 'Day 4 · วัดลามะ & ย่านศิลปะ 798 & กายกรรมจ้าวหยาง',
+      'day5': 'Day 5 · พระราชวังฤดูร้อน & ตรอกหูท่ง Houhai',
+      'day6': 'Day 6 · พระราชวังต้องห้าม & หอบูชาฟ้าเทียนถาน',
+      'day7': 'Day 7 · พระราชวังหยวนหมิงหยวน & หวังฝู่จิ่ง',
+      'day8': 'Day 8 · เดินทางกลับกรุงเทพฯ (TG615)'
+    };
+
+    function syncPixelArt(dayId) {
+      if (!dayId.startsWith('day')) return;
+      const dayNum = dayId.replace('day', '');
+      
+      // Update Day Title
+      const titleElem = document.getElementById('pixel-day-title');
+      if (titleElem && pixelDayTitles[dayId]) {
+        titleElem.innerText = pixelDayTitles[dayId];
+      }
+      
+      // Toggle Landmark SVGs
+      document.querySelectorAll('.pixel-landmark .lm-svg').forEach(svg => {
+        svg.classList.remove('active');
+      });
+      // Show all landmark SVGs for this day
+      document.querySelectorAll(`.pixel-landmark .lm-day-${dayNum}`).forEach(svg => {
+        svg.classList.add('active');
+      });
+    }
+
     /* --------------------------------------------------
        1. MOUSE SPOTLIGHT EFFECT
        -------------------------------------------------- */
@@ -6540,37 +7037,7 @@
     // Run initial progress calculation
     updateChecklistProgress();
 
-    // 8-bit Pixel Art Animation Syncing Logic
-    const pixelDayTitles = {
-      'day1': 'Day 1 · ถึงปักกิ่ง & เที่ยว Qianmen',
-      'day2': 'Day 2 · ปีนกำแพงเมืองจีน Mutianyu',
-      'day3': 'Day 3 · สวนสนุก Universal Studios',
-      'day4': 'Day 4 · วัดลามะ & ย่านศิลปะ 798 & กายกรรมจ้าวหยาง',
-      'day5': 'Day 5 · พระราชวังฤดูร้อน & ตรอกหูท่ง Houhai',
-      'day6': 'Day 6 · พระราชวังต้องห้าม & หอบูชาฟ้าเทียนถาน',
-      'day7': 'Day 7 · พระราชวังหยวนหมิงหยวน & หวังฝู่จิ่ง',
-      'day8': 'Day 8 · เดินทางกลับกรุงเทพฯ (TG615)'
-    };
 
-    function syncPixelArt(dayId) {
-      if (!dayId.startsWith('day')) return;
-      const dayNum = dayId.replace('day', '');
-      
-      // Update Day Title
-      const titleElem = document.getElementById('pixel-day-title');
-      if (titleElem && pixelDayTitles[dayId]) {
-        titleElem.innerText = pixelDayTitles[dayId];
-      }
-      
-      // Toggle Landmark SVGs
-      document.querySelectorAll('.pixel-landmark .lm-svg').forEach(svg => {
-        svg.classList.remove('active');
-      });
-      const activeSvg = document.getElementById(`lm-svg-${dayNum}`);
-      if (activeSvg) {
-        activeSvg.classList.add('active');
-      }
-    }
 </script>
 </body>
 </html>
