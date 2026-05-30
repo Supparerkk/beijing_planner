@@ -14081,6 +14081,34 @@
       document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });
     });
 
+
+    // Auto-slideshow functionality (swaps days every 5 seconds)
+    let autoSlideTimer = null;
+    const autoSlideInterval = 5000; // 5000ms = 5 seconds
+
+    function startAutoSlide() {
+      stopAutoSlide(); // Ensure we clear any existing timer
+      autoSlideTimer = setInterval(() => {
+        const activeTab = document.querySelector('.day-tab.active');
+        if (!activeTab) return;
+        const currentId = activeTab.getAttribute('data-target');
+        if (!currentId.startsWith('day')) return; // Stop if user clicked restaurants or checklist
+        
+        let dayNum = parseInt(currentId.replace('day', ''));
+        dayNum = (dayNum % 8) + 1; // Loop 1 -> 8 -> 1
+        const nextId = `day${dayNum}`;
+        
+        setActiveDay(nextId, false); // Switch without scrolling the viewport
+      }, autoSlideInterval);
+    }
+
+    function stopAutoSlide() {
+      if (autoSlideTimer) {
+        clearInterval(autoSlideTimer);
+        autoSlideTimer = null;
+      }
+    }
+
     function setActiveDay(dayId, shouldScroll = true) {
       const isMobile = window.innerWidth < 768;
 
@@ -14147,20 +14175,35 @@
       const activeId = activeTab ? activeTab.getAttribute('data-target') : 'day1';
       
       setActiveDay(activeId, false);
+      if (activeId.startsWith('day')) {
+        startAutoSlide();
+      }
     }
 
     // Event listeners for tabs & buttons
     dayTabs.forEach(tab => {
       tab.addEventListener('click', (e) => {
         e.preventDefault();
-        setActiveDay(tab.getAttribute('data-target'));
+        const target = tab.getAttribute('data-target');
+        setActiveDay(target);
+        if (target.startsWith('day')) {
+          startAutoSlide();
+        } else {
+          stopAutoSlide();
+        }
       });
     });
 
     mobileDayBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        setActiveDay(btn.getAttribute('data-target'));
+        const target = btn.getAttribute('data-target');
+        setActiveDay(target);
+        if (target.startsWith('day')) {
+          startAutoSlide();
+        } else {
+          stopAutoSlide();
+        }
       });
     });
 
@@ -14174,8 +14217,14 @@
           e.preventDefault();
           if (card.classList.contains('collapsed')) {
             setActiveDay(card.id);
+            if (card.id.startsWith('day')) {
+              startAutoSlide();
+            } else {
+              stopAutoSlide();
+            }
           } else {
             card.classList.add('collapsed');
+            stopAutoSlide();
           }
         }
       };
@@ -14244,6 +14293,7 @@
         const firstDayNum = days[0].replace('Day ', '');
         const targetId = `day${firstDayNum}`;
         setActiveDay(targetId);
+        startAutoSlide();
       });
     });
 
