@@ -13913,6 +13913,7 @@
   <!-- Javascript Logic -->
   <script>
     // 8-bit Pixel Art Animation Syncing Logic
+    let currentAnimationDay = 1; // Tracks the currently displayed day in the animation slideshow
     const pixelDayTitles = {
       'day1': 'Day 1 · ถึงปักกิ่ง & เที่ยว Qianmen',
       'day2': 'Day 2 · ปีนกำแพงเมืองจีน Mutianyu',
@@ -13926,6 +13927,7 @@
 
     function syncPixelArt(dayId) {
       if (!dayId.startsWith('day')) return;
+      currentAnimationDay = parseInt(dayId.replace('day', ''));
       const dayNum = dayId.replace('day', '');
       
       // Update Day Title
@@ -14089,16 +14091,9 @@
     function startAutoSlide() {
       stopAutoSlide(); // Ensure we clear any existing timer
       autoSlideTimer = setInterval(() => {
-        const activeTab = document.querySelector('.day-tab.active');
-        if (!activeTab) return;
-        const currentId = activeTab.getAttribute('data-target');
-        if (!currentId.startsWith('day')) return; // Stop if user clicked restaurants or checklist
-        
-        let dayNum = parseInt(currentId.replace('day', ''));
-        dayNum = (dayNum % 8) + 1; // Loop 1 -> 8 -> 1
-        const nextId = `day${dayNum}`;
-        
-        setActiveDay(nextId, false); // Switch without scrolling the viewport
+        currentAnimationDay = (currentAnimationDay % 8) + 1; // Loop 1 -> 8 -> 1
+        const nextId = `day${currentAnimationDay}`;
+        syncPixelArt(nextId); // ONLY update the 8-bit animation and title, do not touch the travel cards!
       }, autoSlideInterval);
     }
 
@@ -14187,9 +14182,7 @@
         const target = tab.getAttribute('data-target');
         setActiveDay(target);
         if (target.startsWith('day')) {
-          startAutoSlide();
-        } else {
-          stopAutoSlide();
+          startAutoSlide(); // Snaps animation to this day and restarts 5s loop from here
         }
       });
     });
@@ -14200,9 +14193,7 @@
         const target = btn.getAttribute('data-target');
         setActiveDay(target);
         if (target.startsWith('day')) {
-          startAutoSlide();
-        } else {
-          stopAutoSlide();
+          startAutoSlide(); // Snaps animation to this day and restarts 5s loop from here
         }
       });
     });
@@ -14218,13 +14209,10 @@
           if (card.classList.contains('collapsed')) {
             setActiveDay(card.id);
             if (card.id.startsWith('day')) {
-              startAutoSlide();
-            } else {
-              stopAutoSlide();
+              startAutoSlide(); // Reset timer starting from this day
             }
           } else {
             card.classList.add('collapsed');
-            stopAutoSlide();
           }
         }
       };
