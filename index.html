@@ -314,17 +314,29 @@
       font-weight: 300;
     }
 
-    .hero-content {
+    /* Hero Card Wrapper to align content and animation boxes perfectly */
+    .hero-card-wrapper {
+      width: 100%;
       max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch; /* Forces children to have the exact same width */
+      z-index: 100;
+      margin-top: -8vh; /* Shifts the entire dashboard block upwards on desktop */
       animation: fade-in-up 1.2s ease-out;
+    }
+
+    .hero-content {
+      width: 100%;
       background: rgba(10, 15, 30, 0.55);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
+      border-bottom: none; /* Merges with the pixel bar below */
+      border-radius: 24px 24px 0 0; /* Rounded only at the top */
       padding: 40px 60px;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-      margin-top: -8vh; /* Shifts card upwards on desktop to make room below */
+      position: relative;
     }
 
     @keyframes fade-in-up {
@@ -1121,10 +1133,15 @@
     }
 
     @media (max-width: 767px) {
+      .hero-card-wrapper {
+        margin-top: 0;
+        padding: 0 12px;
+      }
       .hero-content {
         padding: 30px 20px;
-        border-radius: 16px;
-        margin: 0 10px;
+        border-radius: 16px 16px 0 0;
+        border-bottom: none;
+        margin: 0;
       }
 
       .hero-title {
@@ -1648,10 +1665,8 @@
        -------------------------------------------------- */
     .hero-pixel-box {
       width: 100%;
-      max-width: 900px;
-      margin-top: 20px;
       z-index: 100;
-      animation: fade-in-up 1.4s ease-out;
+      margin-top: 0; /* Snaps directly to the card above */
     }
 
     .pixel-indicator-bar {
@@ -1668,7 +1683,8 @@
       align-items: center;
       gap: 10px;
       padding: 8px 18px;
-      border-radius: 16px 16px 0 0;
+      border-radius: 0;
+      border-top: none;
       letter-spacing: 0.5px;
     }
 
@@ -1694,7 +1710,7 @@
       height: 120px;
       background: linear-gradient(to bottom, #070913 0%, #151e2e 70%, #202b3d 100%);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 0 0 16px 16px;
+      border-radius: 0 0 24px 24px;
       position: relative;
       overflow: hidden;
       box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.8), 0 10px 30px rgba(0,0,0,0.3);
@@ -1832,11 +1848,12 @@
     /* Adjust layout on PC and Mobile */
     @media (max-width: 767px) {
       .hero-pixel-box {
-        margin-top: 15px;
-        padding: 0 10px;
+        margin-top: 0;
+        padding: 0;
       }
       .pixel-screen {
         height: 85px;
+        border-radius: 0 0 16px 16px;
       }
       .pixel-char {
         height: 38px;
@@ -1887,6 +1904,7 @@
     <canvas id="particles-canvas"></canvas>
     
 
+    <div class="hero-card-wrapper">
     <div class="hero-content">
       <p class="hero-subtitle">แผนการเดินทางส่วนตัว 8 วัน</p>
       <h1 class="hero-title">Beijing Autumn Odyssey</h1>
@@ -11323,6 +11341,7 @@
         </div>
       </div>
     </div>
+    </div> <!-- End .hero-card-wrapper -->
 
     <!-- Scroll Indicator -->
     <div class="scroll-down" id="scroll-to-content">
