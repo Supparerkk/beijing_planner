@@ -455,6 +455,12 @@
       cursor: pointer;
       z-index: 11;
       padding: 10px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .scroll-down:hover {
+      color: var(--color-gold);
+      text-shadow: 0 0 12px rgba(201, 168, 76, 0.5);
     }
 
     @keyframes bounce {
@@ -1777,6 +1783,32 @@
       align-items: flex-end;
       gap: 12px;
       z-index: 50;
+      animation: familyBob 0.8s steps(2) infinite;
+      filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
+    }
+
+    /* Gentle double-step bounce synced to the leg-toggle cadence */
+    @keyframes familyBob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-1px); }
+    }
+
+    /* Soft contact shadow that pulses with each footstep */
+    .pixel-family::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 6px;
+      width: 40px;
+      height: 4px;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45) 0%, transparent 75%);
+      animation: footShadowPulse 0.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes footShadowPulse {
+      0%, 100% { opacity: 0.5; transform: scaleX(1); }
+      50% { opacity: 0.8; transform: scaleX(0.85); }
     }
 
     .pixel-char {
@@ -1821,18 +1853,56 @@
       z-index: 40;
     }
 
+    /* Ambient mood-lighting glow behind the active landmark, tinted per scene below */
+    .pixel-landmark::before {
+      content: '';
+      position: absolute;
+      inset: -30px -10px -10px -30px;
+      background: radial-gradient(ellipse 70% 70% at 65% 70%, rgba(255, 205, 130, 0.28), transparent 72%);
+      filter: blur(9px);
+      animation: landmarkGlowPulse 4.5s ease-in-out infinite;
+      z-index: -1;
+      pointer-events: none;
+      transition: background 0.8s ease;
+    }
+
+    @keyframes landmarkGlowPulse {
+      0%, 100% { opacity: 0.55; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+
+    /* Each landmark SVG cross-fades on day switch. display:none keeps the other
+       7 (each ~1000+ pixel rects) fully out of the render tree at rest — only
+       the active one, plus briefly the outgoing one during the 0.65s
+       hand-off (toggled via JS with the .leaving class), are ever painted. */
     .lm-svg {
       display: none;
+      position: absolute;
+      right: 0;
+      bottom: 0;
       width: 100%;
       height: 100%;
+      opacity: 0;
+      transform: translateX(18px) scale(0.985);
+      pointer-events: none;
       image-rendering: pixelated;
       image-rendering: crisp-edges;
       shape-rendering: crispEdges;
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .lm-svg.active,
+    .lm-svg.leaving {
+      display: block;
     }
 
     .lm-svg.active {
-      display: block;
-      animation: lmFloat 2.5s ease-in-out infinite alternate, lmSlideIn 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      opacity: 1;
+      transform: translateX(0) scale(1);
+      pointer-events: auto;
+      animation: lmFloat 3s ease-in-out infinite alternate;
+      /* Drop-shadow only on the visible landmark — keeps the hidden ones cheap to composite */
+      filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.45));
     }
 
     @keyframes lmFloat {
@@ -1840,10 +1910,15 @@
       to { transform: translateY(-4px); }
     }
 
-    @keyframes lmSlideIn {
-      from { transform: translateX(60px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
+    /* Per-day mood-lighting colour grading (no pixel art redrawn, only ambient light) */
+    .pixel-screen:has(#lm-svg-1.active) .pixel-landmark::before { background: radial-gradient(ellipse 70% 70% at 65% 70%, rgba(239, 68, 68, 0.32), transparent 72%); }
+    .pixel-screen:has(#lm-svg-2.active) .pixel-landmark::before { background: radial-gradient(ellipse 70% 70% at 65% 70%, rgba(74, 222, 128, 0.26), transparent 72%); }
+    .pixel-screen:has(#lm-svg-3.active) .pixel-landmark::before { background: radial-gradient(ellipse 70% 70% at 65% 70%, rgba(201, 168, 76, 0.34), transparent 72%); }
+    .pixel-screen:has(#lm-svg-4.active) .pixel-landmark::before { background: radial-gradient(ellipse 70% 70% at 65% 70%, rgba(217, 119, 6, 0.28), transparent 72%); }
+    .pixel-screen:has(#lm-svg-5.active) .pixel-landmark::before { background: radial-gradient(ellipse 70% 70% at 65% 70%, rgba(45, 212, 191, 0.28), transparent 72%); }
+    .pixel-screen:has(#lm-svg-6.active) .pixel-landmark::before { background: radial-gradient(ellipse 70% 70% at 65% 70%, rgba(139, 92, 246, 0.34), transparent 72%); }
+    .pixel-screen:has(#lm-svg-7.active) .pixel-landmark::before { background: radial-gradient(ellipse 70% 70% at 65% 70%, rgba(236, 72, 153, 0.30), transparent 72%); }
+    .pixel-screen:has(#lm-svg-8.active) .pixel-landmark::before { background: radial-gradient(ellipse 70% 70% at 65% 70%, rgba(56, 189, 248, 0.28), transparent 72%); }
 
     /* Adjust layout on PC and Mobile */
     @media (max-width: 767px) {
@@ -1879,6 +1954,150 @@
       .pixel-indicator-bar {
         font-size: 0.7rem;
         padding: 6px 12px;
+      }
+      .pixel-cloud.cloud-2,
+      .pixel-cloud.cloud-3 {
+        display: none;
+      }
+      .pixel-leaf.leaf-4,
+      .pixel-leaf.leaf-5,
+      .pixel-leaf.leaf-6 {
+        display: none;
+      }
+      .pixel-moon {
+        width: 7px;
+        height: 7px;
+      }
+    }
+
+    /* --------------------------------------------------
+       10. ATMOSPHERE LAYER — moon glow, drifting clouds,
+       falling autumn leaves, vignette & CRT scanlines
+       -------------------------------------------------- */
+
+    /* Glowing 8-bit moon, ambient light source for the whole scene */
+    .pixel-moon {
+      position: absolute;
+      top: 10px;
+      right: 14%;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #fef3c7;
+      box-shadow: 0 0 6px 2px rgba(254, 243, 199, 0.75), 0 0 18px 6px rgba(254, 243, 199, 0.3);
+      animation: moonGlow 5s ease-in-out infinite;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    @keyframes moonGlow {
+      0%, 100% { opacity: 0.8; box-shadow: 0 0 6px 2px rgba(254, 243, 199, 0.7), 0 0 16px 5px rgba(254, 243, 199, 0.25); }
+      50% { opacity: 1; box-shadow: 0 0 8px 3px rgba(254, 243, 199, 0.9), 0 0 22px 8px rgba(254, 243, 199, 0.4); }
+    }
+
+    /* Drifting pixel-cloud silhouettes for parallax depth */
+    .pixel-cloud {
+      position: absolute;
+      left: 110%;
+      width: 6px;
+      height: 4px;
+      background: rgba(226, 232, 240, 0.22);
+      box-shadow:
+        -4px 0 0 rgba(226, 232, 240, 0.22),
+        4px 0 0 rgba(226, 232, 240, 0.22),
+        -2px -3px 0 rgba(226, 232, 240, 0.16),
+        2px -3px 0 rgba(226, 232, 240, 0.16);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .pixel-cloud.cloud-1 { top: 14px; animation: cloudDrift 42s linear infinite; }
+    .pixel-cloud.cloud-2 { top: 32px; transform: scale(1.5); opacity: 0.65; animation: cloudDriftReverse 58s linear infinite; animation-delay: -14s; }
+    .pixel-cloud.cloud-3 { top: 22px; transform: scale(0.8); opacity: 0.5; animation: cloudDrift 50s linear infinite; animation-delay: -28s; }
+
+    @keyframes cloudDrift {
+      from { left: 110%; }
+      to { left: -15%; }
+    }
+
+    @keyframes cloudDriftReverse {
+      from { left: -15%; }
+      to { left: 110%; }
+    }
+
+    /* Falling autumn leaves — a nod to the "Beijing Autumn Odyssey" theme */
+    .pixel-leaves {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 60;
+      pointer-events: none;
+    }
+
+    .pixel-leaf {
+      position: absolute;
+      top: -8px;
+      width: 3px;
+      height: 3px;
+      opacity: 0;
+      image-rendering: pixelated;
+      animation: leafFall linear infinite;
+    }
+
+    .leaf-1 { left: 8%;  background: #f59e0b; animation-duration: 6.2s; animation-delay: 0s; }
+    .leaf-2 { left: 24%; background: #ef4444; animation-duration: 7.6s; animation-delay: 1.4s; }
+    .leaf-3 { left: 41%; background: #eab308; animation-duration: 5.6s; animation-delay: 2.6s; }
+    .leaf-4 { left: 59%; background: #f97316; animation-duration: 8.2s; animation-delay: 0.7s; }
+    .leaf-5 { left: 75%; background: #dc2626; animation-duration: 6.9s; animation-delay: 3.3s; }
+    .leaf-6 { left: 90%; background: #ca8a04; animation-duration: 7.3s; animation-delay: 1.9s; }
+
+    @keyframes leafFall {
+      0%   { transform: translateY(-10px) translateX(0) rotate(0deg); opacity: 0; }
+      12%  { opacity: 0.9; }
+      50%  { transform: translateY(55px) translateX(8px) rotate(180deg); }
+      88%  { opacity: 0.85; }
+      100% { transform: translateY(130px) translateX(-6px) rotate(360deg); opacity: 0; }
+    }
+
+    /* Cinematic vignette framing the whole pixel scene */
+    .pixel-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.55) 100%);
+      pointer-events: none;
+      z-index: 90;
+    }
+
+    /* Subtle retro CRT scanlines for an authentic 8-bit screen feel (static, no blend mode to keep compositing cheap) */
+    .pixel-scanlines {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 3px);
+      pointer-events: none;
+      z-index: 91;
+    }
+
+    /* Smooth reveal transition whenever a day-card becomes active */
+    @keyframes dayCardReveal {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .day-card.active-day {
+      animation: dayCardReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pixel-family,
+      .pixel-family::after,
+      .pixel-moon,
+      .pixel-cloud,
+      .pixel-leaf,
+      .lm-svg.active,
+      .pixel-landmark::before,
+      .day-card.active-day,
+      .pixel-led-dot {
+        animation: none !important;
       }
     }
 </style>
@@ -1960,10 +2179,35 @@
           <div class="pixel-star" style="top: 10px; left: 45%;"></div>
           <div class="pixel-star" style="top: 20px; left: 65%;"></div>
           <div class="pixel-star" style="top: 12px; left: 80%;"></div>
+          <div class="pixel-star" style="top: 30px; left: 55%;"></div>
+          <div class="pixel-star" style="top: 8px; left: 92%;"></div>
         </div>
+
+        <!-- Glowing 8-bit moon (ambient light source) -->
+        <div class="pixel-moon"></div>
+
+        <!-- Drifting parallax cloud layer -->
+        <div class="pixel-cloud cloud-1"></div>
+        <div class="pixel-cloud cloud-2"></div>
+        <div class="pixel-cloud cloud-3"></div>
+
+        <!-- Cinematic vignette + CRT scanline overlay -->
+        <div class="pixel-vignette"></div>
+        <div class="pixel-scanlines"></div>
+
         <!-- Scrolling ground path -->
         <div class="pixel-ground"></div>
-        
+
+        <!-- Falling autumn leaves (foreground parallax) -->
+        <div class="pixel-leaves">
+          <span class="pixel-leaf leaf-1"></span>
+          <span class="pixel-leaf leaf-2"></span>
+          <span class="pixel-leaf leaf-3"></span>
+          <span class="pixel-leaf leaf-4"></span>
+          <span class="pixel-leaf leaf-5"></span>
+          <span class="pixel-leaf leaf-6"></span>
+        </div>
+
         <!-- Family (Walking Loop) -->
         <div class="pixel-family">
           <!-- Dad SVG -->
@@ -14738,14 +14982,25 @@
         titleElem.innerText = pixelDayTitles[dayId];
       }
       
-      // Toggle Landmark SVGs
-      document.querySelectorAll('.pixel-landmark .lm-svg').forEach(svg => {
+      // Cross-fade landmark SVGs. Only the incoming (and briefly the outgoing)
+      // SVG is ever rendered — the rest stay display:none so this stays cheap
+      // even though each landmark is built from 1000+ individual pixel rects.
+      const nextSvg = document.getElementById(`lm-svg-${dayNum}`);
+
+      document.querySelectorAll('.pixel-landmark .lm-svg.active').forEach(svg => {
+        if (svg === nextSvg) return;
         svg.classList.remove('active');
+        svg.classList.add('leaving');
+        window.clearTimeout(svg._lmHideTimer);
+        svg._lmHideTimer = window.setTimeout(() => {
+          svg.classList.remove('leaving');
+        }, 700);
       });
-      // Show landmark SVG for this day
-      const activeSvg = document.getElementById(`lm-svg-${dayNum}`);
-      if (activeSvg) {
-        activeSvg.classList.add('active');
+
+      if (nextSvg) {
+        window.clearTimeout(nextSvg._lmHideTimer);
+        nextSvg.classList.remove('leaving');
+        nextSvg.classList.add('active');
       }
     }
 
