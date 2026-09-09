@@ -2102,6 +2102,34 @@
     }
 
     /* --------------------------------------------------
+       12b. DAY STATUS STRIP (open-status / activity level / reason)
+       -------------------------------------------------- */
+    .day-status-strip {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .day-status-strip span {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .day-status-strip i {
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* --------------------------------------------------
        12. BOOKING DOSSIER (ticket/reservation reference page)
        -------------------------------------------------- */
     .booking-summary-chips {
@@ -6732,8 +6760,8 @@
             <rect x="118" y="23" width="1" height="1" fill="#475569" />
             <rect x="119" y="23" width="1" height="1" fill="#475569" />
           </svg>
-          <!-- Day 4 SVG: Yonghe Temple Pagoda & 798 Art District Chimney -->
-          <svg id="lm-svg-4" class="lm-svg" viewBox="0 0 120 24" xmlns="http://www.w3.org/2000/svg">
+          <!-- Day 5 SVG: Yonghe Temple Pagoda & 798 Art District Chimney -->
+          <svg id="lm-svg-5" class="lm-svg" viewBox="0 0 120 24" xmlns="http://www.w3.org/2000/svg">
             <rect x="105" y="0" width="1" height="1" fill="#f1f5f9" />
             <rect x="108" y="0" width="1" height="1" fill="#f1f5f9" />
             <rect x="112" y="0" width="1" height="1" fill="#f1f5f9" />
@@ -7914,8 +7942,8 @@
             <rect x="109" y="23" width="1" height="1" fill="#64748b" />
             <rect x="110" y="23" width="1" height="1" fill="#64748b" />
           </svg>
-          <!-- Day 5 SVG: Summer Palace Foxiangge Pagoda & Marble Boat -->
-          <svg id="lm-svg-5" class="lm-svg" viewBox="0 0 120 24" xmlns="http://www.w3.org/2000/svg">
+          <!-- Day 3 SVG: Summer Palace Foxiangge Pagoda & Marble Boat -->
+          <svg id="lm-svg-3" class="lm-svg" viewBox="0 0 120 24" xmlns="http://www.w3.org/2000/svg">
             <rect x="29" y="0" width="1" height="1" fill="#eab308" />
             <rect x="24" y="1" width="1" height="1" fill="#1d4ed8" />
             <rect x="25" y="1" width="1" height="1" fill="#1d4ed8" />
@@ -9071,8 +9099,8 @@
             <rect x="112" y="23" width="1" height="1" fill="#1d4ed8" />
             <rect x="118" y="23" width="1" height="1" fill="#1d4ed8" />
           </svg>
-          <!-- Day 3 SVG: Forbidden City Palace Hall & Tiananmen Square -->
-          <svg id="lm-svg-3" class="lm-svg" viewBox="0 0 120 24" xmlns="http://www.w3.org/2000/svg">
+          <!-- Day 4 SVG: Forbidden City Palace Hall & Tiananmen Square -->
+          <svg id="lm-svg-4" class="lm-svg" viewBox="0 0 120 24" xmlns="http://www.w3.org/2000/svg">
             <rect x="12" y="1" width="1" height="1" fill="#f1f5f9" />
             <rect x="13" y="1" width="1" height="1" fill="#f1f5f9" />
             <rect x="14" y="1" width="1" height="1" fill="#f1f5f9" />
@@ -12684,9 +12712,9 @@
     <div class="mobile-day-list">
       <button class="mobile-day-btn active" data-target="day1">วันที่ 1 🏨</button>
       <button class="mobile-day-btn" data-target="day2">วันที่ 2 🧗</button>
-      <button class="mobile-day-btn" data-target="day3">วันที่ 3 🏯</button>
-      <button class="mobile-day-btn" data-target="day4">วันที่ 4 🎨</button>
-      <button class="mobile-day-btn" data-target="day5">วันที่ 5 🛶</button>
+      <button class="mobile-day-btn" data-target="day3">วันที่ 3 🛶</button>
+      <button class="mobile-day-btn" data-target="day4">วันที่ 4 🏯</button>
+      <button class="mobile-day-btn" data-target="day5">วันที่ 5 🎨</button>
       <button class="mobile-day-btn" data-target="day6">วันที่ 6 🎢</button>
       <button class="mobile-day-btn" data-target="day7">วันที่ 7 🎭</button>
       <button class="mobile-day-btn" data-target="day8">วันที่ 8 ✈️</button>
@@ -12722,23 +12750,23 @@
                 <a href="#day3" class="day-tab" data-target="day3">
           <div class="tab-info">
             <span class="tab-num">วันที่ 3 · 19 ต.ค.</span>
-            <span class="tab-name">Forbidden City & Tiananmen Square</span>
+            <span class="tab-name">Summer Palace & Hutong</span>
           </div>
           <span class="tab-badge diff-heavy">เยอะ</span>
         </a>
         <a href="#day4" class="day-tab" data-target="day4">
           <div class="tab-info">
             <span class="tab-num">วันที่ 4 · 20 ต.ค.</span>
-            <span class="tab-name">Lama Temple, วัดขงจื๊อ & 798 Art</span>
+            <span class="tab-name">Forbidden City & Tiananmen Square</span>
           </div>
-          <span class="tab-badge diff-medium">ปานกลาง</span>
+          <span class="tab-badge diff-heavy">เยอะ</span>
         </a>
         <a href="#day5" class="day-tab" data-target="day5">
           <div class="tab-info">
             <span class="tab-num">วันที่ 5 · 21 ต.ค.</span>
-            <span class="tab-name">Summer Palace & Hutong</span>
+            <span class="tab-name">Lama Temple, วัดขงจื๊อ & 798 Art</span>
           </div>
-          <span class="tab-badge diff-heavy">เยอะ</span>
+          <span class="tab-badge diff-medium">ปานกลาง</span>
         </a>
         <a href="#day6" class="day-tab" data-target="day6">
           <div class="tab-info">
@@ -12752,7 +12780,7 @@
             <span class="tab-num">วันที่ 7 · 23 ต.ค.</span>
             <span class="tab-name">Temple of Heaven, Wangfujing & โชว์กายกรรม</span>
           </div>
-          <span class="tab-badge diff-heavy">เยอะ</span>
+          <span class="tab-badge diff-medium">ปานกลาง</span>
         </a>
         <a href="#day8" class="day-tab" data-target="day8">
           <div class="tab-info">
@@ -12802,7 +12830,7 @@
           <text x="212" y="100" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Shunyi (PEK Airport)</text>
           
           <!-- Haidian (West - Palaces) -->
-          <polygon class="map-zone zone-haidian" points="50,85 130,85 120,135 60,155" data-zone="Haidian" data-day="Day 5" />
+          <polygon class="map-zone zone-haidian" points="50,85 130,85 120,135 60,155" data-zone="Haidian" data-day="Day 3" />
           <text x="90" y="115" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Haidian (Palaces)</text>
 
           <!-- Central (Dongcheng/Xicheng - CitiGo, Forbidden City, etc) -->
@@ -12810,7 +12838,7 @@
           <text x="155" y="154" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Central (Hotel)</text>
           
           <!-- Chaoyang (East - 798, Sanlitun) -->
-          <polygon class="map-zone zone-chaoyang" points="190,125 250,125 240,185 190,185" data-zone="Chaoyang" data-day="Day 4, 7" />
+          <polygon class="map-zone zone-chaoyang" points="190,125 250,125 240,185 190,185" data-zone="Chaoyang" data-day="Day 5, 7" />
           <text x="220" y="160" fill="#ffffff" font-size="9" text-anchor="middle" font-weight="600" pointer-events="none">Chaoyang (Art)</text>
           
           <!-- Tongzhou (Southeast - Universal Beijing) -->
@@ -12901,8 +12929,14 @@
           </div>
         </div>
 
+        <div class="day-status-strip">
+          <span><i class="fa-solid fa-circle-check" style="color: var(--color-green);"></i> สถานะเปิดสถานที่: ✅ ตรวจสอบแล้ว — วันเดินทางถึง ไม่มีสถานที่ที่ต้องตรวจสอบวันปิด</span>
+          <span><i class="fa-solid fa-person-walking" style="color: var(--color-green);"></i> ระดับกิจกรรม: 🟩 เดินน้อย / วันพัก</span>
+          <span><i class="fa-solid fa-circle-info" style="color: var(--color-sky-blue);"></i> เหตุผลการจัดวัน: วันเดินทางถึง — ล็อกตามเที่ยวบิน TG614 ไม่เปลี่ยนแปลง</span>
+        </div>
+
         <div class="timeline">
-          
+
           <div class="timeline-item activity-transport">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
@@ -12985,6 +13019,12 @@
             <strong>การหลีกเลี่ยงคนเยอะและการเดินทาง</strong>
             <p>ออกเดินทางแต่เช้าตรู่เวลา 07:00 น. ด้วยรถเช่าส่วนตัว เพื่อไปถึงกำแพงเมืองจีนก่อนกลุ่มทัวร์ขนาดใหญ่ จะช่วยเลี่ยงฝูงชนและเดินเที่ยวชมทิวทัศน์ใบไม้เปลี่ยนสีได้อย่างสวยงามที่สุด</p>
           </div>
+        </div>
+
+        <div class="day-status-strip">
+          <span><i class="fa-solid fa-circle-check" style="color: var(--color-green);"></i> สถานะเปิดสถานที่: ✅ ตรวจสอบแล้ว — กำแพงเมืองจีนด่าน Mutianyu เปิดทุกวันไม่มีวันปิดประจำสัปดาห์</span>
+          <span><i class="fa-solid fa-person-walking" style="color: var(--color-soft-red);"></i> ระดับกิจกรรม: 🟥 เดินเยอะ</span>
+          <span><i class="fa-solid fa-circle-info" style="color: var(--color-sky-blue);"></i> เหตุผลการจัดวัน: คงวันเดิม (อาทิตย์) ไม่มีปัญหาวันปิด — ⚠️ ตามด้วยวันจันทร์-อังคารซึ่งจำเป็นต้องเป็นวันเดินเยอะต่อเนื่องเช่นกัน (ดูหมายเหตุความขัดแย้งท้ายหน้า) เพราะพระราชวังต้องห้ามและวัดขงจื๊อปิดวันจันทร์ ทำให้เหลือวันเปิดจริงให้จัดสลับได้จำกัด</span>
         </div>
 
         <div class="timeline">
@@ -13106,6 +13146,160 @@
         <header class="day-header">
           <div class="day-title-box">
             <h2 class="day-number-title">วันที่ 3 <span class="date">วันจันทร์ที่ 19 ตุลาคม 2026</span></h2>
+            <span class="day-main-theme">เที่ยว Summer Palace & ตรอก Hutong</span>
+          </div>
+          <span class="difficulty-badge diff-heavy">
+            <i class="fa-solid fa-person-running"></i> ความหนัก: เยอะ
+          </span>
+        </header>
+
+        <div class="tips-warnings-box">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div class="tips-content">
+            <strong>การเดินทางและความปลอดภัยในทัวร์ Hutong</strong>
+            <p>พระราชวังฤดูร้อนอยู่ทางฝั่งตะวันตกเฉียงเหนือของตัวเมืองปักกิ่ง ควรเดินทางด้วยรถไฟใต้ดิน Line 4 สำหรับการท่องเที่ยวตรอก Hutong แนะนำให้นั่งรถสามล้อถีบที่เป็นทางการที่ท่ารถใกล้สถานีชิชาไห่ เพื่อความปลอดภัยและหลีกเลี่ยงการถูกโก่งราคา</p>
+          </div>
+        </div>
+
+        <div class="day-status-strip">
+          <span><i class="fa-solid fa-circle-check" style="color: var(--color-green);"></i> สถานะเปิดสถานที่: ✅ ตรวจสอบแล้ว — พระราชวังฤดูร้อนเปิดทุกวันไม่มีวันปิดประจำสัปดาห์ (จุดในสุด 园中园 ปิดจันทร์ แต่ไม่กระทบ Long Corridor/Longevity Hill/เรือที่แผนนี้ไป), ตรอก Hutong/Houhai ไม่มีวันปิด</span>
+          <span><i class="fa-solid fa-person-walking" style="color: var(--color-soft-red);"></i> ระดับกิจกรรม: 🟥 เดินเยอะ</span>
+          <span><i class="fa-solid fa-circle-info" style="color: var(--color-sky-blue);"></i> เหตุผลการจัดวัน: ย้ายมาจากวันพุธเดิม เพื่อให้วันจันทร์ (ซึ่งพระราชวังต้องห้ามปิด) ใช้สถานที่ที่เปิดแน่นอนแทน และให้วันพุธว่างเป็นวันเบาก่อน Universal</span>
+        </div>
+
+        <div class="timeline">
+
+          <div class="timeline-item activity-transport">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🚇</span> 08:00 - 09:00
+              </div>
+              <h3 class="timeline-title">เดินทางด้วยรถไฟใต้ดินไป Summer Palace</h3>
+              <p class="timeline-desc"><strong>เส้นทางรถไฟใต้ดินโดยละเอียด:</strong> จากโรงแรมเดินเท้าไปยังสถานี <strong>Qianmen (前门站)</strong> เข้าทาง <strong>Exit B หรือ Exit C</strong> ขึ้นรถไฟใต้ดิน <strong>Line 2 (สาย 2 วงแหวน)</strong> นั่งฝั่งวงแหวนรอบนอกไปลงสถานี <strong>Xizhimen (西直门站)</strong> เดินตามป้ายเชื่อมสายเปลี่ยนขบวนเป็น <strong>Line 4</strong> นั่งมุ่งหน้าทิศเหนือไปลงสถานี <strong>Beigongmen (北宫门站)</strong> เดินออกทาง <strong>Exit D</strong> แล้วเดินเท้าต่อประมาณ 5-10 นาทีเข้าสู่ประตูทิศเหนือ (Beigongmen) ของพระราชวังฤดูร้อน (ใช้เวลาเดินทางรวมประมาณ 50 นาที)</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 09:00 - 12:00
+              </div>
+              <h3 class="timeline-title">Summer Palace Tour (颐和园)</h3>
+              <p class="timeline-desc">ชมสถาปัตยกรรมทางเดินยาวระเบียง Long Corridor กว่า 700 เมตร ปีนขึ้นเนินเขาอายุยืน (Longevity Hill) ถ่ายภาพทัศนียภาพ และนั่งเรือมังกรข้ามทะเลสาบคุนหมิงอันเงียบสงบ ไปออกทางประตูใหญ่ทิศตะวันออก (East Palace Gate)</p>
+
+              <!-- Attraction Callout -->
+              <div class="attraction-callout">
+                <div class="callout-header">
+                  <h4 class="callout-title">Summer Palace <span class="chinese">(颐和园)</span></h4>
+                  <span class="callout-tag">สถานที่ไฮไลท์</span>
+                </div>
+                <div class="callout-body">
+                  <p>อุทยานราชสำนักขนาดมหึมาที่โอบล้อมทะเลสาบ Kunming ซึ่งทำหน้าที่เป็นพระราชวังฤดูร้อนสำหรับพักผ่อนของจักรพรรดิราชวงศ์ชิง</p>
+                  <ul class="callout-bullets">
+                    <li>Long Corridor: ทางเดินไม้ที่ทาสีและวาดลวดลายวรรณกรรมจีนประวัติศาสตร์อย่างวิจิตรบรรจง ยาวกว่า 700 เมตร</li>
+                    <li>Scenic Boat Ride: นั่งเรือมังกรข้ามทะเลสาบเพื่อรับสายลมเย็นและทอดสายตามองดูวิหารกลางภูเขา</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 12:00 - 13:00
+              </div>
+              <h3 class="timeline-title">อาหารกลางวัน: ร้านอาหารท้องถิ่น</h3>
+              <p class="timeline-desc">รับประทานอาหารกลางวันที่ร้านอาหารจีนหรือร้านท้องถิ่นใกล้ประตูหลักทิศตะวันออกของพระราชวังฤดูร้อน</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-transport">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🚇</span> 13:00 - 13:30
+              </div>
+              <h3 class="timeline-title">เดินทางสู่ย่านหอกลอง & Houhai ด้วยรถไฟใต้ดิน (Metro)</h3>
+              <p class="timeline-desc"><strong>เส้นทางรถไฟใต้ดินโดยละเอียด:</strong> จากทางออกประตูทิศตะวันออกของพระราชวังฤดูร้อน เดินไปยังสถานีรถไฟใต้ดิน <strong>Beigongmen (北宫门站)</strong> ขึ้นรถไฟใต้ดิน <strong>Line 4</strong> (มุ่งหน้าทิศใต้) ไปลงสถานี <strong>Ping'anli (平安里站)</strong> เปลี่ยนขบวนเป็น <strong>Line 6</strong> นั่งไปลงที่สถานี <strong>Beihai North (北海北站)</strong> เดินออกทาง <strong>Exit B</strong> เดินเลียบกำแพงสวน Beihai Park ไปทางทิศเหนือประมาณ 10 นาที (จะเห็นเจดีย์ขาวทิเบตของ Beihai Park โดดเด่นอยู่ไกลๆ ด้านในกำแพง) ก็จะถึงบริเวณหอกลองโบราณและทะเลสาบ Houhai</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-sightseeing">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🏯</span> 13:30 - 15:30
+              </div>
+              <h3 class="timeline-title">ชมหอกลอง Drum Tower & ทัวร์สามล้อถีบตรอกโบราณ Hutong</h3>
+              <p class="timeline-desc"><strong>รายละเอียดการเดินทาง:</strong> เดินถึงหอกลองโบราณ (Drum Tower) นั่งรถสามล้อถีบโบราณลัดเลาะนำเที่ยวชมวิถีชีวิตดั้งเดิมในตรอกซอกซอยเก่าแก่ปักกิ่งและชมบ้านเรือนสี่ประสานโบราณ (Siheyuan) รอบทะเลสาบชิชาไห่ (Houhai Hutongs)</p>
+
+              <!-- Attraction Callout -->
+              <div class="attraction-callout">
+                <div class="callout-header">
+                  <h4 class="callout-title">Hutong Rickshaw Tour <span class="chinese">(胡同胡同)</span></h4>
+                  <span class="callout-tag">สถานที่ไฮไลท์</span>
+                </div>
+                <div class="callout-body">
+                  <p>สัมผัสบรรยากาศย้อนยุคด้วยการนั่งรถสามล้อถีบสำรวจตรอกซอยเก่าแก่และหมู่บ้านแบบจีนโบราณในปักกิ่ง</p>
+                  <ul class="callout-bullets">
+                    <li>วิถีชีวิต: มีโอกาสเยี่ยมชมบ้านสี่ประสานแบบดั้งเดิม (Siheyuan)</li>
+                    <li>เส้นทาง: ทัวร์จะแล่นลัดเลาะเลียบทะเลสาบ Houhai และย่านชุมชนเก่าแก่</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-shopping">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🛍️</span> 15:30 - 16:30
+              </div>
+              <h3 class="timeline-title">ช้อปปิ้งที่ตรอกโบราณ Nanluoguxiang (南锣鼓巷)</h3>
+              <p class="timeline-desc"><strong>รายละเอียดการเดินทาง:</strong> จากหอกลอง เดินเท้าลัดเลาะตรอกซอยไปทางทิศตะวันออกประมาณ 15 นาที (1.2 กม.) เข้าสู่ทางเข้าทิศเหนือของตรอก <strong>Nanluoguxiang (南锣鼓巷)</strong> พาลูกเดินเล่นช้อปปิ้งของฝากน่ารักๆ และลองทานขนมสตรีทฟู้ดเล็กๆ น้อยๆ จนสุดฝั่งทิศใต้</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-food">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🍜</span> 16:30 - 18:00
+              </div>
+              <h3 class="timeline-title">อาหารเย็นเลียบทะเลสาบ Houhai</h3>
+              <p class="timeline-desc">รับประทานอาหารเย็นบรรยากาศอบอุ่นสบายตาเลียบทะเลสาบ Houhai (เลือกได้ 2 ทางเลือก):
+                <br>• <strong>ทางเลือกที่ 1: Fangzhuanchang 69 Zhajiangmian (方砖厂69号炸酱面)</strong> - ชิมบะหมี่ดำคลุกเต้าเจี้ยวปักกิ่งดั้งเดิม มิชลินไกด์ เส้นหนานุ่มหอมซอสกลมกล่อมที่เด็กๆ ทานสนุก
+                <br>• <strong>ทางเลือกที่ 2: Yaoji Chaogan (姚记炒肝)</strong> - ร้านตับผัดและซาลาเปานึ่งโบราณระดับร้อยปีริมหอกลอง รสชาติเข้มข้นถูกใจครอบครัวนักเดินทาง</p>
+            </div>
+          </div>
+
+          <div class="timeline-item activity-transport">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">
+                <span class="activity-emoji">🚇</span> 18:00 - 19:00
+              </div>
+              <h3 class="timeline-title">เดินทางกลับโรงแรมที่พักด้วยรถไฟใต้ดิน (Metro)</h3>
+              <p class="timeline-desc"><strong>เส้นทางรถไฟใต้ดินโดยละเอียด:</strong> จากย่าน Houhai เดินไปยังสถานีรถไฟใต้ดิน <strong>Nanluoguxiang (南锣鼓巷站)</strong> (บริเวณปากทางเข้าทิศใต้) ขึ้นรถไฟใต้ดิน <strong>Line 8</strong> (มุ่งหน้าทิศใต้) นั่งยาวตรงไปลงสถานี <strong>Qianmen (前门站)</strong> ออกทาง <strong>Exit B หรือ Exit C</strong> เดินกลับสู่ที่พัก CitiGo Hotel พักผ่อนให้เต็มที่</p>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Day 4 -->
+      <article class="day-card" id="day4">
+        <div class="day-anchor"></div>
+        <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+
+        <header class="day-header">
+          <div class="day-title-box">
+            <h2 class="day-number-title">วันที่ 4 <span class="date">วันอังคารที่ 20 ตุลาคม 2026</span></h2>
             <span class="day-main-theme">เที่ยว Forbidden City, Tiananmen Square & Jingshan Park</span>
           </div>
           <span class="difficulty-badge diff-heavy">
@@ -13119,6 +13313,12 @@
             <strong>การจองตั๋วล่วงหน้าที่สำคัญมาก</strong>
             <p><strong>ตั๋วเข้าชม Forbidden City ต้องจองออนไลน์ล่วงหน้า 7 วัน</strong> (ระบบจะเริ่มเปิดให้จองเวลา 20:00 น. ตามเวลาปักกิ่ง) และต้องกรอกข้อมูลหนังสือเดินทาง ตั๋วเข้าชมจัตุรัส Tiananmen ก็ต้องจองล่วงหน้าเช่นกัน วันนี้เข้าชมพระราชวังต้องห้ามก่อนแล้วค่อยย้อนกลับมาเดินชมจัตุรัสเทียนอันเหมินแบบเต็มอิ่มในช่วงบ่าย</p>
           </div>
+        </div>
+
+        <div class="day-status-strip">
+          <span><i class="fa-solid fa-circle-check" style="color: var(--color-green);"></i> สถานะเปิดสถานที่: ✅ ตรวจสอบแล้ว — พระราชวังต้องห้ามปิดเฉพาะวันจันทร์เท่านั้น วันอังคารเปิดปกติ, Tiananmen Square และ Jingshan Park ไม่มีวันปิดประจำสัปดาห์</span>
+          <span><i class="fa-solid fa-person-walking" style="color: var(--color-soft-red);"></i> ระดับกิจกรรม: 🟥 เดินเยอะ</span>
+          <span><i class="fa-solid fa-circle-info" style="color: var(--color-sky-blue);"></i> เหตุผลการจัดวัน: ย้ายจากวันจันทร์เดิม (พระราชวังต้องห้ามปิดวันจันทร์) มาวันอังคารซึ่งเปิดแน่นอน — ยังคงเป็นวันเดินเยอะเหมือนเดิม เพียงแค่เปลี่ยนวันที่ให้เข้าชมได้จริง</span>
         </div>
 
         <div class="timeline">
@@ -13261,14 +13461,14 @@
         </div>
       </article>
 
-      <!-- Day 4 -->
-      <article class="day-card" id="day4">
+      <!-- Day 5 -->
+      <article class="day-card" id="day5">
         <div class="day-anchor"></div>
         <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
 
         <header class="day-header">
           <div class="day-title-box">
-            <h2 class="day-number-title">วันที่ 4 <span class="date">วันอังคารที่ 20 ตุลาคม 2026</span></h2>
+            <h2 class="day-number-title">วันที่ 5 <span class="date">วันพุธที่ 21 ตุลาคม 2026</span></h2>
             <span class="day-main-theme">เที่ยว Lama Temple, วัดขงจื๊อ, 798 Art & ช้อปปิ้งย่าน Sanlitun</span>
           </div>
           <span class="difficulty-badge diff-medium">
@@ -13284,8 +13484,14 @@
           </div>
         </div>
 
+        <div class="day-status-strip">
+          <span><i class="fa-solid fa-circle-check" style="color: var(--color-green);"></i> สถานะเปิดสถานที่: ✅ ตรวจสอบแล้ว — วัดลามะเปิดทุกวันไม่มีวันปิด, วัดขงจื๊อ & กั่วจื่อเจี้ยนปิดเฉพาะวันจันทร์ (พุธเปิดปกติ), 798 Art District และ Sanlitun เป็นย่านเปิดตลอด ไม่มีวันปิด</span>
+          <span><i class="fa-solid fa-person-walking" style="color: var(--color-orange);"></i> ระดับกิจกรรม: 🟨 เดินปานกลาง</span>
+          <span><i class="fa-solid fa-circle-info" style="color: var(--color-sky-blue);"></i> เหตุผลการจัดวัน: ย้ายมาจากวันอังคารเดิม เพื่อให้เป็นวันเบาก่อนวันไป Universal Beijing Resort (พฤหัสฯ) ตามหลักสลับวันเดินเยอะ-เบา และวัดขงจื๊อปิดวันจันทร์อยู่แล้วจึงวางในวันจันทร์ไม่ได้</span>
+        </div>
+
         <div class="timeline">
-          
+
           <div class="timeline-item activity-transport">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
@@ -13390,7 +13596,7 @@
               </div>
               <h3 class="timeline-title">798 Art District (798艺术区)</h3>
               <p class="timeline-desc">เดินถ่ายรูปคู่กับปฏิมากรรมล้ำยุค ชมแกลเลอรี่ภาพวาด และนิทรรศการศิลปะร่วมสมัยของศิลปินชั้นนำระดับนานาชาติ ภายใต้โครงสร้างอาคารโรงงานทหารเก่าในยุคสงครามเย็น</p>
-              
+
               <!-- Attraction Callout -->
               <div class="attraction-callout">
                 <div class="callout-header">
@@ -13454,154 +13660,6 @@
 
       </article>
 
-      <!-- Day 5 -->
-      <article class="day-card" id="day5">
-        <div class="day-anchor"></div>
-        <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
-
-        <header class="day-header">
-          <div class="day-title-box">
-            <h2 class="day-number-title">วันที่ 5 <span class="date">วันพุธที่ 21 ตุลาคม 2026</span></h2>
-            <span class="day-main-theme">เที่ยว Summer Palace & ตรอก Hutong</span>
-          </div>
-          <span class="difficulty-badge diff-heavy">
-            <i class="fa-solid fa-person-running"></i> ความหนัก: เยอะ
-          </span>
-        </header>
-
-        <div class="tips-warnings-box">
-          <i class="fa-solid fa-circle-exclamation"></i>
-          <div class="tips-content">
-            <strong>การเดินทางและความปลอดภัยในทัวร์ Hutong</strong>
-            <p>พระราชวังฤดูร้อนอยู่ทางฝั่งตะวันตกเฉียงเหนือของตัวเมืองปักกิ่ง ควรเดินทางด้วยรถไฟใต้ดิน Line 4 สำหรับการท่องเที่ยวตรอก Hutong แนะนำให้นั่งรถสามล้อถีบที่เป็นทางการที่ท่ารถใกล้สถานีชิชาไห่ เพื่อความปลอดภัยและหลีกเลี่ยงการถูกโก่งราคา</p>
-          </div>
-        </div>
-
-        <div class="timeline">
-
-          <div class="timeline-item activity-transport">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-time">
-                <span class="activity-emoji">🚇</span> 08:00 - 09:00
-              </div>
-              <h3 class="timeline-title">เดินทางด้วยรถไฟใต้ดินไป Summer Palace</h3>
-              <p class="timeline-desc"><strong>เส้นทางรถไฟใต้ดินโดยละเอียด:</strong> จากโรงแรมเดินเท้าไปยังสถานี <strong>Qianmen (前门站)</strong> เข้าทาง <strong>Exit B หรือ Exit C</strong> ขึ้นรถไฟใต้ดิน <strong>Line 2 (สาย 2 วงแหวน)</strong> นั่งฝั่งวงแหวนรอบนอกไปลงสถานี <strong>Xizhimen (西直门站)</strong> เดินตามป้ายเชื่อมสายเปลี่ยนขบวนเป็น <strong>Line 4</strong> นั่งมุ่งหน้าทิศเหนือไปลงสถานี <strong>Beigongmen (北宫门站)</strong> เดินออกทาง <strong>Exit D</strong> แล้วเดินเท้าต่อประมาณ 5-10 นาทีเข้าสู่ประตูทิศเหนือ (Beigongmen) ของพระราชวังฤดูร้อน (ใช้เวลาเดินทางรวมประมาณ 50 นาที)</p>
-            </div>
-          </div>
-
-          <div class="timeline-item activity-sightseeing">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-time">
-                <span class="activity-emoji">🏯</span> 09:00 - 12:00
-              </div>
-              <h3 class="timeline-title">Summer Palace Tour (颐和园)</h3>
-              <p class="timeline-desc">ชมสถาปัตยกรรมทางเดินยาวระเบียง Long Corridor กว่า 700 เมตร ปีนขึ้นเนินเขาอายุยืน (Longevity Hill) ถ่ายภาพทัศนียภาพ และนั่งเรือมังกรข้ามทะเลสาบคุนหมิงอันเงียบสงบ ไปออกทางประตูใหญ่ทิศตะวันออก (East Palace Gate)</p>
-
-              <!-- Attraction Callout -->
-              <div class="attraction-callout">
-                <div class="callout-header">
-                  <h4 class="callout-title">Summer Palace <span class="chinese">(颐和园)</span></h4>
-                  <span class="callout-tag">สถานที่ไฮไลท์</span>
-                </div>
-                <div class="callout-body">
-                  <p>อุทยานราชสำนักขนาดมหึมาที่โอบล้อมทะเลสาบ Kunming ซึ่งทำหน้าที่เป็นพระราชวังฤดูร้อนสำหรับพักผ่อนของจักรพรรดิราชวงศ์ชิง</p>
-                  <ul class="callout-bullets">
-                    <li>Long Corridor: ทางเดินไม้ที่ทาสีและวาดลวดลายวรรณกรรมจีนประวัติศาสตร์อย่างวิจิตรบรรจง ยาวกว่า 700 เมตร</li>
-                    <li>Scenic Boat Ride: นั่งเรือมังกรข้ามทะเลสาบเพื่อรับสายลมเย็นและทอดสายตามองดูวิหารกลางภูเขา</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item activity-food">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-time">
-                <span class="activity-emoji">🍜</span> 12:00 - 13:00
-              </div>
-              <h3 class="timeline-title">อาหารกลางวัน: ร้านอาหารท้องถิ่น</h3>
-              <p class="timeline-desc">รับประทานอาหารกลางวันที่ร้านอาหารจีนหรือร้านท้องถิ่นใกล้ประตูหลักทิศตะวันออกของพระราชวังฤดูร้อน</p>
-            </div>
-          </div>
-
-          <div class="timeline-item activity-transport">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-time">
-                <span class="activity-emoji">🚇</span> 13:00 - 13:30
-              </div>
-              <h3 class="timeline-title">เดินทางสู่ย่านหอกลอง & Houhai ด้วยรถไฟใต้ดิน (Metro)</h3>
-              <p class="timeline-desc"><strong>เส้นทางรถไฟใต้ดินโดยละเอียด:</strong> จากทางออกประตูทิศตะวันออกของพระราชวังฤดูร้อน เดินไปยังสถานีรถไฟใต้ดิน <strong>Beigongmen (北宫门站)</strong> ขึ้นรถไฟใต้ดิน <strong>Line 4</strong> (มุ่งหน้าทิศใต้) ไปลงสถานี <strong>Ping'anli (平安里站)</strong> เปลี่ยนขบวนเป็น <strong>Line 6</strong> นั่งไปลงที่สถานี <strong>Beihai North (北海北站)</strong> เดินออกทาง <strong>Exit B</strong> เดินเลียบกำแพงสวน Beihai Park ไปทางทิศเหนือประมาณ 10 นาที (จะเห็นเจดีย์ขาวทิเบตของ Beihai Park โดดเด่นอยู่ไกลๆ ด้านในกำแพง) ก็จะถึงบริเวณหอกลองโบราณและทะเลสาบ Houhai</p>
-            </div>
-          </div>
-
-          <div class="timeline-item activity-sightseeing">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-time">
-                <span class="activity-emoji">🏯</span> 13:30 - 15:30
-              </div>
-              <h3 class="timeline-title">ชมหอกลอง Drum Tower & ทัวร์สามล้อถีบตรอกโบราณ Hutong</h3>
-              <p class="timeline-desc"><strong>รายละเอียดการเดินทาง:</strong> เดินถึงหอกลองโบราณ (Drum Tower) นั่งรถสามล้อถีบโบราณลัดเลาะนำเที่ยวชมวิถีชีวิตดั้งเดิมในตรอกซอกซอยเก่าแก่ปักกิ่งและชมบ้านเรือนสี่ประสานโบราณ (Siheyuan) รอบทะเลสาบชิชาไห่ (Houhai Hutongs)</p>
-
-              <!-- Attraction Callout -->
-              <div class="attraction-callout">
-                <div class="callout-header">
-                  <h4 class="callout-title">Hutong Rickshaw Tour <span class="chinese">(胡同胡同)</span></h4>
-                  <span class="callout-tag">สถานที่ไฮไลท์</span>
-                </div>
-                <div class="callout-body">
-                  <p>สัมผัสบรรยากาศย้อนยุคด้วยการนั่งรถสามล้อถีบสำรวจตรอกซอยเก่าแก่และหมู่บ้านแบบจีนโบราณในปักกิ่ง</p>
-                  <ul class="callout-bullets">
-                    <li>วิถีชีวิต: มีโอกาสเยี่ยมชมบ้านสี่ประสานแบบดั้งเดิม (Siheyuan)</li>
-                    <li>เส้นทาง: ทัวร์จะแล่นลัดเลาะเลียบทะเลสาบ Houhai และย่านชุมชนเก่าแก่</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item activity-shopping">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-time">
-                <span class="activity-emoji">🛍️</span> 15:30 - 16:30
-              </div>
-              <h3 class="timeline-title">ช้อปปิ้งที่ตรอกโบราณ Nanluoguxiang (南锣鼓巷)</h3>
-              <p class="timeline-desc"><strong>รายละเอียดการเดินทาง:</strong> จากหอกลอง เดินเท้าลัดเลาะตรอกซอยไปทางทิศตะวันออกประมาณ 15 นาที (1.2 กม.) เข้าสู่ทางเข้าทิศเหนือของตรอก <strong>Nanluoguxiang (南锣鼓巷)</strong> พาลูกเดินเล่นช้อปปิ้งของฝากน่ารักๆ และลองทานขนมสตรีทฟู้ดเล็กๆ น้อยๆ จนสุดฝั่งทิศใต้</p>
-            </div>
-          </div>
-
-          <div class="timeline-item activity-food">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-time">
-                <span class="activity-emoji">🍜</span> 16:30 - 18:00
-              </div>
-              <h3 class="timeline-title">อาหารเย็นเลียบทะเลสาบ Houhai</h3>
-              <p class="timeline-desc">รับประทานอาหารเย็นบรรยากาศอบอุ่นสบายตาเลียบทะเลสาบ Houhai (เลือกได้ 2 ทางเลือก):
-                <br>• <strong>ทางเลือกที่ 1: Fangzhuanchang 69 Zhajiangmian (方砖厂69号炸酱面)</strong> - ชิมบะหมี่ดำคลุกเต้าเจี้ยวปักกิ่งดั้งเดิม มิชลินไกด์ เส้นหนานุ่มหอมซอสกลมกล่อมที่เด็กๆ ทานสนุก
-                <br>• <strong>ทางเลือกที่ 2: Yaoji Chaogan (姚记炒肝)</strong> - ร้านตับผัดและซาลาเปานึ่งโบราณระดับร้อยปีริมหอกลอง รสชาติเข้มข้นถูกใจครอบครัวนักเดินทาง</p>
-            </div>
-          </div>
-
-          <div class="timeline-item activity-transport">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-time">
-                <span class="activity-emoji">🚇</span> 18:00 - 19:00
-              </div>
-              <h3 class="timeline-title">เดินทางกลับโรงแรมที่พักด้วยรถไฟใต้ดิน (Metro)</h3>
-              <p class="timeline-desc"><strong>เส้นทางรถไฟใต้ดินโดยละเอียด:</strong> จากย่าน Houhai เดินไปยังสถานีรถไฟใต้ดิน <strong>Nanluoguxiang (南锣鼓巷站)</strong> (บริเวณปากทางเข้าทิศใต้) ขึ้นรถไฟใต้ดิน <strong>Line 8</strong> (มุ่งหน้าทิศใต้) นั่งยาวตรงไปลงสถานี <strong>Qianmen (前门站)</strong> ออกทาง <strong>Exit B หรือ Exit C</strong> เดินกลับสู่ที่พัก CitiGo Hotel พักผ่อนให้เต็มที่</p>
-            </div>
-          </div>
-
-        </div>
-      </article>
-
       <!-- Day 6 -->
       <article class="day-card" id="day6">
         <div class="day-anchor"></div>
@@ -13623,6 +13681,12 @@
             <strong>การเตรียมตัวไปสวนสนุก</strong>
             <p>กรุณาเตรียมบัตรผ่านประตูที่ซื้อล่วงหน้าออนไลน์และพกหนังสือเดินทางตัวจริงไปเพื่อเข้าสวนสนุก ควรดาวน์โหลดแอปพลิเคชัน Universal Beijing Resort เพื่อเช็คแผนที่และเวลารอคิวของเครื่องเล่นแต่ละตัว</p>
           </div>
+        </div>
+
+        <div class="day-status-strip">
+          <span><i class="fa-solid fa-circle-check" style="color: var(--color-green);"></i> สถานะเปิดสถานที่: ✅ ตรวจสอบแล้ว — สวนสนุกเปิดทุกวันไม่มีวันปิดประจำสัปดาห์</span>
+          <span><i class="fa-solid fa-person-walking" style="color: var(--color-soft-red);"></i> ระดับกิจกรรม: 🟥 เดินเยอะ (ล็อกวันตายตัว ห้ามย้าย)</span>
+          <span><i class="fa-solid fa-circle-info" style="color: var(--color-sky-blue);"></i> เหตุผลการจัดวัน: วันไป Universal ล็อกไว้ตามเดิม — วันก่อนหน้า (พุธ) และวันถัดไป (ศุกร์) จัดให้เป็นวันเดินปานกลาง/เบาเพื่อเป็นวันพักคั่นก่อน-หลังวันที่หนักที่สุดของทริป</span>
         </div>
 
         <div class="timeline">
@@ -13746,8 +13810,8 @@
             <h2 class="day-number-title">วันที่ 7 <span class="date">วันศุกร์ที่ 23 ตุลาคม 2026</span></h2>
             <span class="day-main-theme">เที่ยว Temple of Heaven, ช้อปปิ้ง Wangfujing & ชมกายกรรมจ้าวหยางยามเย็น</span>
           </div>
-          <span class="difficulty-badge diff-heavy">
-            <i class="fa-solid fa-person-running"></i> ความหนัก: เยอะ
+          <span class="difficulty-badge diff-medium">
+            <i class="fa-solid fa-face-smile-beam"></i> ความหนัก: ปานกลาง
           </span>
         </header>
 
@@ -13757,6 +13821,12 @@
             <strong>เที่ยว Temple of Heaven ช่วงเช้า ก่อนช้อปปิ้งและโชว์กายกรรมยามเย็น</strong>
             <p>เช้านี้แวะเที่ยว Temple of Heaven แบบสบายๆ ไม่เร่งรีบ (ควรซื้อตั๋วรวมล่วงหน้าหรือหน้างานก็ได้) ก่อนไปช้อปปิ้งพักผ่อนต่อที่ Wangfujing และควรเริ่มทยอยเก็บกระเป๋าเดินทางบางส่วนไว้ล่วงหน้าเพราะพรุ่งนี้ต้องเช็คเอาท์แล้ว ส่วนช่วงเย็นมีนัดชมโชว์กายกรรมจ้าวหยาง <strong>กรุณาเตรียมบัตรที่จองไว้ล่วงหน้าออนไลน์ให้พร้อม</strong> และเผื่อเวลาเดินทางข้ามฝั่งเมืองจาก Wangfujing ไปยังโรงละครด้วย</p>
           </div>
+        </div>
+
+        <div class="day-status-strip">
+          <span><i class="fa-solid fa-circle-check" style="color: var(--color-green);"></i> สถานะเปิดสถานที่: ✅ ตรวจสอบแล้ว — หอบูชาฟ้าเทียนถันปิดเฉพาะจุดชมภายในทุกวันจันทร์ (ศุกร์เปิดปกติ), Wangfujing และโรงละครจ้าวหยางไม่มีวันปิด</span>
+          <span><i class="fa-solid fa-person-walking" style="color: var(--color-orange);"></i> ระดับกิจกรรม: 🟨 เดินปานกลาง</span>
+          <span><i class="fa-solid fa-circle-info" style="color: var(--color-sky-blue);"></i> เหตุผลการจัดวัน: คงวันเดิม (ศุกร์) — จัดเป็นวันเบา/ปานกลางต่อจาก Universal (พฤหัสฯ) โดยเฉพาะ เพื่อให้ครอบครัวได้พักหลังวันที่เดินเยอะที่สุดของทริป</span>
         </div>
 
         <div class="timeline">
@@ -13975,8 +14045,14 @@
           </div>
         </div>
 
+        <div class="day-status-strip">
+          <span><i class="fa-solid fa-circle-check" style="color: var(--color-green);"></i> สถานะเปิดสถานที่: ✅ ตรวจสอบแล้ว — วันเดินทางกลับ ไม่มีสถานที่ที่ต้องตรวจสอบวันปิด</span>
+          <span><i class="fa-solid fa-person-walking" style="color: var(--color-green);"></i> ระดับกิจกรรม: 🟩 เดินน้อย / วันพัก</span>
+          <span><i class="fa-solid fa-circle-info" style="color: var(--color-sky-blue);"></i> เหตุผลการจัดวัน: วันเดินทางกลับ — ล็อกตามเที่ยวบิน TG615 ไม่เปลี่ยนแปลง</span>
+        </div>
+
         <div class="timeline">
-          
+
           <div class="timeline-item activity-hotel">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
@@ -14080,7 +14156,7 @@
               <div class="restaurant-meta-grid">
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
-                  <span class="restaurant-meta-val val-highlight-day">วันที่ 3 (วันพระราชวังต้องห้าม) หรือ วันที่ 1 / วันที่ 8</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 4 (วันพระราชวังต้องห้าม) หรือ วันที่ 1 / วันที่ 8</span>
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
@@ -14122,7 +14198,7 @@
               <div class="restaurant-meta-grid">
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
-                  <span class="restaurant-meta-val val-highlight-day">วันที่ 3 (มื้อค่ำ สาขา Qianmen ใกล้โรงแรม) หรือ วันที่ 7 (เช้าเที่ยวหอบูชาฟ้าเทียนถาน)</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 4 (มื้อค่ำ สาขา Qianmen ใกล้โรงแรม) หรือ วันที่ 7 (เช้าเที่ยวหอบูชาฟ้าเทียนถาน)</span>
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
@@ -14164,7 +14240,7 @@
               <div class="restaurant-meta-grid">
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
-                  <span class="restaurant-meta-val val-highlight-day">วันที่ 4 (วันเดินเที่ยว Lama Temple / 798 / Sanlitun)</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 5 (วันเดินเที่ยว Lama Temple / 798 / Sanlitun)</span>
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
@@ -14248,7 +14324,7 @@
               <div class="restaurant-meta-grid">
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
-                  <span class="restaurant-meta-val val-highlight-day">วันที่ 5 (วันเที่ยว Summer Palace & Hutong)</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 3 (วันเที่ยว Summer Palace & Hutong)</span>
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
@@ -14290,7 +14366,7 @@
               <div class="restaurant-meta-grid">
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
-                  <span class="restaurant-meta-val val-highlight-day">วันที่ 5 (วันเดินตรอก Hutong & ถนน Nanluoguxiang)</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 3 (วันเดินตรอก Hutong & ถนน Nanluoguxiang)</span>
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
@@ -14416,7 +14492,7 @@
               <div class="restaurant-meta-grid">
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
-                  <span class="restaurant-meta-val val-highlight-day">วันที่ 5 หรือ วันที่ 4 (หลังจากเที่ยววัดลามะ)</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 5 (หลังจากเที่ยววัดลามะ)</span>
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
@@ -14458,7 +14534,7 @@
               <div class="restaurant-meta-grid">
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
-                  <span class="restaurant-meta-val val-highlight-day">วันที่ 4 หรือ วันที่ 7 (ย่าน Sanlitun)</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 5 หรือ วันที่ 7 (ย่าน Sanlitun)</span>
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
@@ -14542,7 +14618,7 @@
               <div class="restaurant-meta-grid">
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
-                  <span class="restaurant-meta-val val-highlight-day">วันที่ 7 (หลังชมโชว์กายกรรมจ้าวหยาง) หรือ วันที่ 4 (Sanlitun)</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 7 (หลังชมโชว์กายกรรมจ้าวหยาง) หรือ วันที่ 5 (Sanlitun)</span>
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
@@ -14668,7 +14744,7 @@
               <div class="restaurant-meta-grid">
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
-                  <span class="restaurant-meta-val val-highlight-day">วันที่ 4 (วันช้อปปิ้งย่าน Sanlitun)</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 5 (วันช้อปปิ้งย่าน Sanlitun)</span>
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
@@ -14710,7 +14786,7 @@
               <div class="restaurant-meta-grid">
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
-                  <span class="restaurant-meta-val val-highlight-day">วันที่ 4 (Sanlitun) หรือ วันที่ 7 (Wangfujing) หรือทุกวันเดินทาง</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 5 (Sanlitun) หรือ วันที่ 7 (Wangfujing) หรือทุกวันเดินทาง</span>
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
@@ -14752,7 +14828,7 @@
               <div class="restaurant-meta-grid">
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
-                  <span class="restaurant-meta-val val-highlight-day">วันที่ 5 (วันเที่ยวพระราชวังฤดูร้อน & ตรอกหูท่ง)</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 3 (วันเที่ยวพระราชวังฤดูร้อน & ตรอกหูท่ง)</span>
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
@@ -14794,7 +14870,7 @@
               <div class="restaurant-meta-grid">
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
-                  <span class="restaurant-meta-val val-highlight-day">วันที่ 4 (วันเดินเที่ยว Lama Temple / 798 Art / Sanlitun)</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 5 (วันเดินเที่ยว Lama Temple / 798 Art / Sanlitun)</span>
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
@@ -14836,7 +14912,7 @@
               <div class="restaurant-meta-grid">
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-regular fa-calendar-days"></i> วันเที่ยวที่แนะนำ</span>
-                  <span class="restaurant-meta-val val-highlight-day">วันที่ 3 (หลังเที่ยวพระราชวังต้องห้าม)</span>
+                  <span class="restaurant-meta-val val-highlight-day">วันที่ 4 (หลังเที่ยวพระราชวังต้องห้าม)</span>
                 </div>
                 <div class="restaurant-meta-item">
                   <span class="restaurant-meta-label"><i class="fa-solid fa-location-dot"></i> พิกัด & คำแนะนำการเดินทาง</span>
@@ -15077,15 +15153,35 @@
 
             <!-- Day 3 -->
             <div style="margin-bottom: 15px;">
-              <h4 style="font-size: 0.85rem; color: var(--color-sky-blue); margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px;">วันที่ 3 · 19 ต.ค. (พระราชวังต้องห้าม & จัตุรัสเทียนอันเหมิน)</h4>
+              <h4 style="font-size: 0.85rem; color: var(--color-sky-blue); margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px;">วันที่ 3 · 19 ต.ค. (พระราชวังฤดูร้อน & ตรอกหูท่ง)</h4>
 
               <div class="checklist-item">
                 <div class="checklist-cb-wrapper">
-                  <input type="checkbox" id="chk_d3_tiananmen" class="checklist-checkbox">
+                  <input type="checkbox" id="chk_d3_summer" class="checklist-checkbox">
                   <span class="checklist-checkmark"></span>
                 </div>
                 <div class="checklist-content">
-                  <label for="chk_d3_tiananmen" class="checklist-label">ลงทะเบียนขอสิทธิ์เข้าชมจัตุรัส Tiananmen Square (ลานจัตุรัสภายนอก)</label>
+                  <label for="chk_d3_summer" class="checklist-label">ตั๋วเข้าชมพระราชวังฤดูร้อน (Summer Palace Ticket)</label>
+                  <div class="checklist-meta">
+                    <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 1-7 วัน</span>
+                    <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (颐和园 หรือ 畅游公园)</span>
+                    <span class="checklist-badge badge-info">ข้อมูลเพิ่มเติม</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 0.85rem; color: var(--color-sky-blue); margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px;">วันที่ 4 · 20 ต.ค. (พระราชวังต้องห้าม & จัตุรัสเทียนอันเหมิน)</h4>
+
+              <div class="checklist-item">
+                <div class="checklist-cb-wrapper">
+                  <input type="checkbox" id="chk_d4_tiananmen" class="checklist-checkbox">
+                  <span class="checklist-checkmark"></span>
+                </div>
+                <div class="checklist-content">
+                  <label for="chk_d4_tiananmen" class="checklist-label">ลงทะเบียนขอสิทธิ์เข้าชมจัตุรัส Tiananmen Square (ลานจัตุรัสภายนอก)</label>
                   <div class="checklist-meta">
                     <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 1-9 วัน (เปิดให้กดลงทะเบียนตอน 12:00 น. ตามเวลาปักกิ่ง)</span>
                     <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (天安门广场预约) (เข้าฟรีแต่จำเป็นต้องกดจองสิทธิ์)</span>
@@ -15096,11 +15192,11 @@
 
               <div class="checklist-item">
                 <div class="checklist-cb-wrapper">
-                  <input type="checkbox" id="chk_d3_forbidden" class="checklist-checkbox">
+                  <input type="checkbox" id="chk_d4_forbidden" class="checklist-checkbox">
                   <span class="checklist-checkmark"></span>
                 </div>
                 <div class="checklist-content">
-                  <label for="chk_d3_forbidden" class="checklist-label">จองบัตรเข้าชมพระราชวังต้องห้าม (Forbidden City)</label>
+                  <label for="chk_d4_forbidden" class="checklist-label">จองบัตรเข้าชมพระราชวังต้องห้าม (Forbidden City)</label>
                   <div class="checklist-meta">
                     <span><i class="fa-regular fa-clock"></i> <strong>จองล่วงหน้า 7 วัน (เปิดระบบตอน 20:00 น. ตามเวลาปักกิ่งของ 7 วันล่วงหน้า)</strong></span>
                     <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (故宫博物院) หรือจองผ่านเว็บนำเที่ยว Trip.com (จองยากมาก ด่วน!)</span>
@@ -15111,11 +15207,11 @@
 
               <div class="checklist-item">
                 <div class="checklist-cb-wrapper">
-                  <input type="checkbox" id="chk_d3_jingshan" class="checklist-checkbox">
+                  <input type="checkbox" id="chk_d4_jingshan" class="checklist-checkbox">
                   <span class="checklist-checkmark"></span>
                 </div>
                 <div class="checklist-content">
-                  <label for="chk_d3_jingshan" class="checklist-label">ตั๋วเข้าชมสวน Jingshan Park (ศาลาว่านชุนชมวิวพระราชวังต้องห้ามมุมสูง)</label>
+                  <label for="chk_d4_jingshan" class="checklist-label">ตั๋วเข้าชมสวน Jingshan Park (ศาลาว่านชุนชมวิวพระราชวังต้องห้ามมุมสูง)</label>
                   <div class="checklist-meta">
                     <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 1-7 วัน (หรือซื้อหน้าทางเข้า)</span>
                     <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (畅游公园) หรือซื้อตั๋วที่หน้าประตูทางเข้า</span>
@@ -15125,17 +15221,17 @@
               </div>
             </div>
 
-            <!-- Day 4 -->
+            <!-- Day 5 -->
             <div style="margin-bottom: 15px;">
-              <h4 style="font-size: 0.85rem; color: var(--color-sky-blue); margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px;">วันที่ 4 · 20 ต.ค. (วัดลามะ & ย่านศิลปะ 798)</h4>
+              <h4 style="font-size: 0.85rem; color: var(--color-sky-blue); margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px;">วันที่ 5 · 21 ต.ค. (วัดลามะ & ย่านศิลปะ 798)</h4>
 
               <div class="checklist-item">
                 <div class="checklist-cb-wrapper">
-                  <input type="checkbox" id="chk_d4_lama" class="checklist-checkbox">
+                  <input type="checkbox" id="chk_d5_lama" class="checklist-checkbox">
                   <span class="checklist-checkmark"></span>
                 </div>
                 <div class="checklist-content">
-                  <label for="chk_d4_lama" class="checklist-label">ตั๋วผ่านประตูเข้าชมวัดลามะ (Lama Temple / Yonghegong)</label>
+                  <label for="chk_d5_lama" class="checklist-label">ตั๋วผ่านประตูเข้าชมวัดลามะ (Lama Temple / Yonghegong)</label>
                   <div class="checklist-meta">
                     <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 1-10 วัน</span>
                     <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (雍和宫游客信众服务)</span>
@@ -15146,34 +15242,14 @@
 
               <div class="checklist-item">
                 <div class="checklist-cb-wrapper">
-                  <input type="checkbox" id="chk_d4_confucius" class="checklist-checkbox">
+                  <input type="checkbox" id="chk_d5_confucius" class="checklist-checkbox">
                   <span class="checklist-checkmark"></span>
                 </div>
                 <div class="checklist-content">
-                  <label for="chk_d4_confucius" class="checklist-label">ตั๋วเข้าชมวัดขงจื๊อ & กั่วจื่อเจี้ยน (Confucius Temple & Guozijian)</label>
+                  <label for="chk_d5_confucius" class="checklist-label">ตั๋วเข้าชมวัดขงจื๊อ & กั่วจื่อเจี้ยน (Confucius Temple & Guozijian)</label>
                   <div class="checklist-meta">
                     <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 1-7 วัน (หรือซื้อหน้าทางเข้า)</span>
                     <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (孔庙和国子监博物馆) หรือซื้อตั๋วที่หน้าประตูทางเข้า</span>
-                    <span class="checklist-badge badge-info">ข้อมูลเพิ่มเติม</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Day 5 -->
-            <div style="margin-bottom: 15px;">
-              <h4 style="font-size: 0.85rem; color: var(--color-sky-blue); margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 4px;">วันที่ 5 · 21 ต.ค. (พระราชวังฤดูร้อน & เป่ยไห่)</h4>
-              
-              <div class="checklist-item">
-                <div class="checklist-cb-wrapper">
-                  <input type="checkbox" id="chk_d5_summer" class="checklist-checkbox">
-                  <span class="checklist-checkmark"></span>
-                </div>
-                <div class="checklist-content">
-                  <label for="chk_d5_summer" class="checklist-label">ตั๋วเข้าชมพระราชวังฤดูร้อน (Summer Palace Ticket)</label>
-                  <div class="checklist-meta">
-                    <span><i class="fa-regular fa-clock"></i> จองล่วงหน้า 1-7 วัน</span>
-                    <span><i class="fa-solid fa-cart-shopping"></i> WeChat Mini Program (颐和园 หรือ 畅游公园)</span>
                     <span class="checklist-badge badge-info">ข้อมูลเพิ่มเติม</span>
                   </div>
                 </div>
@@ -15468,7 +15544,114 @@
             </div>
             <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 14px;">งบเด็กมักต่ำกว่าผู้ใหญ่ประมาณครึ่งหนึ่ง (แชร์เมนู/สั่งน้อยลง) ตัวเลขข้างต้นเป็นค่าประมาณการแบบเผื่อเต็มที่ ไม่รวมค่ารถไฟใต้ดิน/แท็กซี่และค่าตั๋วสถานที่ท่องเที่ยว</p>
 
-            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 18px; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 12px;"><strong style="color: var(--color-soft-red);">⚠️ ข้อมูลที่ยังต้องตรวจสอบก่อนเดินทาง:</strong> (1) สาขาจริงของ Nanmen Shunrou ที่ตรงกับแผนวันที่ 3/7 ในทริป — ผลค้นคว้าไม่พบสาขา "Qianmen" ที่ระบุไว้เดิม สาขาหลักจริงคือ Tiantan/South Gate (2) ราคาชุดเป็ดทั้งตัวที่ Siji Minfu (พบตัวเลข 198-298 CNY ไม่ตรงกันตามแหล่ง) (3) ราคาต่อคนที่ Chuan Ban ไม่พบตัวเลขยืนยันชัดเจน (4) สาขาแท้ของ Bao Shi Fu ใกล้ Qianmen/Wangfujing — ต้องเช็คผ่านเว็บทางการก่อนไปเพราะร้านลอกเลียนแบบระบาดหนักมาก ทุกร้านควรเช็คเวลาเปิด-ปิดและราคาอีกครั้งผ่าน Dianping/Meituan ใกล้วันเดินทาง เนื่องจากอาจเปลี่ยนแปลงก่อนเดือนตุลาคม 2026</p>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 18px; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 12px;"><strong style="color: var(--color-soft-red);">⚠️ ข้อมูลที่ยังต้องตรวจสอบก่อนเดินทาง:</strong> (1) สาขาจริงของ Nanmen Shunrou ที่ตรงกับแผนวันที่ 4/7 ในทริป — ผลค้นคว้าไม่พบสาขา "Qianmen" ที่ระบุไว้เดิม สาขาหลักจริงคือ Tiantan/South Gate (2) ราคาชุดเป็ดทั้งตัวที่ Siji Minfu (พบตัวเลข 198-298 CNY ไม่ตรงกันตามแหล่ง) (3) ราคาต่อคนที่ Chuan Ban ไม่พบตัวเลขยืนยันชัดเจน (4) สาขาแท้ของ Bao Shi Fu ใกล้ Qianmen/Wangfujing — ต้องเช็คผ่านเว็บทางการก่อนไปเพราะร้านลอกเลียนแบบระบาดหนักมาก ทุกร้านควรเช็คเวลาเปิด-ปิดและราคาอีกครั้งผ่าน Dianping/Meituan ใกล้วันเดินทาง เนื่องจากอาจเปลี่ยนแปลงก่อนเดือนตุลาคม 2026</p>
+          </div>
+
+          <!-- Category 4: Itinerary Review & Changes -->
+          <div class="checklist-section">
+            <h3 class="checklist-section-title">
+              <i class="fa-solid fa-arrows-rotate"></i>
+              <span>🔄 Itinerary Review & Changes</span>
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: -8px 0 18px;">ตรวจสอบวันเปิด-ปิดของทุกสถานที่ในแผนเดิม พบว่า Forbidden City และวัดขงจื๊อปิดทุกวันจันทร์ ขณะที่วันที่ 19 ต.ค. 2026 ในแผนเดิมตรงกับวันจันทร์พอดี จึงสลับสถานที่ระหว่างวันที่ 3-4-5 ใหม่ทั้งคลัสเตอร์ โดยไม่ย้ายวันเดินทางถึง/กลับ และไม่ย้ายวันไป Universal Beijing Resort (ตรวจสอบเมื่อ 9 ก.ย. 2026)</p>
+
+            <div class="tips-warnings-box" style="margin-bottom: 20px;">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <div class="tips-content">
+                <strong>ข้อขัดแย้งที่พบ และทางเลือกที่ใช้</strong>
+                <p>ไม่สามารถเลี่ยง "วันเดินเยอะ 🟥 ติดต่อกันเกิน 1 วัน" ได้ครบ 100% เพราะเงื่อนไข "เปิดจริงในวันนั้น" บังคับให้ Forbidden City, วัดขงจื๊อ และหอบูชาฟ้า (จุดชมภายใน) ต้องเลี่ยงวันจันทร์พร้อมกัน เหลือเพียงคลัสเตอร์ Summer Palace เท่านั้นที่เปิดทุกวันและวางในวันจันทร์ได้ ผลคือวันที่ 2-3-4 (อา.-จ.-อ.) กลายเป็นวันเดินเยอะติดกัน 3 วัน ได้พิจารณาทางเลือกอื่น เช่น แยก Summer Palace ออกจาก Hutong หรือให้วันพุธ/ศุกร์รับภาระเพิ่มแทน แต่จะไปขัดกับเงื่อนไข "Universal ต้องมีวันกันชนเบาทั้งก่อน-หลัง" (พุธที่ 21 และศุกร์ที่ 23) ซึ่งมีความสำคัญกว่า จึงเลือกทางเลือกนี้เป็นทางที่ดีที่สุด: <strong>ยอมรับวันเดินเยอะ 3 วันติดกัน (วันที่ 2-3-4) แลกกับการรักษาวันกันชนรอบ Universal และไม่มีสถานที่ใดตกวันปิดเลย</strong></p>
+              </div>
+            </div>
+
+            <h4 style="font-size: 0.9rem; color: var(--color-gold); margin: 0 0 12px;">✅ ตรวจสอบวันเปิดสถานที่</h4>
+            <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:24px; font-size:0.85rem; color:var(--text-main);">
+              <div>- Mutianyu Great Wall — เดิม: วันที่ 2 (อา. 18 ต.ค.) → ใหม่: ไม่เปลี่ยน — ✅ เปิด — ไม่มีวันปิดประจำสัปดาห์</div>
+              <div>- Summer Palace — เดิม: วันที่ 5 (พ. 21 ต.ค.) → ใหม่: วันที่ 3 (จ. 19 ต.ค.) — ✅ เปิด — เปิดทุกวัน ย้ายมาวันจันทร์แทน Forbidden City</div>
+              <div>- ตรอก Hutong / Houhai / Nanluoguxiang — เดิม: วันที่ 5 → ใหม่: วันที่ 3 — ✅ เปิด — ไม่มีวันปิด ย้ายพร้อมคลัสเตอร์ Summer Palace</div>
+              <div>- Forbidden City — เดิม: วันที่ 3 (จ. 19 ต.ค.) → ใหม่: วันที่ 4 (อ. 20 ต.ค.) — ❌ ย้ายเพราะปิด — ปิดทุกวันจันทร์ทั้งปี วันอังคารเปิดปกติ</div>
+              <div>- Tiananmen Square — เดิม: วันที่ 3 → ใหม่: วันที่ 4 — ✅ เปิด (ไม่มีวันปิด) — ย้ายตามคลัสเตอร์ Forbidden City เพื่อรักษาเส้นทางเดินเดิม</div>
+              <div>- Jingshan Park — เดิม: วันที่ 3 → ใหม่: วันที่ 4 — ✅ เปิด (จุดชมวิวหลักเปิดทุกวัน) — ย้ายตามคลัสเตอร์ Forbidden City</div>
+              <div>- Lama Temple (Yonghegong) — เดิม: วันที่ 4 (อ. 20 ต.ค.) → ใหม่: วันที่ 5 (พ. 21 ต.ค.) — ✅ เปิด (เปิดทุกวัน) — ย้ายเพื่อเปิดวันอังคารให้คลัสเตอร์ Forbidden City</div>
+              <div>- Confucius Temple & Guozijian — เดิม: วันที่ 4 → ใหม่: วันที่ 5 — ✅ เปิด — ปิดเฉพาะวันจันทร์ (พุธเปิดปกติ) ย้ายเพราะจัดกลุ่มใหม่ ไม่ใช่เพราะปัญหาวันปิด</div>
+              <div>- 798 Art District — เดิม: วันที่ 4 → ใหม่: วันที่ 5 — ✅ เปิด (ย่านเปิดตลอด) — ย้ายตามคลัสเตอร์</div>
+              <div>- Sanlitun — เดิม: วันที่ 4 → ใหม่: วันที่ 5 — ✅ เปิด — ย้ายตามคลัสเตอร์</div>
+              <div>- Universal Beijing Resort — เดิม: วันที่ 6 (พฤ. 22 ต.ค.) → ใหม่: ไม่เปลี่ยน (ล็อก) — ✅ เปิด — ไม่มีวันปิดประจำสัปดาห์</div>
+              <div>- Temple of Heaven — เดิม: วันที่ 7 (ศ. 23 ต.ค.) → ใหม่: ไม่เปลี่ยน — ✅ เปิด — พาร์คหลักเปิดทุกวัน จุดชมภายในปิดเฉพาะจันทร์ (ศุกร์ไม่กระทบ)</div>
+              <div>- Wangfujing — เดิม: วันที่ 7 → ใหม่: ไม่เปลี่ยน — ✅ เปิด — ย่านเปิดตลอด ไม่มีวันปิด</div>
+              <div>- Chaoyang Theatre Acrobatic Show — เดิม: วันที่ 7 → ใหม่: ไม่เปลี่ยน — ✅ เปิด — โรงละครแสดงทุกวัน</div>
+            </div>
+
+            <h4 style="font-size: 0.9rem; color: var(--color-gold); margin: 0 0 12px;">📅 ตารางแผนเที่ยวฉบับปรับแล้ว</h4>
+            <div style="overflow-x: auto; margin-bottom: 24px;">
+              <table style="width:100%; border-collapse: collapse; font-size: 0.82rem; min-width: 900px;">
+                <thead>
+                  <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <th style="text-align:left; padding: 8px 10px; color: var(--text-muted); font-weight:600;">วัน/วันที่</th>
+                    <th style="text-align:left; padding: 8px 10px; color: var(--text-muted); font-weight:600;">ย่านหลัก</th>
+                    <th style="text-align:left; padding: 8px 10px; color: var(--text-muted); font-weight:600;">สถานที่</th>
+                    <th style="text-align:left; padding: 8px 10px; color: var(--text-muted); font-weight:600;">ระดับกิจกรรม</th>
+                    <th style="text-align:left; padding: 8px 10px; color: var(--text-muted); font-weight:600;">สถานะเปิด</th>
+                    <th style="text-align:left; padding: 8px 10px; color: var(--text-muted); font-weight:600;">สิ่งที่ต้องจอง/ข้อควรระวัง</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px dashed rgba(255,255,255,0.05);"><td style="padding:10px;">วันที่ 1 · เสาร์ 17 ต.ค.</td><td style="padding:10px;">สนามบิน/Qianmen</td><td style="padding:10px;">เดินทางถึงปักกิ่ง เช็คอินโรงแรม</td><td style="padding:10px;">🟩 เดินน้อย</td><td style="padding:10px; color:var(--color-green);">✅ เปิด</td><td style="padding:10px;">ไม่มี</td></tr>
+                  <tr style="border-bottom: 1px dashed rgba(255,255,255,0.05);"><td style="padding:10px;">วันที่ 2 · อาทิตย์ 18 ต.ค.</td><td style="padding:10px;">Huairou</td><td style="padding:10px;">Mutianyu Great Wall</td><td style="padding:10px;">🟥 เดินเยอะ</td><td style="padding:10px; color:var(--color-green);">✅ เปิด</td><td style="padding:10px;">ตั๋ว+รถส่วนตัว จองล่วงหน้า — deadline 18 ก.ย.</td></tr>
+                  <tr style="border-bottom: 1px dashed rgba(255,255,255,0.05);"><td style="padding:10px;">วันที่ 3 · จันทร์ 19 ต.ค.</td><td style="padding:10px;">Haidian / Houhai</td><td style="padding:10px;">Summer Palace + ตรอก Hutong</td><td style="padding:10px;">🟥 เดินเยอะ</td><td style="padding:10px; color:var(--color-green);">✅ เปิด</td><td style="padding:10px;">ไม่บังคับจองแล้ว แนะนำจอง 12 ต.ค. 21:00 น.</td></tr>
+                  <tr style="border-bottom: 1px dashed rgba(255,255,255,0.05);"><td style="padding:10px;">วันที่ 4 · อังคาร 20 ต.ค.</td><td style="padding:10px;">Central (Forbidden City)</td><td style="padding:10px;">Forbidden City + Tiananmen Square + Jingshan Park</td><td style="padding:10px;">🟥 เดินเยอะ</td><td style="padding:10px; color:var(--color-green);">✅ เปิด</td><td style="padding:10px;">FC จอง 13 ต.ค. 20:00 น. (หมดใน ~10 นาที!), Tiananmen ลงทะเบียน 13 ต.ค., Jingshan โทรจอง 13 ต.ค.</td></tr>
+                  <tr style="border-bottom: 1px dashed rgba(255,255,255,0.05);"><td style="padding:10px;">วันที่ 5 · พุธ 21 ต.ค.</td><td style="padding:10px;">Chaoyang (Lama/798)</td><td style="padding:10px;">Lama Temple + Confucius Temple + 798 Art + Sanlitun</td><td style="padding:10px;">🟨 เดินปานกลาง</td><td style="padding:10px; color:var(--color-green);">✅ เปิด</td><td style="padding:10px;">Lama จอง 11 ต.ค. 06:00 น., Confucius จอง 14 ต.ค.</td></tr>
+                  <tr style="border-bottom: 1px dashed rgba(255,255,255,0.05);"><td style="padding:10px;">วันที่ 6 · พฤหัสฯ 22 ต.ค.</td><td style="padding:10px;">Tongzhou</td><td style="padding:10px;">Universal Beijing Resort <span style="color:var(--color-gold);">(ล็อกวัน ห้ามย้าย)</span></td><td style="padding:10px;">🟥 เดินเยอะ</td><td style="padding:10px; color:var(--color-green);">✅ เปิด</td><td style="padding:10px;">จองตั๋วช่วง 22 ก.ย. – 8 ต.ค.</td></tr>
+                  <tr style="border-bottom: 1px dashed rgba(255,255,255,0.05);"><td style="padding:10px;">วันที่ 7 · ศุกร์ 23 ต.ค.</td><td style="padding:10px;">Central / Chaoyang</td><td style="padding:10px;">Temple of Heaven + Wangfujing + โชว์กายกรรม Chaoyang Theatre</td><td style="padding:10px;">🟨 เดินปานกลาง</td><td style="padding:10px; color:var(--color-green);">✅ เปิด</td><td style="padding:10px;">ToH จอง 16 ต.ค., โชว์จอง 16-20 ต.ค.</td></tr>
+                  <tr><td style="padding:10px;">วันที่ 8 · เสาร์ 24 ต.ค.</td><td style="padding:10px;">สนามบิน</td><td style="padding:10px;">เดินทางกลับ</td><td style="padding:10px;">🟩 เดินน้อย</td><td style="padding:10px; color:var(--color-green);">✅ เปิด</td><td style="padding:10px;">เที่ยวบิน TG615</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h4 style="font-size: 0.9rem; color: var(--color-gold); margin: 0 0 12px;">🚶 Walking Balance</h4>
+            <div style="overflow-x: auto; margin-bottom: 24px;">
+              <table style="width:100%; border-collapse: collapse; font-size: 0.82rem; min-width: 700px;">
+                <thead>
+                  <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <th style="text-align:left; padding: 8px 10px; color: var(--text-muted); font-weight:600;">วัน/วันที่</th>
+                    <th style="text-align:left; padding: 8px 10px; color: var(--text-muted); font-weight:600;">ระดับกิจกรรมเดิม</th>
+                    <th style="text-align:left; padding: 8px 10px; color: var(--text-muted); font-weight:600;">ระดับกิจกรรมใหม่</th>
+                    <th style="text-align:left; padding: 8px 10px; color: var(--text-muted); font-weight:600;">เหตุผล</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px dashed rgba(255,255,255,0.05);"><td style="padding:10px;">วันที่ 1 · 17 ต.ค.</td><td style="padding:10px;">🟩</td><td style="padding:10px;">🟩</td><td style="padding:10px;">ไม่เปลี่ยน — วันเดินทางถึง ล็อกตายตัว</td></tr>
+                  <tr style="border-bottom: 1px dashed rgba(255,255,255,0.05);"><td style="padding:10px;">วันที่ 2 · 18 ต.ค.</td><td style="padding:10px;">🟥</td><td style="padding:10px;">🟥</td><td style="padding:10px;">ไม่เปลี่ยน — Mutianyu ไม่มีปัญหาวันปิด</td></tr>
+                  <tr style="border-bottom: 1px dashed rgba(255,255,255,0.05);"><td style="padding:10px;">วันที่ 3 · 19 ต.ค.</td><td style="padding:10px;">🟥 (เดิม: FC cluster)</td><td style="padding:10px;">🟥 (ใหม่: Summer Palace cluster)</td><td style="padding:10px;">ระดับเท่าเดิม สลับเฉพาะสถานที่ เพื่อเลี่ยง Forbidden City ตกวันจันทร์</td></tr>
+                  <tr style="border-bottom: 1px dashed rgba(255,255,255,0.05);"><td style="padding:10px;">วันที่ 4 · 20 ต.ค.</td><td style="padding:10px;">🟨 (เดิม: Lama cluster)</td><td style="padding:10px;">🟥 (ใหม่: FC cluster)</td><td style="padding:10px;">เพิ่มขึ้น — Forbidden City ย้ายมาวันนี้ เพราะเป็นวันเดียวที่เปิดแน่นอนในช่วงที่ยังว่าง</td></tr>
+                  <tr style="border-bottom: 1px dashed rgba(255,255,255,0.05);"><td style="padding:10px;">วันที่ 5 · 21 ต.ค.</td><td style="padding:10px;">🟥 (เดิม: Summer Palace cluster)</td><td style="padding:10px;">🟨 (ใหม่: Lama cluster)</td><td style="padding:10px;">ลดลง — เป็นวันเบาก่อน Universal ตามหลักสลับวันเดินเยอะ-เบา</td></tr>
+                  <tr style="border-bottom: 1px dashed rgba(255,255,255,0.05);"><td style="padding:10px;">วันที่ 6 · 22 ต.ค.</td><td style="padding:10px;">🟥</td><td style="padding:10px;">🟥</td><td style="padding:10px;">ไม่เปลี่ยน — Universal ล็อกวันตายตัว</td></tr>
+                  <tr style="border-bottom: 1px dashed rgba(255,255,255,0.05);"><td style="padding:10px;">วันที่ 7 · 23 ต.ค.</td><td style="padding:10px;">🟥</td><td style="padding:10px;">🟨</td><td style="padding:10px;">ปรับลงเป็นวันพักหลัง Universal ตามเกณฑ์กิจกรรมใหม่ — ไม่ได้ตัดกิจกรรมใดออก</td></tr>
+                  <tr><td style="padding:10px;">วันที่ 8 · 24 ต.ค.</td><td style="padding:10px;">🟩</td><td style="padding:10px;">🟩</td><td style="padding:10px;">ไม่เปลี่ยน — วันเดินทางกลับ ล็อกตายตัว</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h4 style="font-size: 0.9rem; color: var(--color-sky-blue); margin: 0 0 12px;">⚠️ สิ่งที่ต้องทำต่อ</h4>
+            <div class="checklist-item">
+              <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_review_rebook" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+              <div class="checklist-content"><label for="chk_review_rebook" class="checklist-label">อัปเดต/ยกเลิก-จองใหม่สำหรับสถานที่ที่วันเปลี่ยน (Forbidden City cluster → 20 ต.ค., Lama/Confucius cluster → 21 ต.ค., Summer Palace/Hutong → 19 ต.ค.)</label></div>
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_review_universal" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+              <div class="checklist-content"><label for="chk_review_universal" class="checklist-label">ตรวจสอบบัตร Universal Beijing Resort ให้ตรงตามวันเดิม (พฤหัสฯ 22 ต.ค. — ไม่เปลี่ยนแปลง)</label></div>
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_review_fc_quota" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+              <div class="checklist-content"><label for="chk_review_fc_quota" class="checklist-label">ตรวจสอบรอบเข้าชมและโควตาของ Forbidden City ในวันใหม่ (อังคาร 20 ต.ค.) ก่อนกดจอง 13 ต.ค.</label></div>
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_review_hours" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+              <div class="checklist-content"><label for="chk_review_hours" class="checklist-label">ตรวจสอบเวลาเปิด-ปิดของทุกสถานที่อีกครั้งใกล้วันเดินทางจริง</label></div>
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_review_holiday" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+              <div class="checklist-content"><label for="chk_review_holiday" class="checklist-label">ตรวจสอบวันหยุดพิเศษหรือประกาศปิดชั่วคราวใกล้วันเดินทาง (17-24 ต.ค. 2026)</label></div>
+            </div>
           </div>
 
         </div>
@@ -15487,10 +15670,10 @@
         </header>
 
         <div class="tips-warnings-box">
-          <i class="fa-solid fa-triangle-exclamation"></i>
+          <i class="fa-solid fa-circle-check" style="color: var(--color-green);"></i>
           <div class="tips-content">
-            <strong>⚠️ พระราชวังต้องห้ามชนวันปิดประจำสัปดาห์ — ต้องเลือกวันใหม่ก่อนจองได้</strong>
-            <p><strong>19 ต.ค. 2026 ตรงกับวันจันทร์</strong> และพระราชวังต้องห้ามปิดทุกวันจันทร์ตลอดปี (ยกเว้นวันหยุดนักขัตฤกษ์ ซึ่ง ต.ค. 2026 ไม่มีวันหยุดพิเศษทับซ้อน) ระบบจองจะไม่เปิดให้จองวันนี้เลย ส่วน Tiananmen Square และ Jingshan Park ไม่ติดปัญหาวันปิด แต่ทั้งวันถูกออกแบบเป็นเส้นทางเดินเดียวกัน (เข้า Forbidden City ผ่านจัตุรัสแล้วออกไป Jingshan) จึงกระทบทั้งคลัสเตอร์ ทางแก้ที่พอเป็นไปได้คือย้ายทั้งคลัสเตอร์ไปวันอังคารที่ 20 ต.ค. (วันเดียวที่พอสลับได้ เพราะวันอาทิตย์ 18 ต.ค. ติดทริปกำแพงเมืองจีนทั้งวันอยู่แล้ว) แต่จะทำให้วันที่ 20 ต.ค. แน่นมากขึ้น เพราะมีวัดลามะ+วัดขงจื๊อ+798 Art+Sanlitun อยู่แล้ว <strong>ตารางด้านล่างใช้วันอังคาร 20 ต.ค. เป็นตัวอย่างคำนวณเท่านั้น ยังไม่ได้ตัดสินใจแทน — ควรคุยเรื่องออกแบบวันที่ 3-4 ใหม่ก่อนกดจองจริง</strong></p>
+            <strong>✅ แก้ไขแล้ว: ย้าย Forbidden City cluster ออกจากวันจันทร์</strong>
+            <p><strong>19 ต.ค. 2026 ตรงกับวันจันทร์</strong> และพระราชวังต้องห้ามปิดทุกวันจันทร์ตลอดปี (ยกเว้นวันหยุดนักขัตฤกษ์ ซึ่ง ต.ค. 2026 ไม่มีวันหยุดพิเศษทับซ้อน) จึงย้าย Forbidden City + Tiananmen Square + Jingshan Park ทั้งคลัสเตอร์ไปเป็น <strong>วันที่ 4 (อังคารที่ 20 ต.ค.)</strong> แทน และสลับ Lama Temple + Confucius Temple + 798 Art + Sanlitun ไปเป็นวันที่ 5 (พุธที่ 21 ต.ค.) กับสลับ Summer Palace + Hutong มาเป็นวันที่ 3 (จันทร์ที่ 19 ต.ค. — เปิดทุกวันไม่มีปัญหา) รายละเอียดทั้งหมดสรุปไว้ในหัวข้อ "🔄 Itinerary Review & Changes" ท้ายหน้า Checklist ตัวเลข deadline การจองด้านล่างคำนวณจากวันที่ใหม่แล้วทั้งหมด</p>
           </div>
         </div>
 
@@ -15512,12 +15695,12 @@
           <div class="inventory-grid">
             <div class="inv-item"><span class="inv-day">DAY 2 · 18 ต.ค.</span><span class="inv-name">Mutianyu Great Wall (บัตรรวม)</span><span class="inv-status verify">ราคาแหล่งไม่ตรงกัน</span></div>
             <div class="inv-item"><span class="inv-day">DAY 2 · 18 ต.ค.</span><span class="inv-name">รถส่วนตัวไป-กลับ Mutianyu</span><span class="inv-status verify">ไม่มีราคากลางทางการ</span></div>
-            <div class="inv-item"><span class="inv-day">DAY 3 · 19 ต.ค.</span><span class="inv-name">Tiananmen Square (ลงทะเบียน)</span><span class="inv-status conflict">วันเดินทางต้องยืนยันใหม่</span></div>
-            <div class="inv-item"><span class="inv-day">DAY 3 · 19 ต.ค.</span><span class="inv-name">Forbidden City</span><span class="inv-status conflict">ปิดวันจันทร์ — ชนวันเดิม</span></div>
-            <div class="inv-item"><span class="inv-day">DAY 3 · 19 ต.ค.</span><span class="inv-name">Jingshan Park</span><span class="inv-status conflict">วันเดินทางต้องยืนยันใหม่</span></div>
-            <div class="inv-item"><span class="inv-day">DAY 4 · 20 ต.ค.</span><span class="inv-name">Lama Temple (Yonghegong)</span><span class="inv-status verify">โควตา/ระยะเวลาจองไม่ตรงกัน</span></div>
-            <div class="inv-item"><span class="inv-day">DAY 4 · 20 ต.ค.</span><span class="inv-name">Confucius Temple & Guozijian</span><span class="inv-status verify">รับ Passport หรือไม่ ยังไม่ยืนยัน</span></div>
-            <div class="inv-item"><span class="inv-day">DAY 5 · 21 ต.ค.</span><span class="inv-name">Summer Palace</span><span class="inv-status ok">พบข้อมูลครบ (นโยบายเพิ่งเปลี่ยน ก.ค. 2026)</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 4 · 20 ต.ค.</span><span class="inv-name">Tiananmen Square (ลงทะเบียน)</span><span class="inv-status ok">ย้ายจากวันจันทร์เดิม — วันอังคารเปิดปกติ</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 4 · 20 ต.ค.</span><span class="inv-name">Forbidden City</span><span class="inv-status ok">ย้ายจากวันจันทร์เดิม — วันอังคารเปิดปกติ</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 4 · 20 ต.ค.</span><span class="inv-name">Jingshan Park</span><span class="inv-status ok">ย้ายจากวันจันทร์เดิม — วันอังคารเปิดปกติ</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 5 · 21 ต.ค.</span><span class="inv-name">Lama Temple (Yonghegong)</span><span class="inv-status verify">โควตา/ระยะเวลาจองไม่ตรงกัน</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 5 · 21 ต.ค.</span><span class="inv-name">Confucius Temple & Guozijian</span><span class="inv-status verify">รับ Passport หรือไม่ ยังไม่ยืนยัน</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 3 · 19 ต.ค.</span><span class="inv-name">Summer Palace</span><span class="inv-status ok">ย้ายมาจากวันพุธเดิม — เปิดทุกวัน พบข้อมูลครบ</span></div>
             <div class="inv-item"><span class="inv-day">DAY 6 · 22 ต.ค.</span><span class="inv-name">Universal Beijing Resort</span><span class="inv-status verify">ราคาจริงอยู่ในปฏิทินภาพ อ่านอัตโนมัติไม่ได้</span></div>
             <div class="inv-item"><span class="inv-day">DAY 7 · 23 ต.ค.</span><span class="inv-name">Temple of Heaven</span><span class="inv-status verify">เวลาปล่อยตั๋วไม่ตรงกัน</span></div>
             <div class="inv-item"><span class="inv-day">DAY 7 · 23 ต.ค.</span><span class="inv-name">Chaoyang Theatre Acrobatic Show</span><span class="inv-status verify">ไม่พบช่องทางทางการแท้</span></div>
@@ -15567,16 +15750,16 @@
             <div class="booking-note">ไม่มีหน่วยงานทางการเดียว เป็นตลาดบริการส่วนตัวหลาย operator — <span class="flag-text">แนะนำเทียบราคา 2-3 เจ้าก่อนตัดสินใจ</span> เงื่อนไขยกเลิกแตกต่างกันตาม operator ที่เลือก</div>
           </div>
 
-          <div class="booking-card card-critical">
+          <div class="booking-card">
             <div class="booking-card-head">
-              <div class="booking-card-titles"><span class="booking-card-day flag-day">DAY 3 · 19 ต.ค. → ต้องยืนยันวันใหม่</span><span class="booking-card-name">Tiananmen Square <span style="font-size:0.7em;color:var(--text-muted);">(ลงทะเบียนเข้าลาน ฟรี)</span></span></div>
+              <div class="booking-card-titles"><span class="booking-card-day">DAY 4 · อ. 20 ต.ค.</span><span class="booking-card-name">Tiananmen Square <span style="font-size:0.7em;color:var(--text-muted);">(ลงทะเบียนเข้าลาน ฟรี)</span></span></div>
               <span class="urgency-pill urgency-med">ความเร่งด่วน: กลาง</span>
             </div>
             <div class="booking-meta-grid">
               <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">ต้อง (ฟรีแต่บังคับลงทะเบียน)</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">1-7 วัน</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ระบบเปิดจอง</span><span class="booking-meta-val flag">~12:00-12:30 ปักกิ่ง (2 แหล่งไม่ตรงกัน) ≈ 11:00-11:30 ไทย</span></div>
-              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">13 ต.ค. 2026* <span style="font-weight:400;font-size:0.85em;">(*ถ้าไป 20 ต.ค.)</span></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">13 ต.ค. 2026 · ~12:00-12:30 น. ปักกิ่ง ≈ 11:00-11:30 น. ไทย</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val">WeChat "天安门广场预约" · App 京通</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val">ได้ ต้องพกตัวจริง</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ราคา</span><span class="booking-meta-val">ฟรีทุกกลุ่ม</span></div>
@@ -15585,35 +15768,35 @@
             <div class="booking-note">ลานอาจ<span class="flag-text">ปิดกะทันหันหากมีภารกิจรัฐ/การทูตสำคัญ</span> ควรติดตามข่าวใกล้วันเดินทาง</div>
           </div>
 
-          <div class="booking-card card-critical">
+          <div class="booking-card">
             <div class="booking-card-head">
-              <div class="booking-card-titles"><span class="booking-card-day flag-day">DAY 3 · 19 ต.ค. = ปิด (จันทร์)</span><span class="booking-card-name">Forbidden City <span style="font-size:0.7em;color:var(--text-muted);">故宫</span></span></div>
+              <div class="booking-card-titles"><span class="booking-card-day">DAY 4 · อ. 20 ต.ค.</span><span class="booking-card-name">Forbidden City <span style="font-size:0.7em;color:var(--text-muted);">故宫</span></span></div>
               <span class="urgency-pill urgency-high">ความเร่งด่วน: สูง</span>
             </div>
             <div class="booking-meta-grid">
               <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">ต้อง — ไม่ขายหน้างานเด็ดขาด</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">7 วันพอดี</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ระบบเปิดจอง</span><span class="booking-meta-val gold">20:00 ปักกิ่ง = 19:00 ไทย</span></div>
-              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">13 ต.ค. 2026, 20:00 น.* <span style="font-weight:400;font-size:0.85em;">(*ถ้าไป 20 ต.ค. — ตั๋วหมดใน ~10 นาที)</span></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">13 ต.ค. 2026, 20:00 น. ปักกิ่ง = 19:00 น. ไทย <span style="font-weight:400;font-size:0.85em;">(ตั๋วหมดใน ~10 นาที)</span></span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val"><a href="https://ticket.dpm.org.cn" target="_blank" rel="noopener">ticket.dpm.org.cn</a> · WeChat "故宫博物院" เท่านั้น</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val">ได้ (1 Passport = 1 ใบ/วัน)</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val">Alipay/WeChat <span class="flag">(บัตรต่างชาติยืนยันแหล่งเดียว)</span></span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ราคา</span><span class="booking-meta-val">60 ผู้ใหญ่ / 20 นศ. / 30 สูงวัย ≈ 294/98/147 THB · <b>ฟรี &lt;18 ปี</b> · +10 Treasure Gallery · +10 Clock Gallery</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ยกเลิก/คืนเงิน</span><span class="booking-meta-val">ฟรีก่อน 24 ชม. — no-show 3 ครั้ง/180 วัน = แบน 60 วัน</span></div>
             </div>
-            <div class="booking-note"><span class="flag-text">ปิดทุกวันจันทร์ทั้งปี — ดูกล่องแจ้งเตือนด้านบน ต้องเลือกวันใหม่ก่อนคำนวณ deadline จริง</span></div>
+            <div class="booking-note">ปิดทุกวันจันทร์ทั้งปี — <span style="color:var(--color-green);">ย้ายมาวันอังคาร 20 ต.ค. แล้ว ไม่ติดปัญหา</span></div>
           </div>
 
-          <div class="booking-card card-critical">
+          <div class="booking-card">
             <div class="booking-card-head">
-              <div class="booking-card-titles"><span class="booking-card-day flag-day">DAY 3 · 19 ต.ค. → ต้องยืนยันวันใหม่</span><span class="booking-card-name">Jingshan Park <span style="font-size:0.7em;color:var(--text-muted);">จุดชมวิว Forbidden City</span></span></div>
+              <div class="booking-card-titles"><span class="booking-card-day">DAY 4 · อ. 20 ต.ค.</span><span class="booking-card-name">Jingshan Park <span style="font-size:0.7em;color:var(--text-muted);">จุดชมวิว Forbidden City</span></span></div>
               <span class="urgency-pill urgency-low">ความเร่งด่วน: ต่ำ-กลาง</span>
             </div>
             <div class="booking-meta-grid">
               <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">ต้อง (โทรจองสำหรับต่างชาติ)</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">สูงสุด 7 วัน</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ช่วงเวลาโทรจอง</span><span class="booking-meta-val">09:00-16:00 ปักกิ่ง = 08:00-15:00 ไทย</span></div>
-              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">13 ต.ค. 2026, 09:00 น.* <span style="font-weight:400;font-size:0.85em;">(*ถ้าไป 20 ต.ค.)</span></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">13 ต.ค. 2026, 09:00 น. ปักกิ่ง = 08:00 น. ไทย</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val">โทร 010-64038098 (สายต่างชาติ)</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val">ได้ (แจ้งเลขทางโทรศัพท์)</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val flag">ที่เคาน์เตอร์: ไม่ยืนยัน</span></div>
@@ -15624,14 +15807,14 @@
 
           <div class="booking-card">
             <div class="booking-card-head">
-              <div class="booking-card-titles"><span class="booking-card-day">DAY 4 · อ. 20 ต.ค.</span><span class="booking-card-name">Lama Temple <span style="font-size:0.7em;color:var(--text-muted);">Yonghegong 雍和宫</span></span></div>
+              <div class="booking-card-titles"><span class="booking-card-day">DAY 5 · พ. 21 ต.ค.</span><span class="booking-card-name">Lama Temple <span style="font-size:0.7em;color:var(--text-muted);">Yonghegong 雍和宫</span></span></div>
               <span class="urgency-pill urgency-high">ความเร่งด่วน: สูง</span>
             </div>
             <div class="booking-meta-grid">
               <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">ต้อง (real-name)</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">10 วัน <span class="flag">(แหล่งเก่า: next-day only)</span></span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ระบบเปิดจอง</span><span class="booking-meta-val">06:00-21:00 ปักกิ่ง = 05:00-20:00 ไทย</span></div>
-              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">10 ต.ค. 2026, 06:00 น.</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">11 ต.ค. 2026, 06:00 น. ปักกิ่ง = 05:00 น. ไทย</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val">WeChat Official Account "雍和宫游客信众服务"</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val">ได้ ต้องพกตัวจริง</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val">WeChat Pay / Alipay เท่านั้น</span></div>
@@ -15643,32 +15826,32 @@
 
           <div class="booking-card">
             <div class="booking-card-head">
-              <div class="booking-card-titles"><span class="booking-card-day">DAY 4 · อ. 20 ต.ค.</span><span class="booking-card-name">Confucius Temple & Guozijian</span></div>
+              <div class="booking-card-titles"><span class="booking-card-day">DAY 5 · พ. 21 ต.ค.</span><span class="booking-card-name">Confucius Temple & Guozijian</span></div>
               <span class="urgency-pill urgency-high">ความเร่งด่วน: สูง</span>
             </div>
             <div class="booking-meta-grid">
               <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">ต้อง (time-slot booking)</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">7 วัน</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ระบบเปิดจอง</span><span class="booking-meta-val flag">เวลาปล่อยรอบ: ไม่ยืนยัน</span></div>
-              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">13 ต.ค. 2026 (ลองเช้าตรู่)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">14 ต.ค. 2026 (ลองเช้าตรู่)</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val">WeChat "孔庙和国子监博物馆"</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val flag">ไม่ยืนยัน — โทร 010-84027224 ก่อนจอง</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val flag">คาด WeChat Pay — ไม่ยืนยัน</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ราคา</span><span class="booking-meta-val">30 ผู้ใหญ่ / 15 นศ. ≈ 147/74 THB · เด็ก: ขึ้นกับบัตรนักเรียนจีน</span></div>
             </div>
-            <div class="booking-note">ต่อเนื่องจาก Lama Temple เดินเพียง 5-10 นาที · <span class="flag-text">ปิดทุกวันจันทร์ (ปกติ — 20 ต.ค.เป็นอังคาร ไม่กระทบ แต่เคยสลับวันปิดตามฤดูกาลมาก่อน)</span> · no-show 3 ครั้ง = แบน 30 วัน</div>
+            <div class="booking-note">ต่อเนื่องจาก Lama Temple เดินเพียง 5-10 นาที · <span class="flag-text">ปิดทุกวันจันทร์ (ปกติ — 21 ต.ค.เป็นวันพุธ ไม่กระทบ แต่เคยสลับวันปิดตามฤดูกาลมาก่อน)</span> · no-show 3 ครั้ง = แบน 30 วัน</div>
           </div>
 
           <div class="booking-card">
             <div class="booking-card-head">
-              <div class="booking-card-titles"><span class="booking-card-day">DAY 5 · พ. 21 ต.ค.</span><span class="booking-card-name">Summer Palace <span style="font-size:0.7em;color:var(--text-muted);">颐和园</span></span></div>
+              <div class="booking-card-titles"><span class="booking-card-day">DAY 3 · จ. 19 ต.ค.</span><span class="booking-card-name">Summer Palace <span style="font-size:0.7em;color:var(--text-muted);">颐和园</span></span></div>
               <span class="urgency-pill urgency-med">ความเร่งด่วน: กลาง</span>
             </div>
             <div class="booking-meta-grid">
               <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val" style="color:var(--color-green);">ไม่บังคับแล้ว — walk-in ได้ (นโยบายใหม่ ก.ค. 2026)</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน (ถ้าจอง)</span><span class="booking-meta-val">1-7 วัน</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ระบบเปิดจอง</span><span class="booking-meta-val">21:00 ปักกิ่ง = 20:00 ไทย</span></div>
-              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">14 ต.ค. 2026, 21:00 น. (หรือ walk-in ได้เลย)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">12 ต.ค. 2026, 21:00 น. ปักกิ่ง = 20:00 น. ไทย (หรือ walk-in ได้เลย)</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val">WeChat "颐和园官方在线购票" · "畅游公园"</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val">ได้ ต้องพกตัวจริง</span></div>
               <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val">WeChat/Alipay ยืนยัน <span class="flag">บัตรต่างชาติ: ไม่ยืนยัน</span></span></div>
@@ -15741,7 +15924,7 @@
             <i class="fa-solid fa-calendar-days"></i>
             <span>C) Booking Calendar — เรียงตามวันที่ต้องลงมือจอง</span>
           </h3>
-          <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:10px;">ไม่ใช่ลำดับวันเที่ยว แต่เรียงตามวันที่ต้องกดจองจริง — จุดสีแดงคือรายการที่เกี่ยวข้องกับปัญหาวันปิด Forbidden City ที่ยังต้องยืนยัน</p>
+          <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:10px;">ไม่ใช่ลำดับวันเที่ยว แต่เรียงตามวันที่ต้องกดจองจริง — วันที่คำนวณจากแผนเที่ยวฉบับปรับใหม่แล้วทั้งหมด (ดู "🔄 Itinerary Review & Changes" ท้ายหน้า Checklist)</p>
           <div class="timeline booking-cal">
             <div class="timeline-item visible">
               <div class="timeline-marker"></div>
@@ -15770,49 +15953,49 @@
             <div class="timeline-item visible">
               <div class="timeline-marker"></div>
               <div class="timeline-content">
-                <div class="timeline-time">เสาร์ 10 ต.ค. 2026 · 06:00 น. ปักกิ่ง = 05:00 น. ไทย <span class="flag-text">(ตั้งเตือนล่วงหน้า 15 นาที)</span></div>
+                <div class="timeline-time">อาทิตย์ 11 ต.ค. 2026 · 06:00 น. ปักกิ่ง = 05:00 น. ไทย <span class="flag-text">(ตั้งเตือนล่วงหน้า 15 นาที)</span></div>
                 <h3 class="timeline-title">Lama Temple (Yonghegong) — รอเปิดจอง</h3>
-                <p class="timeline-desc">สำหรับวันที่ 20 ต.ค. เปิดจอง 10 วันล่วงหน้า — เตรียม Passport, WeChat/Alipay พร้อมใช้</p>
-              </div>
-            </div>
-            <div class="timeline-item visible crit">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <div class="timeline-time">จันทร์ 12 ต.ค. 2026* · ~12:00-12:30 น. ปักกิ่ง = ~11:00-11:30 น. ไทย</div>
-                <h3 class="timeline-title">Tiananmen Square — รอการยืนยันวันเดินทางใหม่ก่อน</h3>
-                <p class="timeline-desc">*ถ้ายังคงวันเดิม 19 ต.ค. — ดูกล่องแจ้งเตือนวิกฤตด้านบน</p>
-              </div>
-            </div>
-            <div class="timeline-item visible crit">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <div class="timeline-time">อังคาร 13 ต.ค. 2026* · 20:00 น. ปักกิ่ง = 19:00 น. ไทย <span class="flag-text">(ตั้งเตือน 15 นาที — ตั๋วหมดใน ~10 นาที)</span></div>
-                <h3 class="timeline-title">Forbidden City — ต้องเลือกวันเดินทางที่ใช้ได้จริงก่อน</h3>
-                <p class="timeline-desc">*ตัวอย่างคำนวณจากวันอังคาร 20 ต.ค. — วันจริงยังไม่ยืนยัน</p>
-              </div>
-            </div>
-            <div class="timeline-item visible crit">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <div class="timeline-time">อังคาร 13 ต.ค. 2026* · 09:00 น. ปักกิ่ง = 08:00 น. ไทย (โทรศัพท์)</div>
-                <h3 class="timeline-title">Jingshan Park — รอการยืนยันวันเดินทางใหม่ก่อน</h3>
-                <p class="timeline-desc">*ถ้าไปพร้อม Forbidden City วันอังคาร 20 ต.ค. — โทร 010-64038098</p>
+                <p class="timeline-desc">สำหรับวันที่ 21 ต.ค. (วันที่ 5) เปิดจอง 10 วันล่วงหน้า — เตรียม Passport, WeChat/Alipay พร้อมใช้</p>
               </div>
             </div>
             <div class="timeline-item visible">
               <div class="timeline-marker"></div>
               <div class="timeline-content">
-                <div class="timeline-time">อังคาร 13 ต.ค. 2026 · เวลาไม่ยืนยัน (ลองเช้าตรู่)</div>
+                <div class="timeline-time">จันทร์ 12 ต.ค. 2026 · 21:00 น. ปักกิ่ง = 20:00 น. ไทย</div>
+                <h3 class="timeline-title">Summer Palace — จองล่วงหน้า (หรือ walk-in ได้)</h3>
+                <p class="timeline-desc">สำหรับวันที่ 19 ต.ค. (วันที่ 3) — ไม่บังคับแล้ว แต่แนะนำจองไว้ก่อน</p>
+              </div>
+            </div>
+            <div class="timeline-item visible">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">อังคาร 13 ต.ค. 2026 · ~12:00-12:30 น. ปักกิ่ง = ~11:00-11:30 น. ไทย</div>
+                <h3 class="timeline-title">Tiananmen Square — รอเปิดจอง</h3>
+                <p class="timeline-desc">สำหรับวันที่ 20 ต.ค. (วันที่ 4)</p>
+              </div>
+            </div>
+            <div class="timeline-item visible crit">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">อังคาร 13 ต.ค. 2026 · 20:00 น. ปักกิ่ง = 19:00 น. ไทย <span class="flag-text">(ตั้งเตือน 15 นาที — ตั๋วหมดใน ~10 นาที)</span></div>
+                <h3 class="timeline-title">Forbidden City — รอเปิดจอง</h3>
+                <p class="timeline-desc">สำหรับวันที่ 20 ต.ค. (วันที่ 4) — ยืนยันแล้วว่าเปิดปกติ (อังคารไม่ใช่วันปิด)</p>
+              </div>
+            </div>
+            <div class="timeline-item visible">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">อังคาร 13 ต.ค. 2026 · 09:00 น. ปักกิ่ง = 08:00 น. ไทย (โทรศัพท์)</div>
+                <h3 class="timeline-title">Jingshan Park — รอเปิดจอง</h3>
+                <p class="timeline-desc">สำหรับวันที่ 20 ต.ค. (วันที่ 4) — โทร 010-64038098</p>
+              </div>
+            </div>
+            <div class="timeline-item visible">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">พุธ 14 ต.ค. 2026 · เวลาไม่ยืนยัน (ลองเช้าตรู่)</div>
                 <h3 class="timeline-title">Confucius Temple & Guozijian — รอเปิดจอง</h3>
-                <p class="timeline-desc">สำหรับวันที่ 20 ต.ค. — โทรยืนยันสิทธิ์ Passport ก่อน: 010-84027224</p>
-              </div>
-            </div>
-            <div class="timeline-item visible">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-                <div class="timeline-time">พุธ 14 ต.ค. 2026 · 21:00 น. ปักกิ่ง = 20:00 น. ไทย</div>
-                <h3 class="timeline-title">Summer Palace — ยังไม่ถึงกำหนด (จองได้/walk-in ได้)</h3>
-                <p class="timeline-desc">สำหรับวันที่ 21 ต.ค. — ไม่บังคับแล้ว แต่แนะนำจองไว้ก่อน</p>
+                <p class="timeline-desc">สำหรับวันที่ 21 ต.ค. (วันที่ 5) — โทรยืนยันสิทธิ์ Passport ก่อน: 010-84027224</p>
               </div>
             </div>
             <div class="timeline-item visible">
@@ -15872,7 +16055,7 @@
           </div>
           <div class="checklist-item">
             <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_fc_date" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
-            <div class="checklist-content"><label for="chk_bk_fc_date" class="checklist-label">ตัดสินใจวันใหม่สำหรับ Forbidden City cluster (พระราชวังต้องห้ามปิดวันจันทร์ 19 ต.ค.)</label></div>
+            <div class="checklist-content"><label for="chk_bk_fc_date" class="checklist-label">อัปเดต/ยกเลิก-จองใหม่สำหรับ 3 สถานที่ที่ย้ายวัน (Forbidden City cluster → 20 ต.ค., Lama/Confucius cluster → 21 ต.ค., Summer Palace → 19 ต.ค.)</label></div>
           </div>
           <div class="checklist-item">
             <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_passport_name" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
@@ -15943,9 +16126,9 @@
     const pixelDayTitles = {
       'day1': 'Day 1 · ถึงปักกิ่ง & เที่ยว Qianmen',
       'day2': 'Day 2 · ปีนกำแพงเมืองจีน Mutianyu',
-      'day3': 'Day 3 · พระราชวังต้องห้าม & จัตุรัสเทียนอันเหมิน',
-      'day4': 'Day 4 · วัดลามะ, วัดขงจื๊อ & ย่านศิลปะ 798',
-      'day5': 'Day 5 · พระราชวังฤดูร้อน & ตรอกหูท่ง Houhai',
+      'day3': 'Day 3 · พระราชวังฤดูร้อน & ตรอกหูท่ง Houhai',
+      'day4': 'Day 4 · พระราชวังต้องห้าม & จัตุรัสเทียนอันเหมิน',
+      'day5': 'Day 5 · วัดลามะ, วัดขงจื๊อ & ย่านศิลปะ 798',
       'day6': 'Day 6 · สวนสนุก Universal Studios',
       'day7': 'Day 7 · Temple of Heaven, Wangfujing & โชว์กายกรรม',
       'day8': 'Day 8 · เดินทางกลับกรุงเทพฯ (TG615)'
