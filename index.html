@@ -2100,6 +2100,217 @@
         animation: none !important;
       }
     }
+
+    /* --------------------------------------------------
+       12. BOOKING DOSSIER (ticket/reservation reference page)
+       -------------------------------------------------- */
+    .booking-summary-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .booking-chip {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: 0.8rem;
+    }
+
+    .booking-chip .chip-label {
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .booking-chip b {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .booking-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .booking-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--color-gold);
+    }
+
+    .booking-card.card-critical::before { background: var(--color-soft-red); }
+
+    .booking-card:hover {
+      border-color: rgba(201, 168, 76, 0.2);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .booking-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .booking-card-titles { display: flex; flex-direction: column; gap: 2px; }
+
+    .booking-card-name {
+      font-family: var(--font-headings);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .booking-card-day {
+      font-size: 0.78rem;
+      color: var(--color-sky-blue);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .booking-card-day.flag-day { color: var(--color-soft-red); }
+
+    .urgency-pill {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .urgency-high { background: rgba(248, 113, 113, 0.15); color: var(--color-soft-red); border: 1px solid rgba(248, 113, 113, 0.3); }
+    .urgency-med { background: rgba(249, 115, 22, 0.15); color: var(--color-orange); border: 1px solid rgba(249, 115, 22, 0.3); }
+    .urgency-low { background: rgba(16, 185, 129, 0.15); color: var(--color-green); border: 1px solid rgba(16, 185, 129, 0.3); }
+
+    .booking-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px 20px;
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 12px;
+    }
+
+    .booking-meta-item { display: flex; flex-direction: column; gap: 4px; }
+
+    .booking-meta-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .booking-meta-val {
+      font-size: 0.85rem;
+      color: var(--text-main);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .booking-meta-val.gold { color: var(--color-gold); font-weight: 700; }
+    .booking-meta-val.flag { color: var(--color-soft-red); }
+    .booking-meta-val a { color: var(--color-sky-blue); }
+
+    .booking-note {
+      margin-top: 12px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      border-top: 1px dashed rgba(255, 255, 255, 0.06);
+      padding-top: 12px;
+    }
+
+    .booking-note .flag-text { color: var(--color-soft-red); font-weight: 600; }
+
+    /* Inventory chips for Section A */
+    .inventory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .inv-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .inv-day { font-size: 0.68rem; color: var(--text-muted); font-family: monospace, var(--font-body); }
+    .inv-name { font-size: 0.88rem; font-weight: 600; color: var(--text-main); }
+
+    .inv-status {
+      align-self: flex-start;
+      font-size: 0.68rem;
+      font-family: monospace, var(--font-body);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .inv-status.ok { background: rgba(16, 185, 129, 0.12); color: var(--color-green); }
+    .inv-status.verify { background: rgba(249, 115, 22, 0.12); color: var(--color-orange); }
+    .inv-status.conflict { background: rgba(248, 113, 113, 0.12); color: var(--color-soft-red); }
+    .inv-status.info { background: rgba(56, 189, 248, 0.12); color: var(--color-sky-blue); }
+
+    /* Booking calendar re-uses .timeline but with its own marker color */
+    .booking-cal .timeline-marker { border-color: var(--color-gold); box-shadow: 0 0 6px var(--color-gold); }
+    .booking-cal .timeline-item.crit .timeline-marker { border-color: var(--color-soft-red); box-shadow: 0 0 6px var(--color-soft-red); }
+    .booking-cal .timeline-time { color: var(--color-gold); font-weight: 700; }
+    .booking-cal .timeline-item.crit .timeline-time { color: var(--color-soft-red); }
+
+    /* Cost summary receipt-style table */
+    .cost-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      overflow: hidden;
+      font-size: 0.88rem;
+    }
+    .cost-table td { padding: 12px 16px; border-bottom: 1px dashed rgba(255, 255, 255, 0.06); }
+    .cost-table tr:last-child td { border-bottom: none; }
+    .cost-table td.cost-val { text-align: right; font-family: monospace, var(--font-body); white-space: nowrap; color: var(--text-main); }
+    .cost-table tr.cost-grand td { border-top: 1px solid rgba(201, 168, 76, 0.3); font-weight: 700; padding-top: 16px; }
+    .cost-table tr.cost-grand td.cost-val { color: var(--color-gold); font-size: 1rem; }
+    .cost-table-wrap { overflow-x: auto; }
+
+    @media (max-width: 768px) {
+      .booking-meta-grid { grid-template-columns: 1fr 1fr; }
+      .inventory-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .booking-meta-grid { grid-template-columns: 1fr; }
+    }
 </style>
 </head>
 <body class="spotlight-active">
@@ -12481,6 +12692,7 @@
       <button class="mobile-day-btn" data-target="day8">วันที่ 8 ✈️</button>
       <button class="mobile-day-btn" data-target="restaurants">ร้านแนะนำ 🔥</button>
       <button class="mobile-day-btn" data-target="checklist">เช็คลิสต์ 📋</button>
+      <button class="mobile-day-btn" data-target="booking">คู่มือจองตั๋ว 🎫</button>
     </div>
   </nav>
 
@@ -12562,6 +12774,13 @@
             <span class="tab-name">Checklist การจองและเตรียมตัว</span>
           </div>
           <span class="tab-badge" style="background: var(--color-gold); font-size: 0.65rem; color: #000;">เตรียมตัว</span>
+        </a>
+        <a href="#booking" class="day-tab" data-target="booking" style="margin-top: 10px; border-top: 1px dotted rgba(255,255,255,0.08); padding-top: 10px;">
+          <div class="tab-info">
+            <span class="tab-num" style="color: var(--color-soft-red);">คู่มือจองตั๋ว</span>
+            <span class="tab-name">วัน-เวลาที่ต้องกดจองจริง 🎫</span>
+          </div>
+          <span class="tab-badge" style="background: var(--color-soft-red); font-size: 0.65rem; color: #000;">อัปเดต</span>
         </a>
       </nav>
 
@@ -15021,8 +15240,467 @@
         </div>
       </article>
 
+      <!-- Booking Dossier -->
+      <article class="day-card" id="booking">
+        <div class="day-anchor"></div>
+        <div class="accordion-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+
+        <header class="day-header checklist-header">
+          <div class="day-title-box">
+            <h2 class="day-number-title">🎫 คู่มือจองตั๋ว: วัน-เวลาที่ต้องกดจองจริง</h2>
+            <span class="day-main-theme">ตรวจสอบจากแหล่งทางการล่าสุด พร้อมคำนวณ deadline การจองของทุกสถานที่</span>
+          </div>
+        </header>
+
+        <div class="tips-warnings-box">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <div class="tips-content">
+            <strong>⚠️ พระราชวังต้องห้ามชนวันปิดประจำสัปดาห์ — ต้องเลือกวันใหม่ก่อนจองได้</strong>
+            <p><strong>19 ต.ค. 2026 ตรงกับวันจันทร์</strong> และพระราชวังต้องห้ามปิดทุกวันจันทร์ตลอดปี (ยกเว้นวันหยุดนักขัตฤกษ์ ซึ่ง ต.ค. 2026 ไม่มีวันหยุดพิเศษทับซ้อน) ระบบจองจะไม่เปิดให้จองวันนี้เลย ส่วน Tiananmen Square และ Jingshan Park ไม่ติดปัญหาวันปิด แต่ทั้งวันถูกออกแบบเป็นเส้นทางเดินเดียวกัน (เข้า Forbidden City ผ่านจัตุรัสแล้วออกไป Jingshan) จึงกระทบทั้งคลัสเตอร์ ทางแก้ที่พอเป็นไปได้คือย้ายทั้งคลัสเตอร์ไปวันอังคารที่ 20 ต.ค. (วันเดียวที่พอสลับได้ เพราะวันอาทิตย์ 18 ต.ค. ติดทริปกำแพงเมืองจีนทั้งวันอยู่แล้ว) แต่จะทำให้วันที่ 20 ต.ค. แน่นมากขึ้น เพราะมีวัดลามะ+วัดขงจื๊อ+798 Art+Sanlitun อยู่แล้ว <strong>ตารางด้านล่างใช้วันอังคาร 20 ต.ค. เป็นตัวอย่างคำนวณเท่านั้น ยังไม่ได้ตัดสินใจแทน — ควรคุยเรื่องออกแบบวันที่ 3-4 ใหม่ก่อนกดจองจริง</strong></p>
+          </div>
+        </div>
+
+        <div class="booking-summary-chips">
+          <span class="booking-chip"><span class="chip-label">เดินทาง</span> <b>17–24 ต.ค. 2026</b></span>
+          <span class="booking-chip"><span class="chip-label">ผู้เดินทาง</span> <b>2 ผู้ใหญ่ + เด็ก 1 คน</b></span>
+          <span class="booking-chip"><span class="chip-label">เอกสาร</span> <b>Passport (ต่างชาติ)</b></span>
+          <span class="booking-chip"><span class="chip-label">ชำระเงิน</span> <b>Alipay / WeChat Pay / บัตรต่างประเทศ</b></span>
+          <span class="booking-chip"><span class="chip-label">อัตราแลกเปลี่ยน</span> <b>1 CNY = 4.90 THB</b></span>
+          <span class="booking-chip"><span class="chip-label">ตรวจสอบเมื่อ</span> <b>9 ก.ย. 2026</b></span>
+        </div>
+
+        <!-- Section A: Inventory -->
+        <div class="checklist-section">
+          <h3 class="checklist-section-title">
+            <i class="fa-solid fa-list-ul"></i>
+            <span>A) รายการสถานที่จาก Checklist — สถานะโดยสรุป</span>
+          </h3>
+          <div class="inventory-grid">
+            <div class="inv-item"><span class="inv-day">DAY 2 · 18 ต.ค.</span><span class="inv-name">Mutianyu Great Wall (บัตรรวม)</span><span class="inv-status verify">ราคาแหล่งไม่ตรงกัน</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 2 · 18 ต.ค.</span><span class="inv-name">รถส่วนตัวไป-กลับ Mutianyu</span><span class="inv-status verify">ไม่มีราคากลางทางการ</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 3 · 19 ต.ค.</span><span class="inv-name">Tiananmen Square (ลงทะเบียน)</span><span class="inv-status conflict">วันเดินทางต้องยืนยันใหม่</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 3 · 19 ต.ค.</span><span class="inv-name">Forbidden City</span><span class="inv-status conflict">ปิดวันจันทร์ — ชนวันเดิม</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 3 · 19 ต.ค.</span><span class="inv-name">Jingshan Park</span><span class="inv-status conflict">วันเดินทางต้องยืนยันใหม่</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 4 · 20 ต.ค.</span><span class="inv-name">Lama Temple (Yonghegong)</span><span class="inv-status verify">โควตา/ระยะเวลาจองไม่ตรงกัน</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 4 · 20 ต.ค.</span><span class="inv-name">Confucius Temple & Guozijian</span><span class="inv-status verify">รับ Passport หรือไม่ ยังไม่ยืนยัน</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 5 · 21 ต.ค.</span><span class="inv-name">Summer Palace</span><span class="inv-status ok">พบข้อมูลครบ (นโยบายเพิ่งเปลี่ยน ก.ค. 2026)</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 6 · 22 ต.ค.</span><span class="inv-name">Universal Beijing Resort</span><span class="inv-status verify">ราคาจริงอยู่ในปฏิทินภาพ อ่านอัตโนมัติไม่ได้</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 7 · 23 ต.ค.</span><span class="inv-name">Temple of Heaven</span><span class="inv-status verify">เวลาปล่อยตั๋วไม่ตรงกัน</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 7 · 23 ต.ค.</span><span class="inv-name">Chaoyang Theatre Acrobatic Show</span><span class="inv-status verify">ไม่พบช่องทางทางการแท้</span></div>
+            <div class="inv-item"><span class="inv-day">DAY 1 · 17 ต.ค.</span><span class="inv-name">Airport Express (PEK T3→Dongzhimen)</span><span class="inv-status info">ซื้อวันเดินทางเลย ไม่ต้องจองล่วงหน้า</span></div>
+          </div>
+        </div>
+
+        <!-- Main comparison cards -->
+        <div class="checklist-section">
+          <h3 class="checklist-section-title">
+            <i class="fa-solid fa-table-list"></i>
+            <span>B) รายละเอียดการจองทีละสถานที่</span>
+          </h3>
+
+          <div class="booking-card">
+            <div class="booking-card-head">
+              <div class="booking-card-titles"><span class="booking-card-day">DAY 2 · อา. 18 ต.ค.</span><span class="booking-card-name">Mutianyu Great Wall <span style="font-size:0.7em;color:var(--text-muted);">(ทางเข้า+กระเช้า+Toboggan)</span></span></div>
+              <span class="urgency-pill urgency-med">ความเร่งด่วน: กลาง-สูง</span>
+            </div>
+            <div class="booking-meta-grid">
+              <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">ต้อง (real-name)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">30 วัน <span class="flag">(แหล่งเก่า: 7 วัน)</span></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ระบบเปิดจอง</span><span class="booking-meta-val flag">ไม่ยืนยัน — ลองตั้งแต่ 00:00 ปักกิ่ง</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">18 ก.ย. 2026 <br>(= 17 ก.ย. 23:00 น. ไทย)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ช่องทางจองทางการ</span><span class="booking-meta-val"><a href="https://www.mutianyugreatwall.com" target="_blank" rel="noopener">mutianyugreatwall.com</a> · WeChat "慕田峪长城官方平台"</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val">ได้ ต้องพกตัวจริง</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val">Alipay/WeChat/UnionPay <span class="flag">(บัตรต่างชาติยืนยันแหล่งเดียว)</span></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ราคา (ผู้ใหญ่)</span><span class="booking-meta-val">~180 CNY ≈ 882 THB <span class="flag">(ช่วง 40-45 เข้า, 120-140 กระเช้า)</span></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ยกเลิก/คืนเงิน</span><span class="booking-meta-val">ฟรีก่อนเที่ยงคืนวันเที่ยว หลังจากนั้นต้องโทรขอ</span></div>
+            </div>
+            <div class="booking-note">เด็ก &lt;6 ปี/&lt;1.2ม. เข้าฟรี+กระเช้าฟรี · เด็ก 6-18/&gt;1.2ม. เข้าลดราคาแต่กระเช้า/toboggan เต็มราคา · ผู้สูงอายุ 60+ ลดราคาเข้า แต่<span class="flag-text">ห้ามขึ้น toboggan</span> · <span class="flag-text">โดเมนสำรอง punycode certificate หมดอายุ ห้ามใช้</span> · มีหลายประตูทางเข้า ต้องเลือกให้ตรงกับกระเช้า/toboggan ที่จอง</div>
+          </div>
+
+          <div class="booking-card">
+            <div class="booking-card-head">
+              <div class="booking-card-titles"><span class="booking-card-day">DAY 2 · อา. 18 ต.ค.</span><span class="booking-card-name">รถส่วนตัว Qianmen ↔ Mutianyu</span></div>
+              <span class="urgency-pill urgency-med">ความเร่งด่วน: กลาง</span>
+            </div>
+            <div class="booking-meta-grid">
+              <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">ต้อง (นัดหมาย ไม่ใช่ walk-in)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">ไม่มีกฎตายตัว</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">แนะนำ 2-4 สัปดาห์ก่อน (≈ ปลาย ก.ย. 2026)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val">Klook / Trip.com / Viator / agency ท้องถิ่น</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val">บัตรต่างชาติได้ตรงผ่าน OTA</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ราคา</span><span class="booking-meta-val flag">600-800 CNY/คัน ≈ 2,940-3,920 THB (ตลาดเปิด ไม่มีราคากลาง)</span></div>
+            </div>
+            <div class="booking-note">ไม่มีหน่วยงานทางการเดียว เป็นตลาดบริการส่วนตัวหลาย operator — <span class="flag-text">แนะนำเทียบราคา 2-3 เจ้าก่อนตัดสินใจ</span> เงื่อนไขยกเลิกแตกต่างกันตาม operator ที่เลือก</div>
+          </div>
+
+          <div class="booking-card card-critical">
+            <div class="booking-card-head">
+              <div class="booking-card-titles"><span class="booking-card-day flag-day">DAY 3 · 19 ต.ค. → ต้องยืนยันวันใหม่</span><span class="booking-card-name">Tiananmen Square <span style="font-size:0.7em;color:var(--text-muted);">(ลงทะเบียนเข้าลาน ฟรี)</span></span></div>
+              <span class="urgency-pill urgency-med">ความเร่งด่วน: กลาง</span>
+            </div>
+            <div class="booking-meta-grid">
+              <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">ต้อง (ฟรีแต่บังคับลงทะเบียน)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">1-7 วัน</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ระบบเปิดจอง</span><span class="booking-meta-val flag">~12:00-12:30 ปักกิ่ง (2 แหล่งไม่ตรงกัน) ≈ 11:00-11:30 ไทย</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">13 ต.ค. 2026* <span style="font-weight:400;font-size:0.85em;">(*ถ้าไป 20 ต.ค.)</span></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val">WeChat "天安门广场预约" · App 京通</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val">ได้ ต้องพกตัวจริง</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ราคา</span><span class="booking-meta-val">ฟรีทุกกลุ่ม</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ยกเลิก/คืนเงิน</span><span class="booking-meta-val flag">ไม่พบนโยบายชัดเจน — โทร 010-65016000</span></div>
+            </div>
+            <div class="booking-note">ลานอาจ<span class="flag-text">ปิดกะทันหันหากมีภารกิจรัฐ/การทูตสำคัญ</span> ควรติดตามข่าวใกล้วันเดินทาง</div>
+          </div>
+
+          <div class="booking-card card-critical">
+            <div class="booking-card-head">
+              <div class="booking-card-titles"><span class="booking-card-day flag-day">DAY 3 · 19 ต.ค. = ปิด (จันทร์)</span><span class="booking-card-name">Forbidden City <span style="font-size:0.7em;color:var(--text-muted);">故宫</span></span></div>
+              <span class="urgency-pill urgency-high">ความเร่งด่วน: สูง</span>
+            </div>
+            <div class="booking-meta-grid">
+              <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">ต้อง — ไม่ขายหน้างานเด็ดขาด</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">7 วันพอดี</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ระบบเปิดจอง</span><span class="booking-meta-val gold">20:00 ปักกิ่ง = 19:00 ไทย</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">13 ต.ค. 2026, 20:00 น.* <span style="font-weight:400;font-size:0.85em;">(*ถ้าไป 20 ต.ค. — ตั๋วหมดใน ~10 นาที)</span></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val"><a href="https://ticket.dpm.org.cn" target="_blank" rel="noopener">ticket.dpm.org.cn</a> · WeChat "故宫博物院" เท่านั้น</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val">ได้ (1 Passport = 1 ใบ/วัน)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val">Alipay/WeChat <span class="flag">(บัตรต่างชาติยืนยันแหล่งเดียว)</span></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ราคา</span><span class="booking-meta-val">60 ผู้ใหญ่ / 20 นศ. / 30 สูงวัย ≈ 294/98/147 THB · <b>ฟรี &lt;18 ปี</b> · +10 Treasure Gallery · +10 Clock Gallery</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ยกเลิก/คืนเงิน</span><span class="booking-meta-val">ฟรีก่อน 24 ชม. — no-show 3 ครั้ง/180 วัน = แบน 60 วัน</span></div>
+            </div>
+            <div class="booking-note"><span class="flag-text">ปิดทุกวันจันทร์ทั้งปี — ดูกล่องแจ้งเตือนด้านบน ต้องเลือกวันใหม่ก่อนคำนวณ deadline จริง</span></div>
+          </div>
+
+          <div class="booking-card card-critical">
+            <div class="booking-card-head">
+              <div class="booking-card-titles"><span class="booking-card-day flag-day">DAY 3 · 19 ต.ค. → ต้องยืนยันวันใหม่</span><span class="booking-card-name">Jingshan Park <span style="font-size:0.7em;color:var(--text-muted);">จุดชมวิว Forbidden City</span></span></div>
+              <span class="urgency-pill urgency-low">ความเร่งด่วน: ต่ำ-กลาง</span>
+            </div>
+            <div class="booking-meta-grid">
+              <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">ต้อง (โทรจองสำหรับต่างชาติ)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">สูงสุด 7 วัน</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ช่วงเวลาโทรจอง</span><span class="booking-meta-val">09:00-16:00 ปักกิ่ง = 08:00-15:00 ไทย</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">13 ต.ค. 2026, 09:00 น.* <span style="font-weight:400;font-size:0.85em;">(*ถ้าไป 20 ต.ค.)</span></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val">โทร 010-64038098 (สายต่างชาติ)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val">ได้ (แจ้งเลขทางโทรศัพท์)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val flag">ที่เคาน์เตอร์: ไม่ยืนยัน</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ราคา</span><span class="booking-meta-val">2 ผู้ใหญ่ / 1 ครึ่งราคา ≈ 9.8 THB · <b>ฟรี &lt;6 ปี/&lt;1.2ม.</b></span></div>
+            </div>
+            <div class="booking-note">ต้องโทรจองด้วยตัวเอง ไม่ใช่แอปอัตโนมัติ — ควรทำตั้งแต่เช้าเพื่อกันสายไม่ว่าง ไม่พบนโยบายยกเลิกชัดเจน</div>
+          </div>
+
+          <div class="booking-card">
+            <div class="booking-card-head">
+              <div class="booking-card-titles"><span class="booking-card-day">DAY 4 · อ. 20 ต.ค.</span><span class="booking-card-name">Lama Temple <span style="font-size:0.7em;color:var(--text-muted);">Yonghegong 雍和宫</span></span></div>
+              <span class="urgency-pill urgency-high">ความเร่งด่วน: สูง</span>
+            </div>
+            <div class="booking-meta-grid">
+              <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">ต้อง (real-name)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">10 วัน <span class="flag">(แหล่งเก่า: next-day only)</span></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ระบบเปิดจอง</span><span class="booking-meta-val">06:00-21:00 ปักกิ่ง = 05:00-20:00 ไทย</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">10 ต.ค. 2026, 06:00 น.</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val">WeChat Official Account "雍和宫游客信众服务"</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val">ได้ ต้องพกตัวจริง</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val">WeChat Pay / Alipay เท่านั้น</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ราคา</span><span class="booking-meta-val">25 ผู้ใหญ่ / 12 ครึ่งราคา ≈ 123/59 THB · <b>ฟรี &lt;6 ปี</b></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ยกเลิก/คืนเงิน</span><span class="booking-meta-val">ฟรีก่อน 21:00 น. ของวันเที่ยว</span></div>
+            </div>
+            <div class="booking-note">โควตา/วันตัวเลขไม่ตรงกันในแหล่งต่างๆ (5,000-60,000) มีธูปแจกฟรีที่ทางเข้า ห้ามถ่ายภาพในวิหาร ห้ามแฟลช</div>
+          </div>
+
+          <div class="booking-card">
+            <div class="booking-card-head">
+              <div class="booking-card-titles"><span class="booking-card-day">DAY 4 · อ. 20 ต.ค.</span><span class="booking-card-name">Confucius Temple & Guozijian</span></div>
+              <span class="urgency-pill urgency-high">ความเร่งด่วน: สูง</span>
+            </div>
+            <div class="booking-meta-grid">
+              <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">ต้อง (time-slot booking)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">7 วัน</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ระบบเปิดจอง</span><span class="booking-meta-val flag">เวลาปล่อยรอบ: ไม่ยืนยัน</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">13 ต.ค. 2026 (ลองเช้าตรู่)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val">WeChat "孔庙和国子监博物馆"</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val flag">ไม่ยืนยัน — โทร 010-84027224 ก่อนจอง</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val flag">คาด WeChat Pay — ไม่ยืนยัน</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ราคา</span><span class="booking-meta-val">30 ผู้ใหญ่ / 15 นศ. ≈ 147/74 THB · เด็ก: ขึ้นกับบัตรนักเรียนจีน</span></div>
+            </div>
+            <div class="booking-note">ต่อเนื่องจาก Lama Temple เดินเพียง 5-10 นาที · <span class="flag-text">ปิดทุกวันจันทร์ (ปกติ — 20 ต.ค.เป็นอังคาร ไม่กระทบ แต่เคยสลับวันปิดตามฤดูกาลมาก่อน)</span> · no-show 3 ครั้ง = แบน 30 วัน</div>
+          </div>
+
+          <div class="booking-card">
+            <div class="booking-card-head">
+              <div class="booking-card-titles"><span class="booking-card-day">DAY 5 · พ. 21 ต.ค.</span><span class="booking-card-name">Summer Palace <span style="font-size:0.7em;color:var(--text-muted);">颐和园</span></span></div>
+              <span class="urgency-pill urgency-med">ความเร่งด่วน: กลาง</span>
+            </div>
+            <div class="booking-meta-grid">
+              <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val" style="color:var(--color-green);">ไม่บังคับแล้ว — walk-in ได้ (นโยบายใหม่ ก.ค. 2026)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน (ถ้าจอง)</span><span class="booking-meta-val">1-7 วัน</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ระบบเปิดจอง</span><span class="booking-meta-val">21:00 ปักกิ่ง = 20:00 ไทย</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">14 ต.ค. 2026, 21:00 น. (หรือ walk-in ได้เลย)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val">WeChat "颐和园官方在线购票" · "畅游公园"</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val">ได้ ต้องพกตัวจริง</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val">WeChat/Alipay ยืนยัน <span class="flag">บัตรต่างชาติ: ไม่ยืนยัน</span></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ราคา</span><span class="booking-meta-val">30 ประตูอย่างเดียว / <b>60 联票 (แนะนำ — รวม Long Corridor/Foxiang Ge)</b> ≈ 294 THB</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ยกเลิก/คืนเงิน</span><span class="booking-meta-val">คืนเต็มฟรีถ้ายังไม่ใช้ ภายใน 7 วัน</span></div>
+            </div>
+            <div class="booking-note">เรือข้ามทะเลสาบแยกจ่าย +30-40 CNY/เที่ยว (เด็ก &lt;1.2ม. ฟรี) · เด็กใช้เกณฑ์ส่วนสูง &lt;1.2ม. ไม่ใช่อายุ</div>
+          </div>
+
+          <div class="booking-card">
+            <div class="booking-card-head">
+              <div class="booking-card-titles"><span class="booking-card-day">DAY 6 · พฤ. 22 ต.ค.</span><span class="booking-card-name">Universal Beijing Resort <span style="font-size:0.7em;color:var(--text-muted);">1-Day Ticket</span></span></div>
+              <span class="urgency-pill urgency-med">ความเร่งด่วน: กลาง</span>
+            </div>
+            <div class="booking-meta-grid">
+              <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">ต้อง (real-name dated ticket)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">14-30 วัน (guideline)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ระบบเปิดจอง</span><span class="booking-meta-val flag">ไม่ยืนยัน — เช็คแอปตรง</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">22 ก.ย. – 8 ต.ค. 2026 (แนะนำต้นหน้าต่าง)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val">App "Universal Beijing Resort" · WeChat "北京环球度假区"</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val">ได้ (สแกนที่ประตู)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val flag">App รับเฉพาะ Alipay/WeChat — Klook/Trip.com รับบัตรตรง</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ราคา (คาด off-peak)</span><span class="booking-meta-val">~418 ผู้ใหญ่ ≈ 2,048 THB · ~314 เด็ก 3-11/สูงวัย 65+ ≈ 1,539 THB · <b>ฟรี &lt;3 ปี</b></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ยกเลิก/คืนเงิน</span><span class="booking-meta-val">≥48ชม.ฟรี · 24-48ชม.หัก 80 CNY · &lt;24ชม.ไม่คืน</span></div>
+            </div>
+            <div class="booking-note"><span class="flag-text">ราคาจริงอยู่ในปฏิทินภาพ อ่านอัตโนมัติไม่ได้ — เช็คแอปก่อนจอง</span> · วันธรรมดา = คิวสั้น ไม่จำเป็นต้องซื้อ Express Pass เพิ่ม</div>
+          </div>
+
+          <div class="booking-card">
+            <div class="booking-card-head">
+              <div class="booking-card-titles"><span class="booking-card-day">DAY 7 · ศ. 23 ต.ค.</span><span class="booking-card-name">Temple of Heaven <span style="font-size:0.7em;color:var(--text-muted);">天坛</span></span></div>
+              <span class="urgency-pill urgency-med">ความเร่งด่วน: กลาง</span>
+            </div>
+            <div class="booking-meta-grid">
+              <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">แนะนำจอง / walk-in ได้ถ้าไม่เต็ม</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">1-7 วัน</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ระบบเปิดจอง</span><span class="booking-meta-val flag">21:00 หรือ 10:00 ปักกิ่ง (2 แหล่งไม่ตรงกัน)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">16 ต.ค. 2026 (ลอง 20:00 น. และ 09:00 น. ไทย)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val">WeChat "天坛" · "畅游公园" · App 京通</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">Passport ต่างชาติ</span><span class="booking-meta-val">ได้ ต้องพกตัวจริง</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val">WeChat Pay ยืนยัน <span class="flag">Alipay/บัตร: ไม่ยืนยัน</span></span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ราคา</span><span class="booking-meta-val">15 ประตูอย่างเดียว / <b>34 联票 (แนะนำ — รวม Echo Wall/Hall)</b> ≈ 167 THB</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ยกเลิก/คืนเงิน</span><span class="booking-meta-val">คืนเต็มฟรีถ้ายังไม่ใช้ ภายใน 7 วัน</span></div>
+            </div>
+            <div class="booking-note"><span class="flag-text">ต้องซื้อ 联票 ไม่ใช่บัตรประตูเปล่า</span> จึงจะเข้าถึง Echo Wall และหอหลักตามแผนเที่ยว</div>
+          </div>
+
+          <div class="booking-card">
+            <div class="booking-card-head">
+              <div class="booking-card-titles"><span class="booking-card-day">DAY 7 · ศ. 23 ต.ค. เย็น</span><span class="booking-card-name">Chaoyang Theatre Acrobatic Show</span></div>
+              <span class="urgency-pill urgency-high">ความเร่งด่วน: สูง</span>
+            </div>
+            <div class="booking-meta-grid">
+              <div class="booking-meta-item"><span class="booking-meta-label">ต้องจองล่วงหน้า?</span><span class="booking-meta-val">แนะนำจองล่วงหน้า</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">จองได้ล่วงหน้ากี่วัน</span><span class="booking-meta-val">ไม่มีกฎตายตัว — จองได้ตลอด</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">วัน-เวลาที่ต้องจองจริง</span><span class="booking-meta-val gold">16-20 ต.ค. 2026 (แนะนำ 3-7 วันก่อนโชว์)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ช่องทาง</span><span class="booking-meta-val flag">ไม่พบเว็บทางการแท้ — แนะนำ Klook/Trip.com</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">Passport</span><span class="booking-meta-val">ไม่บังคับ (โชว์เชิงพาณิชย์)</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ชำระเงิน</span><span class="booking-meta-val">บัตรต่างชาติได้ตรงผ่าน OTA</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ราคา</span><span class="booking-meta-val">240-980 CNY ตามโซน (เอเจนต์) <span class="flag">ราคาทางการอาจต่างกัน</span> · อ้างอิง Trip.com ≈ 1,430 THB/คน</span></div>
+              <div class="booking-meta-item"><span class="booking-meta-label">ยกเลิก/คืนเงิน</span><span class="booking-meta-val">ต่างกันตามช่องทาง — เช็คก่อนจอง</span></div>
+            </div>
+            <div class="booking-note"><span class="flag-text">รอบจริงที่พบบ่อยสุดคือ 17:30-18:30 ไม่ใช่ 17:00 ตามแผนเที่ยวปัจจุบัน</span> — ควรโทรยืนยันรอบก่อนจ่ายเงิน · เด็ก &gt;3 ขวบมักต้องซื้อเต็มราคาเพราะเป็นที่นั่งกำหนด</div>
+          </div>
+        </div>
+
+        <!-- Section B: Booking calendar -->
+        <div class="checklist-section">
+          <h3 class="checklist-section-title">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>C) Booking Calendar — เรียงตามวันที่ต้องลงมือจอง</span>
+          </h3>
+          <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:10px;">ไม่ใช่ลำดับวันเที่ยว แต่เรียงตามวันที่ต้องกดจองจริง — จุดสีแดงคือรายการที่เกี่ยวข้องกับปัญหาวันปิด Forbidden City ที่ยังต้องยืนยัน</p>
+          <div class="timeline booking-cal">
+            <div class="timeline-item visible">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">ตอนนี้ – ก่อน 18 ก.ย. 2026</div>
+                <h3 class="timeline-title">รถส่วนตัว Mutianyu — ควรจองทันที</h3>
+                <p class="timeline-desc">สำหรับวันที่ 18 ต.ค. — ขอใบเสนอราคา 2-3 เจ้าเปรียบเทียบก่อนตัดสินใจ</p>
+              </div>
+            </div>
+            <div class="timeline-item visible">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">ศุกร์ 18 ก.ย. 2026 · 00:00 น. ปักกิ่ง (ประมาณ) = พฤ. 17 ก.ย. 23:00 น. ไทย</div>
+                <h3 class="timeline-title">Mutianyu Great Wall — รอเปิดจอง</h3>
+                <p class="timeline-desc">สำหรับวันที่ 18 ต.ค. เปิดจอง 30 วันล่วงหน้า — เตรียม Passport 3 คน และ Alipay/WeChat พร้อมใช้</p>
+              </div>
+            </div>
+            <div class="timeline-item visible">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">อังคาร 22 ก.ย. 2026 · เวลาไม่ยืนยัน</div>
+                <h3 class="timeline-title">Universal Beijing Resort — รอเปิดจอง</h3>
+                <p class="timeline-desc">สำหรับวันที่ 22 ต.ค. ต้นหน้าต่าง 14-30 วัน — เช็คแอปทางการเรื่องราคาจริงก่อนกดจอง</p>
+              </div>
+            </div>
+            <div class="timeline-item visible">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">เสาร์ 10 ต.ค. 2026 · 06:00 น. ปักกิ่ง = 05:00 น. ไทย <span class="flag-text">(ตั้งเตือนล่วงหน้า 15 นาที)</span></div>
+                <h3 class="timeline-title">Lama Temple (Yonghegong) — รอเปิดจอง</h3>
+                <p class="timeline-desc">สำหรับวันที่ 20 ต.ค. เปิดจอง 10 วันล่วงหน้า — เตรียม Passport, WeChat/Alipay พร้อมใช้</p>
+              </div>
+            </div>
+            <div class="timeline-item visible crit">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">จันทร์ 12 ต.ค. 2026* · ~12:00-12:30 น. ปักกิ่ง = ~11:00-11:30 น. ไทย</div>
+                <h3 class="timeline-title">Tiananmen Square — รอการยืนยันวันเดินทางใหม่ก่อน</h3>
+                <p class="timeline-desc">*ถ้ายังคงวันเดิม 19 ต.ค. — ดูกล่องแจ้งเตือนวิกฤตด้านบน</p>
+              </div>
+            </div>
+            <div class="timeline-item visible crit">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">อังคาร 13 ต.ค. 2026* · 20:00 น. ปักกิ่ง = 19:00 น. ไทย <span class="flag-text">(ตั้งเตือน 15 นาที — ตั๋วหมดใน ~10 นาที)</span></div>
+                <h3 class="timeline-title">Forbidden City — ต้องเลือกวันเดินทางที่ใช้ได้จริงก่อน</h3>
+                <p class="timeline-desc">*ตัวอย่างคำนวณจากวันอังคาร 20 ต.ค. — วันจริงยังไม่ยืนยัน</p>
+              </div>
+            </div>
+            <div class="timeline-item visible crit">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">อังคาร 13 ต.ค. 2026* · 09:00 น. ปักกิ่ง = 08:00 น. ไทย (โทรศัพท์)</div>
+                <h3 class="timeline-title">Jingshan Park — รอการยืนยันวันเดินทางใหม่ก่อน</h3>
+                <p class="timeline-desc">*ถ้าไปพร้อม Forbidden City วันอังคาร 20 ต.ค. — โทร 010-64038098</p>
+              </div>
+            </div>
+            <div class="timeline-item visible">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">อังคาร 13 ต.ค. 2026 · เวลาไม่ยืนยัน (ลองเช้าตรู่)</div>
+                <h3 class="timeline-title">Confucius Temple & Guozijian — รอเปิดจอง</h3>
+                <p class="timeline-desc">สำหรับวันที่ 20 ต.ค. — โทรยืนยันสิทธิ์ Passport ก่อน: 010-84027224</p>
+              </div>
+            </div>
+            <div class="timeline-item visible">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">พุธ 14 ต.ค. 2026 · 21:00 น. ปักกิ่ง = 20:00 น. ไทย</div>
+                <h3 class="timeline-title">Summer Palace — ยังไม่ถึงกำหนด (จองได้/walk-in ได้)</h3>
+                <p class="timeline-desc">สำหรับวันที่ 21 ต.ค. — ไม่บังคับแล้ว แต่แนะนำจองไว้ก่อน</p>
+              </div>
+            </div>
+            <div class="timeline-item visible">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">ศุกร์ 16 ต.ค. 2026 · ลอง 20:00 น. และ 09:00 น. ไทย</div>
+                <h3 class="timeline-title">Temple of Heaven — ยังไม่ถึงกำหนด</h3>
+                <p class="timeline-desc">สำหรับวันที่ 23 ต.ค. เปิดจอง 7 วันล่วงหน้า</p>
+              </div>
+            </div>
+            <div class="timeline-item visible">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">ศุกร์ 16 – อังคาร 20 ต.ค. 2026 · ไม่มีเวลาตายตัว</div>
+                <h3 class="timeline-title">Chaoyang Theatre Acrobatic Show — ยังไม่ถึงกำหนด</h3>
+                <p class="timeline-desc">สำหรับค่ำวันที่ 23 ต.ค. — จองผ่าน Klook/Trip.com แล้วโทรยืนยันรอบจริง</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section C: Cost summary -->
+        <div class="checklist-section">
+          <h3 class="checklist-section-title">
+            <i class="fa-solid fa-receipt"></i>
+            <span>D) สรุปค่าใช้จ่าย</span>
+          </h3>
+          <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:14px;">ราคาผู้ใหญ่คูณ 2 คน + ช่วงราคาเด็ก 1 คน (ต่ำ = เด็กเล็ก &lt;6 ปี/&lt;1.2ม., สูง = เด็กโต 12+) — ตัวเลขจะแม่นขึ้นทันทีที่ทราบอายุ/ส่วนสูงเด็กจริง</p>
+          <div class="cost-table-wrap">
+            <table class="cost-table">
+              <tbody>
+                <tr><td>ค่าเข้าบังคับ — ผู้ใหญ่ 2 คน (รวมทุกที่ ยกเว้นโรงละคร)</td><td class="cost-val">1,618 CNY</td></tr>
+                <tr><td>ค่าเข้าบังคับ — เด็ก 1 คน (ต่ำสุด อายุ &lt;6/&lt;1.2ม.)</td><td class="cost-val">314 CNY</td></tr>
+                <tr><td>ค่าเข้าบังคับ — เด็ก 1 คน (สูงสุด อายุ 12+)</td><td class="cost-val">667 CNY</td></tr>
+                <tr><td>Chaoyang Theatre — ผู้ใหญ่ 2 + เด็ก 1 (อ้างอิง Trip.com)</td><td class="cost-val">~4,290 THB</td></tr>
+                <tr><td>เรือ Summer Palace (แนะนำ, one-way/คน)</td><td class="cost-val">30-40 CNY</td></tr>
+                <tr><td>Universal Express Pass Set-3 (เลือกได้ ไม่จำเป็นวันธรรมดา)</td><td class="cost-val">จาก 390 CNY/คน</td></tr>
+                <tr class="cost-grand"><td>รวมประมาณ (ครอบครัว เด็กช่วงต่ำสุด)</td><td class="cost-val">≈ 13,700 THB</td></tr>
+                <tr class="cost-grand"><td>รวมประมาณ (ครอบครัว เด็กช่วงสูงสุด)</td><td class="cost-val">≈ 15,500 THB</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-top:14px;"><strong>ยังไม่รวม:</strong> รถไฟใต้ดิน/แท็กซี่ทั้งทริป, อาหารทุกมื้อ, รถส่วนตัว Mutianyu (600-800 CNY/คัน ราคาตลาดไม่ตายตัว), ทัวร์ไกด์, ประกันการเดินทาง, ตั๋วเครื่องบิน BKK↔PEK, โรงแรม 7 คืน, Airport Express (25 CNY/เที่ยว), eSIM/internet</p>
+        </div>
+
+        <!-- Section D: Action list -->
+        <div class="checklist-section">
+          <h3 class="checklist-section-title">
+            <i class="fa-solid fa-list-check"></i>
+            <span>E) Action List</span>
+          </h3>
+
+          <h4 style="font-size:0.8rem;color:var(--color-soft-red);text-transform:uppercase;letter-spacing:0.5px;margin:16px 0 4px;">ทำทันที — ก่อนวันจองแรกจะมาถึง</h4>
+          <div class="checklist-item">
+            <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_child_age" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+            <div class="checklist-content"><label for="chk_bk_child_age" class="checklist-label">ยืนยันอายุ/ส่วนสูงของเด็กให้ชัดเจน — กระทบราคาตั๋วเกือบทุกที่</label></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_fc_date" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+            <div class="checklist-content"><label for="chk_bk_fc_date" class="checklist-label">ตัดสินใจวันใหม่สำหรับ Forbidden City cluster (พระราชวังต้องห้ามปิดวันจันทร์ 19 ต.ค.)</label></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_passport_name" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+            <div class="checklist-content"><label for="chk_bk_passport_name" class="checklist-label">ตรวจสอบชื่อภาษาอังกฤษใน Passport ของทุกคนให้ตรงกับที่จะใช้จองทุกระบบ</label></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_passport_no" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+            <div class="checklist-content"><label for="chk_bk_passport_no" class="checklist-label">เตรียมเลข Passport ของผู้เดินทางทุกคน (รวมเด็ก) จดสำรองไว้นอกมือถือด้วย</label></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_card_intl" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+            <div class="checklist-content"><label for="chk_bk_card_intl" class="checklist-label">ยืนยันว่าบัตรเครดิตต่างประเทศทำธุรกรรมต่างประเทศได้ (เผื่อ Alipay/WeChat ใช้ไม่ได้ในบางระบบ)</label></div>
+          </div>
+
+          <h4 style="font-size:0.8rem;color:var(--color-gold);text-transform:uppercase;letter-spacing:0.5px;margin:20px 0 4px;">18 ก.ย. – 8 ต.ค. 2026 — ช่วงจองหลัก</h4>
+          <div class="checklist-item">
+            <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_reminders" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+            <div class="checklist-content"><label for="chk_bk_reminders" class="checklist-label">ตั้งเตือนตามเวลาไทยในปฏิทินด้านบนทุกรายการ (ล่วงหน้า 10-15 นาทีสำหรับ Forbidden City และ Lama Temple)</label></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_car_quote" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+            <div class="checklist-content"><label for="chk_bk_car_quote" class="checklist-label">ขอใบเสนอราคารถส่วนตัว Mutianyu จาก 2-3 เจ้าก่อนตัดสินใจ</label></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_universal_price" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+            <div class="checklist-content"><label for="chk_bk_universal_price" class="checklist-label">เช็คแอป Universal Beijing Resort โดยตรงเพื่อดูราคาจริงของวันที่ 22 ต.ค. ก่อนจอง</label></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_confucius_call" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+            <div class="checklist-content"><label for="chk_bk_confucius_call" class="checklist-label">โทรสอบถาม Confucius Temple & Guozijian (010-84027224) ว่ารับจองด้วย Passport ได้จริงหรือไม่</label></div>
+          </div>
+
+          <h4 style="font-size:0.8rem;color:var(--color-sky-blue);text-transform:uppercase;letter-spacing:0.5px;margin:20px 0 4px;">ช่วงจองรอง — 10-16 ต.ค. 2026</h4>
+          <div class="checklist-item">
+            <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_theatre_book" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+            <div class="checklist-content"><label for="chk_bk_theatre_book" class="checklist-label">จองผ่าน Klook หรือ Trip.com สำหรับ Chaoyang Theatre และโทรยืนยันรอบเวลาจริงก่อนจ่ายเงิน</label></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_qr_save" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+            <div class="checklist-content"><label for="chk_bk_qr_save" class="checklist-label">บันทึก QR Code หรือเลขยืนยันการจองทุกใบไว้แบบออฟไลน์ (สกรีนช็อต + อีเมล)</label></div>
+          </div>
+
+          <h4 style="font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin:20px 0 4px;">ก่อนเดินทาง / วันเข้าชม</h4>
+          <div class="checklist-item">
+            <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_final_check" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+            <div class="checklist-content"><label for="chk_bk_final_check" class="checklist-label">ตรวจสอบการจองทุกใบอีกครั้งก่อนถึงวันเดินทางจริง (ราคา/เวลา/ชื่อสะกดถูกต้อง)</label></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_apps" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+            <div class="checklist-content"><label for="chk_bk_apps" class="checklist-label">ดาวน์โหลดแอป/สร้างบัญชีที่จำเป็น: WeChat, Alipay, App Universal Beijing Resort, App 京通</label></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-cb-wrapper"><input type="checkbox" id="chk_bk_carry_passport" class="checklist-checkbox"><span class="checklist-checkmark"></span></div>
+            <div class="checklist-content"><label for="chk_bk_carry_passport" class="checklist-label">พก Passport ตัวจริงติดตัวเสมอทุกวันเข้าชม (ไม่ใช่แค่รูปถ่าย) — บังคับเกือบทุกสถานที่ในทริปนี้</label></div>
+          </div>
+        </div>
+
+        <p style="font-size:0.75rem;color:var(--text-muted);margin-top:20px;">อัตราแลกเปลี่ยน 1 CNY = 4.90 THB (xe.com, mid-market, ตรวจสอบ 9 ก.ย. 2026) · ทุกรายการที่ทำเครื่องหมาย "ไม่ยืนยัน" ควรตรวจสอบซ้ำใกล้วันจองจริงจากช่องทางทางการโดยตรง</p>
+      </article>
+
     </section>
-  
+
 
   <!-- Javascript Logic -->
   <script>
