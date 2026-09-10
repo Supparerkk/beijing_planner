@@ -87,7 +87,7 @@ beijing_planner/
 | 2360–~2470 | Hero section: countdown timer, hero meta badges, pixel-art walking animation box |
 | ~2470–12700 | SVG pixel-art landmark graphics (`lm-svg-1` ถึง `lm-svg-8`) — ภาพพิกเซลของแลนด์มาร์คแต่ละวัน ใช้พื้นที่ไฟล์เยอะที่สุด (rect หลายพันตัว) |
 | 12711–12725 | `<nav class="mobile-day-nav">` — แถบเมนูเลื่อนแนวนอนสำหรับมือถือ |
-| 12727–12904 | `<aside class="sidebar">` — เมนูเลือกวัน (desktop), แผนที่ interactive, กล่องข้อควรจำ |
+| 12727–~12810 | `<aside class="sidebar">` — เมนูเลือกวัน (desktop) เท่านั้น (แผนที่ interactive และกล่องข้อควรจำถูกลบเมื่อ 2026-09-10 ดู Change Log หัวข้อ 13) |
 | 12907–14113 | `<section class="timeline-container">` — การ์ดแต่ละวัน `#day1`–`#day8` |
 | 14114–14980 | `<article id="restaurants">` — แท็บ "ลายแทง 20 ร้านอร่อย" |
 | 14973–15493 | `<article id="checklist">` — แท็บรวม "🎫 คู่มือจองปักกิ่ง 2026" (เดิมแยกเป็น `#checklist` + `#booking` 2 แท็บ รวมเป็นแท็บเดียวเมื่อ 2026-09-10 ดู Change Log หัวข้อ 13) |
@@ -134,12 +134,11 @@ beijing_planner/
 | `.checklist-badge` | 1369–1392 | ป้ายความเร่งด่วนในแต่ละ checklist-item | class ย่อย `badge-urgent` (แดง) / `badge-warning` (เหลือง) / `badge-info` (ฟ้า) / `badge-free` (เขียว) | `#checklist` | - |
 | `.restaurant-card` | 1413–1669 (Section 12) | การ์ดร้านอาหารแต่ละร้าน พร้อมรูป, badge, meta grid | `.restaurant-image-wrapper > img`, `.restaurant-badges`, `.restaurant-meta-grid > .restaurant-meta-item`, `.val-highlight-day` (span สีทองอ้างอิงวันในแผน) | `#restaurants` (20 การ์ด) | `.val-highlight-day` เป็นจุดที่ต้อง sync กับวันที่จริงเสมอเมื่อมีการสลับวันเที่ยว (เคยเป็นจุดพลาดมาแล้วในอดีต) |
 | `.pixel-landmark` / `.lm-svg-N` (N=1–8) | 1670–1973 (pixel art) | ภาพพิกเซลอาร์ตของแลนด์มาร์คแต่ละวัน แสดงใน hero box แบบ cross-fade ตามวันที่เลือก | `id="lm-svg-{dayNum}"` ต้องตรงกับเลขวันเป๊ะ ๆ, ใช้ `.active`/`.leaving` class สลับ | Hero section, sync ผ่าน `syncPixelArt()` | **ห้ามวาดใหม่เฉย ๆ เวลาสลับเนื้อหาแต่ละวัน** — ถ้าสลับว่าวันไหนไปเที่ยวที่ไหน ต้องเปลี่ยน `id` ของ svg (และ comment กำกับ) ให้ตรงกับแลนด์มาร์คจริงของวันนั้น ไม่ใช่วาดภาพใหม่ |
-| `.map-zone` (SVG polygon/rect) | 486–692 (Section 6) | โซนพื้นที่บนแผนที่ปักกิ่งแบบ interactive ในไซด์บาร์ | `data-zone`, `data-day` attribute, class `zone-{name}` (huairou, shunyi, haidian, central, chaoyang, tongzhou) | Sidebar map panel | ⚠️ ดูหัวข้อ 11 (Known Bug) — `data-day` ใน HTML sync ถูกต้องแล้ว แต่ฟังก์ชัน JS `syncMapHighlight()` (บรรทัด 16461) เป็น hardcode แยกต่างหาก **ไม่ sync กับ `data-day`** และยังอ้างอิง mapping แบบเก่าก่อนการสลับวันที่ 3/4/5 |
 | `.booking-card` / `.inventory-grid` / `.booking-cal` | ภายใน Section 12 (Booking Dossier CSS) | การ์ดรายละเอียดการจองตั๋วรายสถานที่ | `.booking-card-head`, `.booking-meta-grid > .booking-meta-item`, `.urgency-pill` (`urgency-high`/`urgency-med`/`urgency-low`), class `card-critical`/`flag-day` สำหรับเน้นรายการวิกฤต | `#booking` Section A–C | ต้องอัปเดตวันที่/deadline ทุกครั้งที่มีการย้ายวันเที่ยว — ปัจจุบัน sync กับแผนล่าสุดแล้ว (commit `a3f2bba`) |
 | `.day-title-box` / `.day-header` | 693–845 | หัวข้อของแต่ละการ์ด (ชื่อวัน, theme, difficulty badge) | `h2.day-number-title`, `span.date`, `span.day-main-theme` | ทุก `.day-card` | - |
 
 **ห้ามแก้โดยไม่ทดสอบผลกระทบ:**
-- `setActiveDay()` / `syncPixelArt()` / `syncMapHighlight()` (บรรทัด 16295–16523) — เป็น engine หลักที่ผูกทุกอย่างเข้าด้วยกัน (tab, pixel art, map, mobile accordion) แก้ผิดจุดเดียวจะกระทบทั้งเว็บ
+- `setActiveDay()` / `syncPixelArt()` (บรรทัด 16295–16523) — เป็น engine หลักที่ผูกทุกอย่างเข้าด้วยกัน (tab, pixel art, mobile accordion) แก้ผิดจุดเดียวจะกระทบทั้งเว็บ
 - checkbox `id` ใด ๆ ภายใต้ `.checklist-checkbox` — ซ้ำกันจะทำให้ progress bar และ `localStorage` เพี้ยน
 - `id="lm-svg-N"` ของ pixel art SVG — ต้องเป็นเลข 1–8 ไม่ซ้ำกัน (มี ~1,000+ `<rect>` ต่อภาพ ห้ามลบทิ้งโดยไม่ได้ตั้งใจ)
 
@@ -158,7 +157,6 @@ User คลิก .day-tab หรือ .mobile-day-btn
    ├─ toggle .active class บน tabs/buttons ที่ตรง data-target
    ├─ toggle .active-day / .collapsed บน .day-card ที่ id ตรงกัน
    ├─ toggle .visible บน .timeline-item ภายในการ์ดที่ active (สำหรับ CSS fade-in)
-   ├─ syncMapHighlight(dayId) → toggle .active บน .map-zone ที่เกี่ยวข้อง (hardcoded mapping)
    └─ syncPixelArt(dayId) → เปลี่ยน #pixel-day-title ข้อความ + สลับ .active/.leaving บน lm-svg-N
 → scrollIntoView() ไปยังตำแหน่งที่เหมาะสม (mobile scroll ไปการ์ด, desktop scroll ไป #main-content)
 ```
@@ -231,8 +229,8 @@ User คลิก checkbox (.checklist-checkbox)
 
 - **Component library:** ไม่มี (เขียน component ด้วยมือทั้งหมดเป็น CSS class ตามหัวข้อ 5)
 - **Icon library:** Font Awesome 6.4.0 (`fa-solid`, `fa-regular` classes)
-- **Responsive breakpoint หลัก:** `768px` (mobile/desktop switch — ใช้ตรวจสอบใน JS ด้วย `window.innerWidth < 768` เช่นกัน ไม่ใช่แค่ CSS media query) และ `991px` (ซ่อนแผนที่ interactive บนจอเล็ก — ดู `syncMapHighlight` บรรทัด 16462) ดู CSS media query เพิ่มเติมที่ Section 10 (บรรทัด 1061–1214)
-- **แนวทางการออกแบบที่ควรรักษาไว้:** โทนมืด (dark theme) หรูหรา สไตล์ "แผนที่เดินทางพรีเมียม", ใช้ glassmorphism (พื้นผิวโปร่งแสงมีขอบบาง), ใช้สี accent (gold/sky-blue/red/purple/orange/green) แบบมีความหมายเฉพาะ (ไม่ใช่สุ่มสี) ตามหัวข้อ/ประเภทกิจกรรม, ใช้ font คู่ Playfair Display (หัว) + Prompt (เนื้อหาไทย)
+- **Responsive breakpoint หลัก:** `768px` (mobile/desktop switch — ใช้ตรวจสอบใน JS ด้วย `window.innerWidth < 768` เช่นกัน ไม่ใช่แค่ CSS media query) และ `991px` (ซ่อนเมนู `.day-tabs` บนจอเล็ก ใช้ `.mobile-day-nav` แทน) ดู CSS media query เพิ่มเติมที่ Section 10 (บรรทัด 1061–1214)
+- **แนวทางการออกแบบที่ควรรักษาไว้:** โทนมืด (dark theme) หรูหรา สไตล์ "แผนที่เดินทางพรีเมียม" (ไม่มีแผนที่ interactive จริงในเว็บแล้วตั้งแต่ 2026-09-10 แต่ยังคงธีมภาพลักษณ์นี้ไว้), ใช้ glassmorphism (พื้นผิวโปร่งแสงมีขอบบาง), ใช้สี accent (gold/sky-blue/red/purple/orange/green) แบบมีความหมายเฉพาะ (ไม่ใช่สุ่มสี) ตามหัวข้อ/ประเภทกิจกรรม, ใช้ font คู่ Playfair Display (หัว) + Prompt (เนื้อหาไทย)
 - **ไฟล์ที่ควรแก้เมื่อเปลี่ยนสี/ฟอนต์/theme/layout/responsive:**
   - เปลี่ยนสีธีมหลัก → แก้ `:root` (บรรทัด 24–58) เท่านั้น เพราะทุก component อ้างอิงผ่าน CSS variable
   - เปลี่ยนฟอนต์ → แก้ `--font-headings`/`--font-body` ใน `:root` และ `<link>` Google Fonts บรรทัด 15
@@ -247,7 +245,7 @@ User คลิก checkbox (.checklist-checkbox)
 
 | หากต้องการแก้ไขเรื่องนี้ | เริ่มดูส่วนนี้ก่อน | บรรทัดโดยประมาณ | ข้อควรตรวจสอบ |
 |---|---|---|---|
-| เพิ่มวันเที่ยวใหม่ / วันที่ 9 | คัดลอกโครงสร้าง `<article class="day-card" id="dayN">` จากวันที่ใกล้เคียง | 12907–14113 | ต้องเพิ่ม `.day-tab` ใน sidebar (12731–12813), `.mobile-day-btn` (12711–12725), เพิ่ม `id="lm-svg-N"` ใหม่ในภาพ pixel art, เพิ่ม entry ใน `pixelDayTitles` (16126–16135), เพิ่ม case ใน `syncMapHighlight()` (16461–16495) |
+| เพิ่มวันเที่ยวใหม่ / วันที่ 9 | คัดลอกโครงสร้าง `<article class="day-card" id="dayN">` จากวันที่ใกล้เคียง | 12907–14113 | ต้องเพิ่ม `.day-tab` ใน sidebar (12731–12813), `.mobile-day-btn` (12711–12725), เพิ่ม `id="lm-svg-N"` ใหม่ในภาพ pixel art, เพิ่ม entry ใน `pixelDayTitles` (16126–16135) |
 | แก้ navigation / menu | Sidebar `.day-tabs` (desktop) และ `.mobile-day-nav` (mobile) | 12711–12813 | ต้องแก้ทั้ง 2 ที่พร้อมกันให้ label ตรงกัน (emoji มือถือ vs ชื่อเต็ม desktop) |
 | แก้ UI/เนื้อหาหน้าเดิม (วันเที่ยว) | หา `id="dayN"` ที่ต้องการ แล้วแก้ `.timeline-item` ภายใน | 12910–14113 | อย่าลืมอัปเดต `.day-status-strip` (3 บรรทัดสถานะ) ให้ตรงกับเนื้อหาใหม่ |
 | เพิ่ม form | ไม่มีระบบฟอร์มอยู่แล้ว ต้องสร้างใหม่ทั้งหมด | - | ไม่มี pattern เดิมให้อ้างอิง — ต้องออกแบบใหม่ |
@@ -256,12 +254,11 @@ User คลิก checkbox (.checklist-checkbox)
 | แก้ database model | ไม่มี database | - | - |
 | แก้ login / permission | ไม่มีระบบ authentication | - | - |
 | แก้ dashboard / chart | ไม่มี chart library ใช้อยู่ — ใกล้เคียงที่สุดคือ progress bar ของเช็คลิสต์ | 16544–16578 | - |
-| แก้ responsive / mobile | Section 10 ใน `<style>` + breakpoint check ใน JS | CSS: 1061–1214, JS: `window.innerWidth < 768` (หลายจุด) | breakpoint หลักคือ 768px (layout) และ 991px (ซ่อนแผนที่) — ต้องเทสทั้งสองจุด |
+| แก้ responsive / mobile | Section 10 ใน `<style>` + breakpoint check ใน JS | CSS: 1061–1214, JS: `window.innerWidth < 768` (หลายจุด) | breakpoint หลักคือ 768px (layout) และ 991px (สลับเมนู `.day-tabs`/`.mobile-day-nav`) — ต้องเทสทั้งสองจุด |
 | แก้ theme / สี / font | `:root` custom properties | 24–58 | ทุก component อ้างอิงผ่าน variable — แก้จุดเดียวมีผลทั้งเว็บ |
 | แก้เช็คลิสต์ (เพิ่ม/ลบรายการ) | `#checklist` article, ระบบ `.checklist-item` | 14981–15660 | checkbox `id` ต้องไม่ซ้ำกับที่มีอยู่ทั้งไฟล์ (ตรวจด้วย `grep 'id="chk_'`) |
 | แก้ข้อมูลร้านอาหาร | `#restaurants` article, `.restaurant-card` | 14114–14980 | ถ้าร้านผูกกับวันเที่ยว ต้องอัปเดต `.val-highlight-day` ให้ตรงกับวันจริง |
 | แก้ข้อมูลจองตั๋ว/deadline | `#booking` article, `.booking-card` / `.inventory-grid` / `.booking-cal` | 15661–16121 | ต้องคำนวณวันที่ deadline ด้วยมือใหม่ทุกครั้งที่มีการย้ายวันเที่ยว — ไม่มี auto-calculation |
-| แก้แผนที่ interactive | `.map-zone` SVG (HTML) + `syncMapHighlight()` (JS) | HTML: ~12817–12879 (map panel), JS: 16461–16495 | **สองจุดนี้ไม่ sync กันอัตโนมัติ** ต้องแก้พร้อมกันด้วยมือ (ดู known bug หัวข้อ 11) |
 | แก้ pixel-art / hero animation | SVG `lm-svg-N` + `pixelDayTitles` + `syncPixelArt()` | SVG: ~2470–12700, JS: 16126–16168 | ห้ามวาดภาพใหม่เมื่อสลับเนื้อหาแต่ละวัน ให้สลับ `id`/comment ของ SVG ที่มีอยู่แทน |
 | deploy เว็บไซต์ | ไม่มีขั้นตอนพิเศษ | - | `git push` ไปที่ branch `main` แล้ว GitHub Pages จะ deploy อัตโนมัติ (ไม่มี CI/CD config ให้เห็นใน repo) |
 
@@ -306,21 +303,17 @@ User คลิก checkbox (.checklist-checkbox)
 - Responsive design รองรับ mobile ผ่าน breakpoint 768px/991px (ดูหัวข้อ 8)
 
 ### สิ่งที่ห้ามแก้โดยไม่ทดสอบผลกระทบ
-ดูหัวข้อ 5 ท้ายตาราง Components Inventory (setActiveDay/syncPixelArt/syncMapHighlight, checkbox id, lm-svg id)
+ดูหัวข้อ 5 ท้ายตาราง Components Inventory (setActiveDay/syncPixelArt, checkbox id, lm-svg id)
 
 ### Known bugs / technical debt ที่พบระหว่างสำรวจ codebase
 
-1. **`syncMapHighlight()` ไม่ sync กับเนื้อหาปัจจุบัน (บั๊กจริง, มีผลต่อ UX):**
-   ฟังก์ชันนี้ (บรรทัด 16461–16495) hardcode mapping ระหว่าง `dayId` กับโซนแผนที่ (`zone-haidian`, `zone-central` ฯลฯ) แยกต่างหากจากค่า `data-day` ที่กำกับไว้บน `.map-zone` polygon/rect เอง (บรรทัด 12825–12845) หลังจากมีการสลับเนื้อหาวันที่ 3/4/5 (Forbidden City ย้ายจากวันจันทร์ไปวันอังคาร) ค่า `data-day` บน SVG ถูกอัปเดตให้ตรงแล้ว แต่ `syncMapHighlight()` **ไม่ได้ถูกอัปเดตตาม** ผลคือเมื่อผู้ใช้กด/scroll ไปวันที่ 3 (ปัจจุบันคือ Summer Palace ย่าน Haidian) แผนที่จะไป highlight โซน Tongzhou (Universal Beijing Resort) แทน ซึ่งผิด — ต้องแก้ให้ตรงกับ `data-day` จริงของแต่ละโซน: Huairou=Day2, Shunyi=Day1,8, Haidian=Day3, Central=Day1,3,4,5,7,8, Chaoyang=Day5,7, Tongzhou=Day6
-   **แนะนำให้ verify และแก้ในงานถัดไปที่แตะเรื่อง routing/แผนที่**
-
-2. **`.flight-banner` CSS ไม่ถูกใช้งาน (orphaned CSS):**
+1. **`.flight-banner` CSS ไม่ถูกใช้งาน (orphaned CSS):**
    มี CSS rule `.flight-banner` / `.flight-banner-bottom` (บรรทัด 154–238) แต่ไม่พบการใช้ class นี้ใน HTML เลย (`grep` ไม่เจอ) — คาดว่าเป็นของเก่าที่ถูกแทนที่ด้วย `.hero-meta` + countdown timer แล้วไม่ได้ลบ CSS ทิ้ง ไม่กระทบการทำงาน แต่เพิ่ม dead code
 
-3. **HTML comment ใน Booking Dossier ไม่ตรงกับ heading จริง:**
+2. **HTML comment ใน Booking Dossier ไม่ตรงกับ heading จริง:**
    Comment `<!-- Section B: Booking calendar -->` (ก่อนบรรทัด ~15923) อยู่เหนือ heading ที่เขียนว่า "C) Booking Calendar" — comment label เพี้ยนจากตัวอักษรจริง 1 อักษร ไม่กระทบการทำงาน เป็นแค่ความสับสนเวลาอ่าน source
 
-4. **Booking deadline เป็นตัวเลขคำนวณด้วยมือ ไม่มี auto-recalculation:**
+3. **Booking deadline เป็นตัวเลขคำนวณด้วยมือ ไม่มี auto-recalculation:**
    ทุกครั้งที่มีการย้ายวันเที่ยวของสถานที่ใด ต้องไปคำนวณวันจองใหม่ด้วยมือใน `#booking` (เช่น "จองล่วงหน้า 7 วัน" ต้องนับวันเองแล้วพิมพ์ทับ) — ไม่มี JS ช่วยคำนวณ มีความเสี่ยงตัวเลขไม่ sync ถ้าลืมอัปเดตจุดใดจุดหนึ่ง (มีบันทึกจุดที่ต้องแก้พร้อมกันไว้ในหัวข้อ 9)
 
 ---
@@ -333,7 +326,7 @@ User คลิก checkbox (.checklist-checkbox)
 - **คำสั่ง test:** ไม่มี (ไม่พบ test file หรือ test framework ใด ๆ ในโปรเจกต์)
 - **วิธีตรวจสอบ feature สำคัญหลังแก้ไข (manual):**
   1. เปิดไฟล์ในเบราว์เซอร์ ตรวจว่าไม่มี error ใน DevTools Console
-  2. คลิกทุก tab (`.day-tab` และ `.mobile-day-btn`) ตรวจว่าเนื้อหาสลับถูกต้อง, pixel-art เปลี่ยนตาม, แผนที่ highlight ถูกโซน (ระวังบั๊กที่ระบุในหัวข้อ 11)
+  2. คลิกทุก tab (`.day-tab` และ `.mobile-day-btn`) ตรวจว่าเนื้อหาสลับถูกต้อง, pixel-art เปลี่ยนตาม
   3. ย่อขนาดหน้าจอ/ใช้ DevTools responsive mode ทดสอบที่ breakpoint 768px และ 991px
   4. ในแท็บ `#checklist` ลองติ๊ก checkbox แล้ว refresh หน้าเว็บ ตรวจว่าสถานะยังอยู่ (localStorage) และ progress bar อัปเดตถูกต้อง
   5. ตรวจสอบ HTML ด้วยสายตา/เครื่องมือว่า tag เปิด-ปิดสมดุล (โปรเจกต์นี้ไม่มี HTML validator ติดตั้งไว้ — แนะนำใช้ `python -c` script นับ `<div>`/`</div>` หรือ paste ผ่าน W3C validator ก่อน commit งานใหญ่)
@@ -342,7 +335,7 @@ User คลิก checkbox (.checklist-checkbox)
   - [ ] ไม่มี syntax error ใน DevTools Console เมื่อเปิดหน้าเว็บ
   - [ ] Tag HTML เปิด-ปิดสมดุล (โดยเฉพาะ `<div>`, `<article>`, `<table>`)
   - [ ] checkbox `id` ใหม่ (ถ้ามี) ไม่ซ้ำกับของเดิม
-  - [ ] ถ้าย้าย/เพิ่ม/ลบวันเที่ยว: อัปเดตครบทุกจุดตามหัวข้อ 9 (sidebar tab, mobile nav, pixel-art id, `pixelDayTitles`, `syncMapHighlight`, `.val-highlight-day` ในร้านอาหาร, checkbox id ใน checklist, วันที่ใน booking dossier)
+  - [ ] ถ้าย้าย/เพิ่ม/ลบวันเที่ยว: อัปเดตครบทุกจุดตามหัวข้อ 9 (sidebar tab, mobile nav, pixel-art id, `pixelDayTitles`, `.val-highlight-day` ในร้านอาหาร, checkbox id ใน checklist, วันที่ใน booking dossier)
   - [ ] ทดสอบคลิกทุกแท็บอย่างน้อย 1 รอบก่อน push
 
 ---
@@ -353,6 +346,7 @@ User คลิก checkbox (.checklist-checkbox)
 |---|---|---|---|---|---|
 | 2026-09-09 | สร้างเอกสาร `website_context.md` ฉบับแรก | `website_context.md` (ใหม่) | ไม่มีผลต่อพฤติกรรมเว็บไซต์ (เอกสารอ้างอิงเท่านั้น) | อ่านทวนเนื้อหาเทียบกับ `index.html` | Claude (AI) |
 | 2026-09-10 | รวมแท็บ `#checklist` และ `#booking` เป็นแท็บเดียว (`#checklist` — "🎫 คู่มือจองปักกิ่ง 2026") เรียงเนื้อหาใหม่เป็น 4 เฟส: ก่อนจอง → วันจอง (ตารางเทียบวัน-เวลาแบบตายตัว/ยืดหยุ่น + booking-card ต่อสถานที่ + สรุปงบ) → ก่อนเดินทาง → ระหว่างทริป ตัดเนื้อหาซ้ำซ้อน (ตาราง Food Guide เต็ม/Drink Checklist/งบอาหาร ซ้ำกับแท็บ `#restaurants`, ตารางวิเคราะห์ Itinerary Review ที่ข้อสรุปถูกสะท้อนในตารางใหม่แล้ว, Inventory summary ที่ซ้ำกับ booking-card, Booking Calendar timeline ที่ซ้ำกับตารางใหม่ที่เรียงตามวันจองอยู่แล้ว) | `index.html` บรรทัด ~14973–15493 (แท็บรวมใหม่), sidebar nav บรรทัด ~12799, mobile nav บรรทัด ~12722 | ลบ `id="booking"` ทั้งหมดออกจากไฟล์ — nav เหลือปุ่ม/ลิงก์เดียวชี้ไป `data-target="checklist"` เท่านั้น checkbox id ทั้งหมด unique (verify ด้วย `grep -oE 'id="chk_[a-zA-Z0-9_]+"' index.html \| sort \| uniq -d`) | เปิดไฟล์ตรวจ tab ใหม่, กด checkbox ทดสอบ progress bar, ตรวจไม่มี `#booking` residual (`grep -n '#booking' index.html`) | Claude (AI) |
+| 2026-09-10 | ทดลองทำ visual redesign "Modern Beijing Travel Journal" (theme สว่าง, ฟอนต์ใหม่, บีบอัดรูป ฯลฯ) แบบ uncommitted แล้วผู้ใช้ตัดสินว่าแย่กว่าดีไซน์เดิม จึง **revert `index.html`/`website_context.md`/`images/*` กลับสู่ commit ล่าสุดทั้งหมด** (ไม่มีร่องรอยของ redesign นั้นหลงเหลือ) จากนั้นลบ 2 ส่วนออกจากดีไซน์เดิมอย่างถาวร: (1) "พื้นที่ท่องเที่ยวตามแผนที่" — sidebar map panel ทั้งหมด (SVG `.map-zone` 6 โซน, `.map-legend`, ฟังก์ชัน JS `syncMapHighlight()` และการเรียกใช้ใน `setActiveDay()`) (2) "ข้อควรจำสำคัญ" — `.reminders-panel` พร้อม `.reminder-item` 3 รายการ (Forbidden City, Mutianyu Toboggan, Universal Beijing) ลบ CSS ที่เกี่ยวข้องทั้งหมด (Section 6 เดิม, media query ที่ซ่อน `.map-panel` บนจอเล็ก) ไม่มี asset ไฟล์แยกให้ลบ (แผนที่เป็น inline SVG, reminders เป็นข้อความล้วน) sidebar ตอนนี้เหลือแค่เมนูเลือกวัน (desktop) อย่างเดียว | `index.html` (`:root`→ท้ายไฟล์ ทั้งไฟล์ revert, แล้วลบ sidebar HTML บรรทัด ~12807–12895 เดิม, CSS Section 6 บรรทัด ~486–692 เดิม, media query บรรทัด ~1304 เดิม, JS Section 6 "INTERACTIVE MAP SYNCING" บรรทัด ~15646–15714 เดิม), `website_context.md` (revert แล้วอัปเดตให้ตรงกับโครงสร้างใหม่) | sidebar เหลือ 1 การ์ด (`.day-tabs`) จากเดิม 3 การ์ด — ไม่กระทบ itinerary/checklist/booking/restaurants เลย breakpoint 991px ยังทำงานถูกต้อง (sidebar ยุบเป็น `height:auto` บนจอเล็กอยู่แล้วจึงไม่มีช่องว่างเกิดขึ้น) | `node --check` ผ่าน, tag balance (`<article>`/`</article>` 10/10, `<section>`/`</section>` 2/2) ผ่าน, grep หา `map-panel\|map-zone\|syncMapHighlight\|reminders-panel\|reminder-item` ไม่พบเหลือ | Claude (AI) |
 
 > เพิ่มแถวใหม่ทุกครั้งที่มีการเปลี่ยนแปลงโครงสร้างสำคัญ (route/component/API/config/rule) ในโปรเจกต์
 
@@ -376,7 +370,7 @@ User คลิก checkbox (.checklist-checkbox)
 
 1. `website_context.md` (ไฟล์นี้) — ภาพรวมทั้งหมดก่อนแตะ code จริง
 2. `index.html` บรรทัด 1–58 — meta tags และ design tokens (`:root`) จำเป็นสำหรับงานด้าน styling ทุกชนิด
-3. `index.html` บรรทัด 16295–16523 — JS engine หลัก (`setActiveDay`, `syncPixelArt`, `syncMapHighlight`) จำเป็นสำหรับงานด้าน navigation/interaction ทุกชนิด
+3. `index.html` บรรทัด 16295–16523 — JS engine หลัก (`setActiveDay`, `syncPixelArt`) จำเป็นสำหรับงานด้าน navigation/interaction ทุกชนิด
 4. `index.html` บรรทัด 12907–14113 — โครงสร้างการ์ดวันเที่ยว `#day1`–`#day8` จำเป็นสำหรับงานแก้เนื้อหาทริป
 5. `index.html` บรรทัด 12731–12813 — sidebar day-tabs (จุดที่มักลืมอัปเดตคู่กับเนื้อหา)
 6. `index.html` บรรทัด 14981–15660 — แท็บ `#checklist` (ระบบ checkbox + localStorage + Food Guide + Itinerary Review)
@@ -389,7 +383,6 @@ User คลิก checkbox (.checklist-checkbox)
 
 ## Open Questions / Needs Verification
 
-- **`syncMapHighlight()` ไม่ sync กับ `data-day`** (ดูหัวข้อ 11 ข้อ 1) — ยังไม่ได้แก้ในเอกสารนี้เพราะเป็นงาน documentation-only ตามที่ร้องขอ ต้องตรวจสอบเพิ่มเติมและแก้ไขแยกเป็นงานถัดไป
 - ไม่พบไฟล์ README หรือเอกสารอ้างอิงเดิมในโปรเจกต์ ก่อนสร้างไฟล์นี้ — เอกสารนี้จึงเป็นฉบับแรกทั้งหมด ไม่มีข้อมูลเดิมให้ merge
 - ไม่มี CI/CD config (`.github/workflows/`) ปรากฏใน repo แม้จะ deploy ผ่าน GitHub Pages ได้จริง — สันนิษฐานว่า GitHub Pages ถูกตั้งค่าให้ serve จาก branch `main` root โดยตรงผ่าน repository settings (ไม่ใช่ Actions) แต่ยังไม่ได้ตรวจสอบ repository settings จริงเพื่อยืนยัน 100%
 - ไม่สามารถยืนยันได้จาก codebase ว่ามีการทดสอบบนเบราว์เซอร์ใดบ้างมาก่อน (Chrome/Safari/Firefox/มือถือจริง) — ไม่มีบันทึกไว้ในโค้ดหรือ commit message
